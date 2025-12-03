@@ -1,6 +1,6 @@
-export default function ContinueButton() {
+export default function DownloadFileButton() {
   const handleClick = () => {
-    alert("ContinueButton!");
+    alert("DownloadFileButton!");
   };
 
   return (
@@ -8,17 +8,15 @@ export default function ContinueButton() {
       onClick={handleClick}
       className="
         inline-flex items-center justify-center
-        w-[516px] h-[52px]
+        w-[330px] h-[45px]
         rounded-[26px]
         border border-[#00000000]
         bg-[#4443E4]
-        text-[18px] leading-7 font-normal
-        text-white
-        text-center
+        text-white text-[18px] leading-7 font-normal
         cursor-pointer
       "
     >
-      Continue
+      Download Your File
     </button>
   );
 }

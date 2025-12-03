@@ -16,17 +16,18 @@ export default function FaceBookButton() {
         cursor-pointer
       "
     >
-      {/* Facebook icon placeholder */}
+      {/* Facebook circle icon */}
       <span
-        aria-hidden="true"
         className="
           flex items-center justify-center
           w-4 h-4
           mr-2
           rounded-full
           bg-[#171A1F]
-          text-[11px] text-white
+          text-[11px] font-normal leading-none
+          text-white
         "
+        aria-hidden="true"
       >
         f
       </span>

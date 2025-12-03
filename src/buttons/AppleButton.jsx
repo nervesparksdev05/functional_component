@@ -16,7 +16,6 @@ export default function AppleButton() {
         cursor-pointer
       "
     >
-      {/* Apple icon placeholder */}
       <span
         aria-hidden="true"
         className="

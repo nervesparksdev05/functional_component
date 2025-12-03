@@ -1,6 +1,6 @@
-export default function DemoButton() {
+export default function UploadKnowledge2Button() {
   const handleClick = () => {
-    alert("DemoButton!");
+    alert("UploadKnowledge2Button!");
   };
 
   return (
@@ -8,15 +8,15 @@ export default function DemoButton() {
       onClick={handleClick}
       className="
         inline-flex items-center justify-center
-        w-[578px] h-10
+        w-[128px] h-[35px]
+        rounded-[15px]
+        bg-[#4443E4]
         pt-[12px] pb-[11px] px-[30px]
-        rounded-[50px]
-        bg-[#4443e4]
-        text-white text-[13px] font-medium
+        text-white text-[10px] font-medium leading-none
         cursor-pointer
       "
     >
-      Start Demo
+      Upload Knowledge Base
     </button>
   );
 }
