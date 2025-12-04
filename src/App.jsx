@@ -21,6 +21,17 @@ import UploadDocumentsInterface from "./interface/UploadDocumentsInterface";
 import MultipleDocumentUploadInterface from "./interface/UploadMultipleDocumentInterface";
 import DragOrBrowsefilesInterface from "./interface/DragOrBrowsefilesInterface";
 import IncreasingDotsInterface from "./interface/IncreasingDotsInterface";
+import WidgetPositionInterface from "./interface/WidgetPositionInterface";
+import InfoInterface from "./interface/InfoInterface";
+import AccordianTitleInterface from "./interface/AccordianTitleInterface";
+import AddCustomGoalsInterface from "./interface/AddCustomGoalsInterface";
+import WidgetColorInterface from "./interface/WidgetColorInterface";
+import ContainerInterface from "./interface/ContainerInterface";
+import AIAvatarInterface from "./interface/AIAvatarInterface";
+import RecentChatBotTable from "./tables/RecentChatBotTable";
+import CandidatesResumeResultTable from "./tables/CandidatesResumeResultTable";
+import Table21 from "./tables/Table21";
+
 export default function App() {
   return (
     <div className="min-h-screen bg-slate-100 p-10">
@@ -51,8 +62,17 @@ export default function App() {
         <MultipleDocumentUploadInterface /> 
         <DragOrBrowsefilesInterface />
         <IncreasingDotsInterface />
+        <WidgetPositionInterface />
+        <InfoInterface />
+        <AccordianTitleInterface />
+        <AddCustomGoalsInterface />
+        <WidgetColorInterface />
+        <ContainerInterface />
+        <AIAvatarInterface />
+        <RecentChatBotTable />
+        <CandidatesResumeResultTable />
+        <Table21 />
       
-
       </div>
     </div>
   );

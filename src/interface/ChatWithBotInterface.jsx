@@ -1,13 +1,31 @@
+// adjust these paths/file names to match your project
+import SparklesIconImg from "../assets/sparkles-1.svg";      // blue sparkles icon
+import SendIconImg from "../assets/paper-plane-dark.svg";   // dark circle + paper plane icon
+
 export default function ChatWithBotInterface() {
+  const handleSend = () => {
+    console.log("Send clicked from chat input");
+  };
+
   return (
     <div className="w-full flex justify-center py-8">
       {/* Outer frame with blue border */}
-      <div className="w-[960px] h-[420px] border border-[#0F8AFD] rounded-[6px] bg-[#F6F7FB] p-6">
-        {/* Header */}
-        <h2 className="text-[20px] font-semibold text-[#111827] mb-4">
-            <SparklesIcon />
-          Chat with Bot
-        </h2>
+      <div
+        className="
+          w-[960px] h-[420px]
+          border border-[#0F8AFD]
+          rounded-[6px]
+          bg-[#F6F7FB]
+          p-6
+        "
+      >
+        {/* Header: sparkles + title */}
+        <div className="flex items-center gap-2 mb-4">
+          <img src={SparklesIconImg} alt="Sparkles" className="w-6 h-6" />
+          <h2 className="text-[20px] font-semibold text-[#111827]">
+            Chat with Bot
+          </h2>
+        </div>
 
         {/* Chat area */}
         <div className="flex flex-col h-[330px] bg-[#F6F7FB] rounded-[14px]">
@@ -17,8 +35,12 @@ export default function ChatWithBotInterface() {
             <div className="flex justify-start">
               <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[72%]">
                 <div className="flex items-start gap-3">
-                  <SparklesIcon />
-                  <p className="text-[#111827] text-[14px] leading-[20px] font-medium">
+                  <img
+                    src={SparklesIconImg}
+                    alt="Bot"
+                    className="w-5 h-5 mt-[2px]"
+                  />
+                  <p className="text-[#111827] text-[14px] leading-[20px]">
                     Hello! I'm chat bot of (Company Name). How can I assist you
                     today?
                   </p>
@@ -37,8 +59,12 @@ export default function ChatWithBotInterface() {
             <div className="flex justify-start">
               <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[72%]">
                 <div className="flex items-start gap-3">
-                  <SparklesIcon />
-                  <p className="text-[#111827] text-[14px] leading-[20px] font-medium">
+                  <img
+                    src={SparklesIconImg}
+                    alt="Bot"
+                    className="w-5 h-5 mt-[2px]"
+                  />
+                  <p className="text-[#111827] text-[14px] leading-[20px]">
                     Could you provide me with more details about your product,
                     so I can prepare a detailed strategic plan on how to
                     increase sales.
@@ -55,81 +81,54 @@ export default function ChatWithBotInterface() {
             </div>
           </div>
 
-          {/* Input area */}
-          <div className="mt-4 flex items-center gap-3">
-            {/* Input pill */}
-            <div className="flex-1 flex items-center bg-white rounded-[999px] px-4 py-2">
-              <span className="mr-2">
-                <SparklesIcon small />
-              </span>
-              <input
-                type="text"
-                placeholder="Ask anything"
-                className="flex-1 bg-transparent outline-none text-[14px] text-[#6B7280] placeholder-[#9CA3AF]"
-              />
-            </div>
-
-            {/* Send button */}
-            <button
+          {/* Input area – full-width like original */}
+          <div className="mt-4 flex items-center">
+            <div
               className="
-                inline-flex items-center justify-center
-                w-10 h-10 rounded-full
-                bg-[#111827]
-                text-white
-                cursor-pointer
+                flex-1
+                h-[52px]
+                rounded-[25px]
+                border border-[#D9DCE1]
+                bg-white
+                flex items-center
+                px-4
               "
             >
-              <PaperPlaneIcon />
-            </button>
+              {/* Left: sparkle + input */}
+              <div className="flex items-center flex-1 gap-2 mr-2">
+                <img src={SparklesIconImg} alt="Sparkles" className="w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Ask anything"
+                  className="
+                    flex-1
+                    bg-transparent
+                    outline-none
+                    border-none
+                    text-[14px] leading-[22px]
+                    text-[#2F3542]
+                    placeholder:text-[#2F3542]/50
+                  "
+                />
+              </div>
+
+              {/* Right: send button (imported icon) */}
+              <button
+                type="button"
+                onClick={handleSend}
+                className="
+                  flex items-center justify-center
+                  w-10 h-10
+                  rounded-[30px]
+                  cursor-pointer
+                "
+              >
+                <img src={SendIconImg} alt="Send" className="w-10 h-10" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-}
-
-/* --- Small helper icons --- */
-
-function SparklesIcon({ small }) {
-  const size = small ? 16 : 20;
-  return (
-    <div
-      className={`
-        inline-flex items-center justify-center
-        rounded-full
-        ${small ? "w-4 h-4" : "w-6 h-6"}
-        bg-transparent
-      `}
-    >
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
-        className="text-[#6366F1]"
-        fill="none"
-      >
-        <path
-          d="M12 2.5l1.1 3.5 3.5 1.1-3.5 1.1-1.1 3.5-1.1-3.5-3.5-1.1 3.5-1.1L12 2.5zM6 12.5l.7 2.3 2.3.7-2.3.7L6 18.5l-.7-2.3-2.3-.7 2.3-.7.7-2.3zm12 0l.7 2.3 2.3.7-2.3.7L18 18.5l-.7-2.3-2.3-.7 2.3-.7.7-2.3z"
-          fill="#6366F1"
-        />
-      </svg>
-    </div>
-  );
-}
-
-function PaperPlaneIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="w-4 h-4"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M22 2L11 13" />
-      <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-    </svg>
   );
 }

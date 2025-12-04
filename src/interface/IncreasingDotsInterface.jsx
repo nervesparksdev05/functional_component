@@ -30,10 +30,6 @@ export default function IncreasingDotsInterface() {
           px-8
           flex flex-col justify-center
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         <div className="relative w-full pt-2">
           {/* Base grey line */}

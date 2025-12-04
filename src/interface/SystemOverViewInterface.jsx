@@ -11,10 +11,6 @@ export default function SystemOverviewInterface() {
           text-white
           flex flex-col
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         {/* Title */}
         <h2 className="text-[30px] leading-[32px] font-semibold tracking-[-0.06em] mb-8">

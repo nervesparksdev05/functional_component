@@ -26,10 +26,6 @@ export default function DragOrBrowsefilesInterface() {
           flex flex-col items-center justify-center
           text-center
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         {/* Cloud icon */}
         <CloudUploadIcon />

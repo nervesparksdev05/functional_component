@@ -13,10 +13,6 @@ export default function DragAndDropInterface() {
         flex flex-col items-center justify-center
         gap-3
       "
-      style={{
-        fontFamily:
-          '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-      }}
     >
       {/* Upload icon */}
       <div className="w-6 h-6 flex items-center justify-center text-[#4B5B6B]">
