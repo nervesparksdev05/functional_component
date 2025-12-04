@@ -16,10 +16,6 @@ export default function BrowseFilesButton({ onClick }) {
         text-white text-center
         cursor-pointer
       "
-      style={{
-        fontFamily:
-          '"Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-      }}
     >
       Browse files
     </button>

@@ -1,3 +1,6 @@
+import BracketArrow from "../assets/bracket-arrow.svg";
+import CopyIcon from "../assets/copy-icon.svg";
+
 const CODE_SNIPPET = `def get_bot_response(user_input):
     """
     Checks the user's input against predefined patterns and returns a response.
@@ -29,11 +32,13 @@ export default function CopyCode() {
         {/* Header row */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-3">
-            {/* Code icon badge (circle with </>) */}
-            <div className="flex items-center justify-center w-9 h-9 rounded-full bg-[#E4DEFF]">
-              <span className="text-[#4F46E5] text-[18px] font-semibold">
-                {"</>"}
-              </span>
+            {/* Left badge: imported bracket-arrow icon */}
+            <div className="flex items-center justify-center  bg-[#E4DEFF]">
+              <img
+                src={BracketArrow}
+                alt="Code icon"
+                className="w-8 h-8"
+              />
             </div>
 
             <span className="text-[16px] font-semibold text-[#111827]">
@@ -41,7 +46,7 @@ export default function CopyCode() {
             </span>
           </div>
 
-          {/* Copy icon button (matches top-right icon) */}
+          {/* Copy icon button: imported copy-icon */}
           <button
             onClick={handleCopy}
             className="
@@ -53,26 +58,17 @@ export default function CopyCode() {
             "
             aria-label="Copy code"
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="w-5 h-5 text-[#111827]"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              {/* front square */}
-              <rect x="9" y="9" width="11" height="11" rx="2" ry="2" />
-              {/* back square */}
-              <path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8" />
-            </svg>
+            <img
+              src={CopyIcon}
+              alt="Copy"
+              className="w-5 h-5"
+            />
           </button>
         </div>
 
         {/* Code area */}
         <div className="mt-1 rounded-[16px] border border-[#E7E0FF] bg-[#F7F4FF] px-5 py-4">
-          <pre className="font-mono text-[13px] leading-[20px] text-[#4F46E5] whitespace-pre-wrap">
+          <pre className="font-mono text-[13px] leading-[20px] text-[#392494] whitespace-pre-wrap">
             {CODE_SNIPPET}
           </pre>
         </div>

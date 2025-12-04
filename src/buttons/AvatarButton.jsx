@@ -1,4 +1,4 @@
-import PlayIcon from "../assets/play-button.svg";
+import VectorIcon from "../assets/vector.svg";
 
 export default function AvatarButton() {
   const handleClick = () => {
@@ -21,7 +21,7 @@ export default function AvatarButton() {
     >
       <span className="inline-flex items-center justify-center w-[14px] h-[14px]">
         <img
-          src={PlayIcon}
+          src={VectorIcon}
           alt="Play"
           className="w-[14px] h-[14px]"
         />

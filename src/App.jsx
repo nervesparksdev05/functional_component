@@ -1,6 +1,7 @@
 import GoogleButton from "./buttons/GoogleButton";
 import DemoButton from "./buttons/DemoButton";
 import ContinueButton from "./buttons/ContinueButton";
+import AppleButton from "./buttons/AppleButton";
 import DownloadFileButton from "./buttons/DownloadFileButton";
 import FaceBookButton from "./buttons/FaceBookButton";
 import CreateNewChatbotButton from "./buttons/CreateNewChatbotButton";
@@ -10,6 +11,7 @@ import DoneAndProcessingButton from "./buttons/DoneAndProcessing";
 import VerifyDnsButton from "./buttons/VerifyDnsButton";
 import VerifyingDNSButton from "./buttons/VerifyingDNSButton";
 import AddButton from "./buttons/AddButton";
+import AvatarButton from "./buttons/AvatarButton";
 import BrowseFilesButton from "./buttons/BrowseFileButton";
 import CustomizeColor from "./buttons/CustomizeColorButton";
 import ChatWithBotInterface from "./interface/ChatWithBotInterface";
@@ -44,6 +46,8 @@ export default function App() {
         <ContinueButton />
         <DownloadFileButton />
         <FaceBookButton />
+        <AppleButton/>
+        <AvatarButton />
         <CreateNewChatbotButton />
         <UpdateKnowledgeButton />
         <EndSessionButton />

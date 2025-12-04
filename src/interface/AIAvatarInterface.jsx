@@ -1,3 +1,5 @@
+import Avatar from "../assets/ai-avatar.svg";
+
 export default function AIAvatarInterface() {
   const handleClick = () => {
     console.log("Start Avatar Session clicked");
@@ -15,14 +17,15 @@ export default function AIAvatarInterface() {
           px-[10px] pt-4 pb-0
           flex flex-col
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         {/* Header */}
         <div className="flex items-center gap-2 mb-3">
-          <AvatarIcon />
+          {/* Imported avatar icon */}
+          <img
+            src={Avatar}
+            alt="AI Avatar"
+            className="w-5 h-5"
+          />
           <span className="text-[16px] font-medium text-[#171A1F]">
             AI Avatar
           </span>
@@ -71,22 +74,7 @@ export default function AIAvatarInterface() {
   );
 }
 
-/* --- Icons --- */
-
-function AvatarIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="w-5 h-5"
-      fill="#F97316"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <circle cx="12" cy="8" r="3" />
-      <path d="M6 19c0-3 2.7-5 6-5s6 2 6 5" />
-    </svg>
-  );
-}
-
+/* --- Play icon stays the same --- */
 function PlayIcon() {
   return (
     <svg

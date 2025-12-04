@@ -1,4 +1,8 @@
 import { useRef, useState } from "react";
+import CloudUpload from "../assets/cloud-upload.svg";
+import PinIcon from "../assets/pin-icon.svg";
+import Radio from "../assets/radio.svg";        // filled radio
+import EmptyRadio from "../assets/empty-radio.svg"; // empty radio
 
 export default function MultipleDocumentUploadInterface() {
   const [docType, setDocType] = useState("pdf");
@@ -31,15 +35,11 @@ export default function MultipleDocumentUploadInterface() {
           px-8 pt-6 pb-6
           flex flex-col
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         {/* Header + radio row */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <PaperclipIcon />
+            <img src={PinIcon} alt="Pin" className="w-6 h-6" />
             <h2 className="text-[20px] leading-[24px] font-semibold text-[#111827]">
               Upload Document
             </h2>
@@ -53,21 +53,11 @@ export default function MultipleDocumentUploadInterface() {
               onClick={() => setDocType("pdf")}
               className="flex items-center gap-2 cursor-pointer"
             >
-              <span
-                className={`
-                  inline-flex items-center justify-center
-                  w-6 h-6 rounded-full border
-                  ${
-                    docType === "pdf"
-                      ? "border-[#4443E4] bg-[#4443E4]"
-                      : "border-[#C4C4D0] bg-white"
-                  }
-                `}
-              >
-                {docType === "pdf" && (
-                  <span className="block w-3 h-3 rounded-full bg-white" />
-                )}
-              </span>
+              <img
+                src={docType === "pdf" ? Radio : EmptyRadio}
+                alt="PDF document radio"
+                className="w-6 h-6"
+              />
               <span className="text-[16px] text-[#111827]">PDF Document</span>
             </button>
 
@@ -77,24 +67,12 @@ export default function MultipleDocumentUploadInterface() {
               onClick={() => setDocType("text")}
               className="flex items-center gap-2 cursor-pointer"
             >
-              <span
-                className={`
-                  inline-flex items-center justify-center
-                  w-6 h-6 rounded-full border
-                  ${
-                    docType === "text"
-                      ? "border-[#4443E4] bg-[#4443E4]"
-                      : "border-[#C4C4D0] bg-white"
-                  }
-                `}
-              >
-                {docType === "text" && (
-                  <span className="block w-3 h-3 rounded-full bg-white" />
-                )}
-              </span>
-              <span className="text-[16px] text-[#111827]">
-                Text Document
-              </span>
+              <img
+                src={docType === "text" ? Radio : EmptyRadio}
+                alt="Text document radio"
+                className="w-6 h-6"
+              />
+              <span className="text-[16px] text-[#111827]">Text Document</span>
             </button>
           </div>
         </div>
@@ -134,7 +112,7 @@ export default function MultipleDocumentUploadInterface() {
             mb-4
           "
         >
-          <CloudUploadIcon />
+          <img src={CloudUpload} alt="Cloud upload" className="w-10 h-10" />
 
           <p className="mt-3 text-[14px] text-[#111827]">
             Drag &amp; drop your files here
@@ -156,7 +134,6 @@ export default function MultipleDocumentUploadInterface() {
             Browse files
           </button>
 
-          {/* Hidden file input */}
           <input
             ref={fileInputRef}
             type="file"
@@ -185,42 +162,5 @@ export default function MultipleDocumentUploadInterface() {
         </div>
       </section>
     </div>
-  );
-}
-
-/* --- Icons --- */
-
-function PaperclipIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="w-6 h-6"
-      fill="none"
-      stroke="#4443E4"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M21 7.5L12.5 16a4 4 0 11-5.7-5.6L15 2.5" />
-      <path d="M17.5 5L10 12.5" />
-    </svg>
-  );
-}
-
-function CloudUploadIcon() {
-  return (
-    <svg
-      viewBox="0 0 48 48"
-      className="w-10 h-10"
-      fill="none"
-      stroke="#4443E4"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 20a8 8 0 0 1 15.6-2.4A6 6 0 1 1 34 30H16a6 6 0 0 1 0-12h.4" />
-      <path d="M24 28V18" />
-      <path d="M20 22l4-4 4 4" />
-    </svg>
   );
 }

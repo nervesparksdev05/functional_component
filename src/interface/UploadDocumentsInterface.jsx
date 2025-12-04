@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import CloudUpload from "../assets/cloud-upload.svg";
 
 export default function UploadDocumentsInterface() {
   const fileInputRef = useRef(null);
@@ -30,14 +31,16 @@ export default function UploadDocumentsInterface() {
           flex flex-col items-center justify-center
           text-center px-6
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         {/* Upload icon */}
         <div className="mb-4">
-          <CloudUploadIcon />
+          {/* Cloud icon (imported SVG) */}
+        <img
+          src={CloudUpload}
+          alt="Cloud upload"
+          className="w-9 h-9"
+        />
+
         </div>
 
         {/* Title */}

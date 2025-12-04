@@ -1,3 +1,5 @@
+import AppleIcon from "../assets/apple.svg";
+
 export default function AppleButton() {
   const handleClick = () => {
     alert("AppleButton!");
@@ -16,17 +18,12 @@ export default function AppleButton() {
         cursor-pointer
       "
     >
-      <span
-        aria-hidden="true"
-        className="
-          flex items-center justify-center
-          w-4 h-4
-          mr-2
-          text-[14px]
-        "
-      >
-        
-      </span>
+      {/* Apple logo from assets */}
+      <img
+        src={AppleIcon}
+        alt="Apple"
+        className="w-4 h-4 mr-2"
+      />
 
       <span>Apple</span>
     </button>

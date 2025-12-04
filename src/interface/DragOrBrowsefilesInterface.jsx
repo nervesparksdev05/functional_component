@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import CloudUpload from "../assets/cloud-upload.svg";
 
 export default function DragOrBrowsefilesInterface() {
   const fileInputRef = useRef(null);
@@ -27,8 +28,12 @@ export default function DragOrBrowsefilesInterface() {
           text-center
         "
       >
-        {/* Cloud icon */}
-        <CloudUploadIcon />
+        {/* Cloud icon (imported SVG) */}
+        <img
+          src={CloudUpload}
+          alt="Cloud upload"
+          className="w-9 h-9"
+        />
 
         {/* Main text */}
         <p className="mt-3 text-[14px] leading-[20px] text-[#111827]">
@@ -66,25 +71,5 @@ export default function DragOrBrowsefilesInterface() {
         />
       </section>
     </div>
-  );
-}
-
-/* --- Icon --- */
-
-function CloudUploadIcon() {
-  return (
-    <svg
-      viewBox="0 0 48 48"
-      className="w-9 h-9"
-      fill="none"
-      stroke="#4443E4"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 20a8 8 0 0 1 15.6-2.4A6 6 0 1 1 34 30H16a6 6 0 0 1 0-12h.4" />
-      <path d="M24 28V18" />
-      <path d="M20 22l4-4 4 4" />
-    </svg>
   );
 }
