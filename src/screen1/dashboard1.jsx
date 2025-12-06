@@ -94,7 +94,7 @@ export default function Dashboard1() {
               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm border border-[#E5E7EB]">
                 <img src={BulbIcon} alt="Idea" className="h-6 w-6" />
               </span>
-              <h1 className="text-xl md:text-2xl font-normal text-[#2F3542]">
+              <h1 className="text-xl md:text-2xl font-semibold text-[#2F3542]">
                 Product Demo Assistant
               </h1>
             </div>
