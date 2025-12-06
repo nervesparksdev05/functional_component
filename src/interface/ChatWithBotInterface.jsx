@@ -1,6 +1,5 @@
-// adjust these paths/file names to match your project
-import SparklesIconImg from "../assets/sparkles-1.svg";      // blue sparkles icon
-import SendIconImg from "../assets/paper-plane-dark.svg";   // dark circle + paper plane icon
+import SparklesIconImg from "../assets/sparkles-1.svg";      
+import SendIconImg from "../assets/paper-plane-dark.svg";   
 
 export default function ChatWithBotInterface() {
   const handleSend = () => {
@@ -8,32 +7,41 @@ export default function ChatWithBotInterface() {
   };
 
   return (
-    <div className="w-full flex justify-center py-8">
-      {/* Outer frame with blue border */}
+    // same outer wrapper as AIAvatarInterface
+    <div className="w-full flex justify-center py-4">
+      {/* Outer card – same size as AI Avatar (505 x 500) */}
       <div
         className="
-          w-[960px] h-[420px]
-          border border-[#0F8AFD]
-          rounded-[6px]
-          bg-[#F6F7FB]
-          p-6
+          w-[505px] h-[500px]
+          rounded-[10px]
+          border border-[#E5E7EB]
+          bg-white
+          px-[10px] pt-4 pb-3
+          flex flex-col
         "
       >
         {/* Header: sparkles + title */}
-        <div className="flex items-center gap-2 mb-4">
-          <img src={SparklesIconImg} alt="Sparkles" className="w-6 h-6" />
-          <h2 className="text-[20px] font-semibold text-[#111827]">
-            Chat with Bot
+        <div className="flex items-center gap-2 mb-3">
+          <img src={SparklesIconImg} alt="Sparkles" className="w-5 h-5" />
+          <h2 className="text-[16px] font-medium text-[#171A1F]">
+            Chat
           </h2>
         </div>
 
-        {/* Chat area */}
-        <div className="flex flex-col h-[330px] bg-[#F6F7FB] rounded-[14px]">
+        {/* Chat area fills the remaining height */}
+        <div
+          className="
+            flex flex-col flex-1
+            bg-[#F6F7FB]
+            rounded-[10px]
+            px-4 pt-4 pb-3
+          "
+        >
           {/* Messages list */}
-          <div className="flex-1 flex flex-col gap-4 pr-2 overflow-y-auto">
+          <div className="flex-1 flex flex-col gap-4 pr-1 overflow-y-auto">
             {/* Bot message 1 */}
             <div className="flex justify-start">
-              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[72%]">
+              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[80%]">
                 <div className="flex items-start gap-3">
                   <img
                     src={SparklesIconImg}
@@ -50,14 +58,14 @@ export default function ChatWithBotInterface() {
 
             {/* User message 1 */}
             <div className="flex justify-end">
-              <div className="bg-white text-[#111827] text-[14px] leading-[20px] font-normal rounded-[16px] px-4 py-3 max-w-[60%] shadow-sm">
+              <div className="bg-white text-[#111827] text-[14px] leading-[20px] font-normal rounded-[16px] px-4 py-3 max-w-[70%] shadow-sm">
                 Hello! Can you help me how to increase my sales?
               </div>
             </div>
 
             {/* Bot message 2 */}
             <div className="flex justify-start">
-              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[72%]">
+              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[80%]">
                 <div className="flex items-start gap-3">
                   <img
                     src={SparklesIconImg}
@@ -81,12 +89,12 @@ export default function ChatWithBotInterface() {
             </div>
           </div>
 
-          {/* Input area – full-width like original */}
-          <div className="mt-4 flex items-center">
+          {/* Input area */}
+          <div className="mt-3 flex items-center">
             <div
               className="
                 flex-1
-                h-[52px]
+                h-[48px]
                 rounded-[25px]
                 border border-[#D9DCE1]
                 bg-white
@@ -112,7 +120,7 @@ export default function ChatWithBotInterface() {
                 />
               </div>
 
-              {/* Right: send button (imported icon) */}
+              {/* Right: send button */}
               <button
                 type="button"
                 onClick={handleSend}

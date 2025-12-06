@@ -1,8 +1,21 @@
+import { useRef } from "react";
 import ArrowUpload from "../assets/arrow-upload.svg";
 
 export default function DragAndDropInterface() {
+  const fileInputRef = useRef(null);
+
   const handleBrowseClick = () => {
-    console.log("Browse clicked");
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange = (event) => {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
+
+    // For now just log them – replace this with real upload logic
+    console.log("Selected files:", Array.from(files));
   };
 
   return (
@@ -16,6 +29,15 @@ export default function DragAndDropInterface() {
         gap-3
       "
     >
+      {/* Hidden file input */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        multiple
+        className="hidden"
+        onChange={handleFileChange}
+      />
+
       {/* Upload icon using imported SVG */}
       <div className="w-6 h-6 flex items-center justify-center">
         <img

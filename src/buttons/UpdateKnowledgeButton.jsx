@@ -1,6 +1,8 @@
-export default function UpdateKnowledgeButton() {
+export default function UpdateKnowledgeButton({ onClick }) {
   const handleClick = () => {
-    alert("UpdateKnowledgeButton!");
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-
 @layer base {
   * {
     font-family: "IBM Plex Sans", sans-serif;
   }
+
 }
