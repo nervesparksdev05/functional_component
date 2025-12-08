@@ -89,6 +89,14 @@ export default function WidgetPositionInterface() {
               bg-white
             "
           >
+            {/* Centered label */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <span className="text-[12px] font-medium text-[#111827]">
+                Desktop Screen
+              </span>
+            </div>
+
+            {/* Chatbot icon */}
             <div
               className="
                 absolute

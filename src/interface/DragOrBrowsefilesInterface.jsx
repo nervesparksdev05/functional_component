@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import CloudUpload from "../assets/cloud-upload.svg";
 
-export default function DragOrBrowsefilesInterface() {
+export default function DragOrBrowsefilesInterface({ onFilesUploaded }) {
   const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => {
@@ -11,14 +11,33 @@ export default function DragOrBrowsefilesInterface() {
   };
 
   const handleFilesSelected = (e) => {
-    const files = e.target.files;
-    if (!files || files.length === 0) return;
-    console.log("Selected files:", files);
+    const files = Array.from(e.target.files || []);
+    if (files.length === 0) return;
+
+    console.log("Selected via browse:", files);
+    if (onFilesUploaded) onFilesUploaded(files);
+  };
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const files = Array.from(e.dataTransfer.files || []);
+    if (files.length === 0) return;
+
+    console.log("Selected via drop:", files);
+    if (onFilesUploaded) onFilesUploaded(files);
   };
 
   return (
     <div className="w-full flex justify-center py-4">
       <section
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
         className="
           w-[696px] h-[166px]
           rounded-[16px]
@@ -26,26 +45,17 @@ export default function DragOrBrowsefilesInterface() {
           bg-[#F5F6FF]
           flex flex-col items-center justify-center
           text-center
+          transition-all
         "
       >
-        {/* Cloud icon (imported SVG) */}
-        <img
-          src={CloudUpload}
-          alt="Cloud upload"
-          className="w-9 h-9"
-        />
+        <img src={CloudUpload} alt="Cloud upload" className="w-9 h-9" />
 
-        {/* Main text */}
         <p className="mt-3 text-[14px] leading-[20px] text-[#111827]">
           Drag &amp; drop your files here
         </p>
 
-        {/* OR */}
-        <p className="mt-1 mb-2 text-[12px] leading-[16px] text-[#4B5563]">
-          OR
-        </p>
+        <p className="mt-1 mb-2 text-[12px] leading-[16px] text-[#4B5563]">OR</p>
 
-        {/* Browse button */}
         <button
           type="button"
           onClick={handleBrowseClick}
@@ -61,7 +71,6 @@ export default function DragOrBrowsefilesInterface() {
           Browse files
         </button>
 
-        {/* Hidden file input */}
         <input
           ref={fileInputRef}
           type="file"

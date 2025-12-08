@@ -25,7 +25,6 @@ export default function IncreasingDotsInterface() {
         className="
           w-[1100px] h-[80px]
           rounded-[6px]
-          border border-[#0F8AFD]
           bg-white
           px-8
           flex flex-col justify-center

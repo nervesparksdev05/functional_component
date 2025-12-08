@@ -1,49 +1,43 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import AddButton from "../buttons/AddButton.jsx";
 
-export default function AddCustomGoalsInterface() {
+export default function AddCustomGoalsInterface({
+  customGoals = [],
+  onAddGoal,
+  onRemoveGoal,
+}) {
   const [inputValue, setInputValue] = useState("");
-  const [goals, setGoals] = useState([
-    "Resolve Purchase-Inhibiting Questions",
-    "Guide Product Discovery",
-  ]);
+
+  const handleAdd = () => {
+    const trimmed = inputValue.trim();
+    if (!trimmed) return;
+    if (onAddGoal) onAddGoal(trimmed);
+    setInputValue("");
+  };
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      const trimmed = inputValue.trim();
-      if (!trimmed) return;
-
-      setGoals((prev) => [...prev, trimmed]);
-      setInputValue("");
+      handleAdd();
     }
   };
 
-  const removeGoal = (indexToRemove) => {
-    setGoals((prev) => prev.filter((_, i) => i !== indexToRemove));
-  };
-
   return (
-    <div className="w-full flex justify-center py-4">
-      <div
+    <div className="w-full flex flex-col">
+      {/* Label */}
+      <label
         className="
-          w-[418px] h-[138px]
-          flex flex-col
+          mb-2
+          text-[15px] leading-[20px]
+          font-medium
+          text-[#111827]
         "
       >
-        {/* Label: Add Custom Goals */}
-        <label
-          className="
-            mb-1
-            text-[15px] leading-[20px]
-            font-medium
-            text-[#111827]
-            w-[256px]
-          "
-        >
-          Add Custom Goals
-        </label>
+        Add Custom Goals
+      </label>
 
-        {/* Text input */}
+      {/* Input + Add button in one row */}
+      <div className="flex items-center gap-3">
         <input
           type="text"
           value={inputValue}
@@ -51,7 +45,8 @@ export default function AddCustomGoalsInterface() {
           onKeyDown={handleKeyDown}
           placeholder="e.g., Book a consultation"
           className="
-            w-[335px] h-[35px]
+            flex-1
+            h-[35px]
             rounded-[6px]
             border border-[#E5E7EB]
             px-3
@@ -63,20 +58,23 @@ export default function AddCustomGoalsInterface() {
           "
         />
 
-        {/* Pills / goals list */}
-        <div className="mt-3 flex flex-col gap-2">
-          {goals.map((goal, index) => (
+        {/* Add button aligned to the right */}
+        <AddButton onClick={handleAdd} />
+      </div>
+
+      {/* Custom goal chips */}
+      {customGoals.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {customGoals.map((goal, index) => (
             <div
               key={`${goal}-${index}`}
               className="
                 inline-flex items-center
-                h-[26px]
+                px-4 h-[26px]
                 rounded-full
                 bg-[#4443E4]
                 text-white
-                px-4
                 text-[13px]
-                self-start
               "
             >
               <span className="whitespace-nowrap leading-none">
@@ -85,7 +83,7 @@ export default function AddCustomGoalsInterface() {
 
               <button
                 type="button"
-                onClick={() => removeGoal(index)}
+                onClick={() => onRemoveGoal && onRemoveGoal(index)}
                 className="
                   ml-3
                   flex items-center justify-center
@@ -93,18 +91,17 @@ export default function AddCustomGoalsInterface() {
                   rounded-full
                   hover:bg-[rgba(255,255,255,0.15)]
                   text-white
-                  text-[12px]
+                  text-[22px]
                   leading-none
                   cursor-pointer
                 "
-                aria-label="Remove goal"
               >
                 ×
               </button>
             </div>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 }

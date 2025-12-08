@@ -9,10 +9,6 @@ export default function InfoInterface() {
           bg-white
           overflow-hidden
         "
-        style={{
-          fontFamily:
-            '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        }}
       >
         <Row label="Domain name" value="Lorem ipsum" />
         <Row

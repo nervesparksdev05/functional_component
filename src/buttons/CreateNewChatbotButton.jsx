@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CreateNewChatbotButton() {
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    alert("CreateNewChatbotButton!");
+    navigate("/upload-documents");
   };
 
   return (

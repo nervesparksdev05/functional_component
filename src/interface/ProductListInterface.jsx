@@ -11,6 +11,7 @@ const DEFAULT_FILES = [
   { id: 5, name: "Onboarding_Playbook", type: "PDF" },
   { id: 6, name: "Sales_Enablement_Deck", type: "PPTX" },
   { id: 7, name: "Customer_FAQ_v1.2", type: "DOCX" },
+  { id: 7, name: "Customer_FAQ_v1.2", type: "DOCX" },
 ];
 
 const MAX_ROWS_BEFORE_SCROLL = 7;
