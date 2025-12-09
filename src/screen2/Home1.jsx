@@ -13,25 +13,27 @@ export default function Home1() {
   // When "Show All" is clicked, show the extended page instead
   if (showExtended) {
     return <ExtendedChatBotHome />;
-    // or if you later want a back button to return here:
-    // return <ExtendedChatBotHome onBack={() => setShowExtended(false)} />;
   }
 
   return (
     <div className="w-full h-screen flex flex-col bg-[#F5F7FB]">
-      {/* Top 2-part header */}
+      {/* Top header */}
       <ComplexHeaderInterface />
 
-      {/* Main content – compact so everything fits in one screen */}
-      <main className="flex-1 w-full flex justify-center">
-        <div className="w-full max-w-[1030px] flex flex-col items-center gap-5 pt-4 pb-6">
+      {/* Main content */}
+      <main className="flex-1 w-full flex justify-center px-4">
+        <div className="w-full max-w-[1030px] flex flex-col gap-5 pt-6 pb-6">
+        
+
+          {/* Main components */}
           <CreateNewChatBotInterface />
           <RecentChatBotTable />
 
+          {/* Show All button */}
           <button
             type="button"
             onClick={() => setShowExtended(true)}
-            className="text-[14px] font-medium text-[#4443E4] hover:underline"
+            className="text-[14px] font-medium text-[#4443E4] hover:underline self-center"
           >
             Show All
           </button>

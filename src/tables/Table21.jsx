@@ -11,11 +11,11 @@ export default function Table21() {
 
   return (
     <div className="w-[833px] rounded-[2px]">
-      {/* Black border on the table itself */}
-      <table className="w-full border-collapse border border-black">
+      {/* 1px black border on the table */}
+      <table className="w-full border border-black">
         <thead>
-          <tr className="bg-[#EBE6F0]">
-            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold text-gray-700 w-16">
+          <tr className="bg-[#4443E4]/10">
+            <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold text-gray-700 w-[65px]">
               Sr.
             </th>
             <th className="border border-gray-300 px-4 py-2 text-left text-sm font-semibold text-gray-700 w-48">
@@ -29,19 +29,20 @@ export default function Table21() {
             </th>
           </tr>
         </thead>
+
         <tbody>
           {data.map((item) => (
             <tr key={item.sr} className="bg-white">
-              <td className="border border-gray-300 px-4 py-3 text-sm text-gray-900 align-top">
+              <td className="border border-gray-300 px-4 py-3 text-[12px] text-[#2F3542] align-top w-[65px]">
                 {item.sr}
               </td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-gray-900 align-top">
+              <td className="border border-gray-300 px-4 py-3 text-[12px] text-[#2F3542] align-top">
                 {item.websiteLink}
               </td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-gray-900 align-top">
+              <td className="border border-gray-300 px-4 py-3 text-[12px] text-[#2F3542] align-top">
                 {item.title}
               </td>
-              <td className="border border-gray-300 px-4 py-3 text-sm text-gray-700 align-top leading-relaxed">
+              <td className="border border-gray-300 px-4 py-3 text-[12px] text-[#2F3542] align-top leading-relaxed">
                 {item.description}
               </td>
             </tr>

@@ -4,8 +4,8 @@ export default function InfoInterface() {
       <div
         className="
           w-[339px] h-[439px]
-          border border-[#D1D5DB]   /* 1px grey border */
-          rounded-[6px]
+          border border-[#D1D5DB]  
+          rounded-md
           bg-white
           overflow-hidden
         "

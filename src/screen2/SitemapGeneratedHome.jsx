@@ -19,7 +19,7 @@ export default function SitemapGeneratedHome() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col bg-[#F5F7FB]">
+    <div className="w-full h-screen flex flex-col">
       {/* Top header */}
       <ComplexHeaderInterface />
 
@@ -38,7 +38,7 @@ export default function SitemapGeneratedHome() {
         {/* Center content */}
         <section className="w-full max-w-[1030px] mt-8 flex flex-col items-center text-center">
           {/* Description text */}
-          <p className="max-w-[820px] text-[13px] leading-[20px] text-[#0c0b0d] font-medium">
+          <p className="max-w-[820px] text-[14px] -mt-3 leading-[20px] font-medium text-[#0c0b0d] font-medium">
             Give us your website link. We&apos;ll send a smart program to read
             all of your pages and map out how everything is connected. Then,
             our AI will figure out the top reasons people visit, so the bot
@@ -67,7 +67,7 @@ export default function SitemapGeneratedHome() {
           <section className="w-full max-w-[1030px] mt-10 mb-10 flex flex-col items-center">
             {/* Heading + table centered at 833px */}
             <div className="w-[833px]">
-              <h2 className="text-[18px] font-medium text-[#111827] mb-3 text-left">
+              <h2 className="text-[18px] font-medium text-[#111827] mb-4 text-left">
                 Generate Sitemap
               </h2>
 
@@ -77,14 +77,14 @@ export default function SitemapGeneratedHome() {
             </div>
 
             {/* Prev / Next full-width row, extremes left/right */}
-            <div className="mt-4 w-full flex items-center justify-between">
+            <div className="mt-10 mb-20 w-full flex items-center justify-between">
               <PreviousButton />
               <NextButton />
             </div>
           </section>
         ) : (
           // When sitemap not generated yet
-          <div className="w-full max-w-[1030px] mt-16 mb-10 flex items-center justify-between">
+          <div className="w-full max-w-[1030px] mt-40 mb-20 flex items-center justify-between">
             <PreviousButton />
             <NextButton />
           </div>

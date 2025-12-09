@@ -6,7 +6,7 @@ export default function BackToDashBoardButton({ onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="mb-3 flex items-center gap-2 text-[#4443E4]"
+      className="mb-5 flex items-center gap-2 text-[#4443E4]"
     >
       <img
         src={BlueArrowIcon}
@@ -14,7 +14,7 @@ export default function BackToDashBoardButton({ onClick }) {
         className="w-5 h-5"
       />
 
-      <span className="text-[26px] font-normal hover:underline">
+      <span className="w-180px h-26px font-normal hover:underline">
         Back to Dashboard
       </span>
     </button>

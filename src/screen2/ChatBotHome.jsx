@@ -27,7 +27,7 @@ export default function ChatBotHome() {
         {/* Center section */}
         <section className="w-full max-w-[1030px] mt-8 flex flex-col items-center text-center">
           {/* Description under stepper */}
-          <p className="text-[13px] leading-[20px] text-[#0e1111] font-semibold">
+          <p className="text-[14px] leading-[20px] -mt-8 -mb-6 text-[#0e1111] font-medium ">
             Test your bot before deploying it to your website. Try different
             questions and see how it responds.
           </p>

@@ -28,7 +28,7 @@ export default function Container2() {
                 cursor-pointer
                 ${
                   isActive
-                    ? "bg-[#4443E4] text-white"
+                    ? "bg-[#d5daf2] text-[#4443E4]"
                     : "bg-transparent text-[#2F3542]"
                 }
               `}

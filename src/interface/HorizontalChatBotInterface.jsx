@@ -9,10 +9,10 @@ export default function HorizontalChatBotInterface() {
 
   return (
     <div className="w-full flex justify-center py-4">
-      {/* Outer card – horizontal variant (953 x 429) */}
+      {/* Outer card – horizontal variant (953 x 450) */}
       <div
         className="
-          w-[953px] h-[429px]
+          w-[953px] h-[450px]
           rounded-[15px]
           border border-[#E5E7EB]
           bg-white
@@ -23,8 +23,8 @@ export default function HorizontalChatBotInterface() {
         {/* Header: sparkles + title */}
         <div className="flex items-center gap-2 mb-4">
           <img src={SparklesIconImg} alt="Sparkles" className="w-5 h-5" />
-          <h2 className="text-[16px] font-medium text-[#171A1F]">
-            Chat
+          <h2 className="text-[20px] font-medium text-[#171A1F]">
+            Chat With Bot
           </h2>
         </div>
 
@@ -42,16 +42,23 @@ export default function HorizontalChatBotInterface() {
           <div className="flex-1 flex flex-col gap-4 pr-2 overflow-y-auto">
             {/* Bot message 1 */}
             <div className="flex justify-start">
-              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[60%]">
+              <div
+                className="
+                  bg-[#4443E4]/10
+                  rounded-[16px]
+                  text-[16px]
+                  px-4 py-4
+                  w-[595px] min-h-[53px]
+                "
+              >
                 <div className="flex items-start gap-3">
                   <img
                     src={SparklesIconImg}
                     alt="Bot"
                     className="w-5 h-5 mt-[2px]"
                   />
-                  <p className="text-[#111827] text-[14px] leading-[20px]">
-                    Hello! I'm chat bot of (Company Name). How can I assist you
-                    today?
+                  <p className="text-[#111827] text-[16px] leading-[20px] text-left">
+                    Hello! I'm chat bot. How can I assist you today?
                   </p>
                 </div>
               </div>
@@ -59,21 +66,41 @@ export default function HorizontalChatBotInterface() {
 
             {/* User message 1 */}
             <div className="flex justify-end">
-              <div className="bg-white text-[#111827] text-[14px] leading-[20px] font-normal rounded-[16px] px-4 py-3 max-w-[55%] shadow-sm">
+              <div
+                className="
+                  bg-white
+                  text-[#111827]
+                  text-[16px]
+                  leading-[20px]
+                  font-normal
+                  rounded-[16px]
+                  px-5 py-4
+                  w-[595px] min-h-[53px]
+                  shadow-sm
+                  text-left
+                "
+              >
                 Hello! Can you help me how to increase my sales?
               </div>
             </div>
 
             {/* Bot message 2 */}
             <div className="flex justify-start">
-              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[60%]">
+              <div
+                className="
+                  bg-[#4443E4]/10
+                  rounded-[16px]
+                  px-4 py-4
+                  w-[595px] min-h-[53px]
+                "
+              >
                 <div className="flex items-start gap-3">
                   <img
                     src={SparklesIconImg}
                     alt="Bot"
                     className="w-5 h-5 mt-[2px]"
                   />
-                  <p className="text-[#111827] text-[14px] leading-[20px]">
+                  <p className="text-[#111827] text-[16px] leading-[20px] text-left">
                     Could you provide me with more details about your product,
                     so I can prepare a detailed strategic plan on how to
                     increase sales.
@@ -84,7 +111,20 @@ export default function HorizontalChatBotInterface() {
 
             {/* User message 2 */}
             <div className="flex justify-end">
-              <div className="bg-white text-[#111827] text-[14px] leading-[20px] font-normal rounded-[16px] px-4 py-3 max-w-[30%] shadow-sm">
+              <div
+                className="
+                  bg-white
+                  text-[#111827]
+                  text-[16px]
+                  leading-[20px]
+                  font-normal
+                  rounded-[16px]
+                  px-5 py-4
+                  w-[595px] min-h-[53px]
+                  shadow-sm
+                  text-left
+                "
+              >
                 Sure!!!
               </div>
             </div>

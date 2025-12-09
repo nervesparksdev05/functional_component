@@ -39,13 +39,7 @@ export default function ExtendedRecentChatBotTable() {
       uploadedFile: "Tech requirements.pdf",
       botCreated: "Jan 2, 2025",
     },
-    {
-      id: 6,
-      websiteName: "Apollo.io",
-      websiteUrl: "www.apollo.io",
-      uploadedFile: "Tech requirements.pdf",
-      botCreated: "Jan 4, 2025",
-    },
+    
   ];
 
   return (

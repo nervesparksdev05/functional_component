@@ -53,7 +53,7 @@ export default function UploadDocumentHome() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col bg-[#F5F7FB]">
+    <div className="w-full h-screen flex flex-col ">
       <ComplexHeaderInterface />
 
       <main className="flex-1 w-full flex flex-col items-center px-4 relative">
@@ -68,8 +68,8 @@ export default function UploadDocumentHome() {
         </div>
 
         {/* Upload area */}
-        <div className="w-full max-w-[1030px] mt-8 flex flex-col items-center text-center">
-          <p className="text-[14px] font-medium text-[#000000] mb-3">
+        <div className="w-full max-w-[1030px] mt-3 flex flex-col items-center text-center">
+          <p className="text-[14px] font-medium text-[#000000] mb-1">
             Upload documents (PDF, DOCX, TXT) that your bot will use to train
             our self and try to answer questions.
           </p>
@@ -79,7 +79,7 @@ export default function UploadDocumentHome() {
 
           {/* Uploading files label – aligned with 696px content */}
           {files.length > 0 && (
-            <div className="mt-4 mb-2 w-full flex justify-center">
+            <div className="mt-2 mb-2 w-full flex justify-center">
               <p className="text-[14px] text-[#2F3542] w-[696px] text-left">
                 Uploading files
               </p>
@@ -124,13 +124,13 @@ export default function UploadDocumentHome() {
                         </div>
 
                         <div className="flex items-center gap-4">
-                          <span className="text-[12px] text-[#6B7280]">
+                          <span className="text-[14px] text-[#434446]">
                             {progress[file.id] || 0}%
                           </span>
                           <button
                             type="button"
                             onClick={() => removeFile(file.id)}
-                            className="text-[#4443E4] text-[32px] font-normal leading-none"
+                            className="text-[#4443E4] text-[36px] font-normal leading-none"
                           >
                             ×
                           </button>

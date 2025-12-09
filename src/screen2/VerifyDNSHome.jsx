@@ -20,7 +20,7 @@ export default function VerifyDNSHome() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
+    <div className="w-full min-h-screen flex flex-col">
       {/* Top header */}
       <ComplexHeaderInterface />
 
@@ -39,7 +39,7 @@ export default function VerifyDNSHome() {
         {/* Central content (text + button + table + messages) */}
         <section className="w-full max-w-[1030px] mt-16 flex flex-col items-center">
           {/* Description */}
-          <p className="max-w-[900px] text-[15px] leading-[20px] text-[#0c0b0d] font-semibold text-center">
+          <p className="max-w-[900px] -mt-14 text-[15px] leading-[20px] text-[#0c0b0d] font-semibold text-center">
             Verify that your domain is accessible and ready for bot deployment.
             This ensures the widget will work properly on your website.
           </p>
@@ -59,16 +59,34 @@ export default function VerifyDNSHome() {
               {/* Table */}
               <DNSTableInterface />
 
-              {/* Success message – reduced width */}
-              <div className="w-[700px] rounded-[8px] border border-[#16A34A] bg-white px-6 py-3 text-center">
-                <p className="text-[14px] text-[#16A34A] font-medium">
+              {/* Success message – new styles */}
+              <div
+                className="
+                  w-[546px]
+                  rounded-[15px]
+                  border border-[#2ECB29]
+                  bg-[#29CB2E03]
+                  px-6 py-4
+                  text-left
+                "
+              >
+                <p className="text-[15px] text-[#2ECB29] font-semibold">
                   Great! Your DNS has been verified
                 </p>
               </div>
 
-              {/* Error message – reduced width */}
-              <div className="w-[700px] rounded-[8px] border border-[#EF4444] bg-white px-6 py-3 text-center">
-                <p className="text-[14px] text-[#B91C1C]">
+              {/* Error message – new styles */}
+              <div
+                className="
+                  w-[546px]
+                  rounded-[15px]
+                  border border-[#CB2936]
+                  bg-[#CB29360D]
+                  px-6 py-3
+                  text-left
+                "
+              >
+                <p className="text-[15px] text-[#CB2936] font-medium">
                   Oops! We couldn&apos;t verify your DNS because a bot is
                   already registered and active under this domain.
                 </p>
@@ -78,7 +96,7 @@ export default function VerifyDNSHome() {
         </section>
 
         {/* Bottom navigation */}
-        <div className="w-full max-w-[1030px] mt-auto mb-8 flex justify-between">
+        <div className="w-full max-w-[1030px] mt-auto mt-10 mb-33 flex justify-between">
           <PreviousButton />
           <NextButton />
         </div>

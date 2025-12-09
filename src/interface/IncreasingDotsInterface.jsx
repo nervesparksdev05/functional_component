@@ -20,7 +20,7 @@ export default function IncreasingDotsInterface() {
     steps.length > 1 ? selectedIndex / (steps.length - 1) : 0;
 
   return (
-    <div className="w-full flex justify-center py-4">
+    <div className="w-full flex justify-center py-4 -mt-4">
       <div
         className="
           w-[1100px] h-[80px]

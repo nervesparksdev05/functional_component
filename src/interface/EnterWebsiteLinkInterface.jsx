@@ -5,9 +5,9 @@ export default function EnterWebsiteLinkInterface() {
       {/* Label */}
       <label
         className="
-          text-[20px] leading-[20px]
+          text-[17px] leading-[20px]
           text-[#171A1F]
-          mb-1 font-medium
+          mb-1 font-semibold
         "
       >
         Enter Website Link
@@ -19,11 +19,11 @@ export default function EnterWebsiteLinkInterface() {
         placeholder="www.example.in Or https://example.in/"
         className="
           w-[833px] h-[35px]
-          rounded-[6px]
+          rounded-[10px]
           border border-[#D3D8E3]
           bg-white
           px-3
-          text-[13px] text-[#171A1F]
+          text-[14px] text-[#171A1F]
           placeholder:text-[#9CA3AF]
           outline-none
         "
