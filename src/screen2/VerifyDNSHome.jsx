@@ -1,4 +1,4 @@
-// src/screens/VerifyDNSHome.jsx
+// src/screen2/VerifyDNSHome.jsx
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
@@ -10,12 +10,10 @@ import DNSTableInterface from "../tables/DNSTable.jsx";
 import PreviousButton from "../buttons/PreviousButton.jsx";
 import NextButton from "../buttons/NextButton.jsx";
 
-export default function VerifyDNSHome() {
-  // Has the user clicked "Verify DNS"?
+export default function VerifyDNSHome({ onNext, onPrevious }) {
   const [isVerified, setIsVerified] = useState(false);
 
   const handleVerifyClick = () => {
-    // later you can plug in real API logic here
     setIsVerified(true);
   };
 
@@ -36,16 +34,15 @@ export default function VerifyDNSHome() {
           <IncreasingDotsInterface />
         </div>
 
-        {/* Central content (text + button + table + messages) */}
+        {/* Central content */}
         <section className="w-full max-w-[1030px] mt-16 flex flex-col items-center">
-          {/* Description */}
           <p className="max-w-[900px] -mt-14 text-[15px] leading-[20px] text-[#0c0b0d] font-semibold text-center">
             Verify that your domain is accessible and ready for bot deployment.
             This ensures the widget will work properly on your website.
           </p>
 
           {/* Button area */}
-          <div className="mt-8 w-full flex justify-center">
+          <div className="mt-4 w-full flex justify-center">
             {isVerified ? (
               <VerifyingDNSButton />
             ) : (
@@ -56,10 +53,9 @@ export default function VerifyDNSHome() {
           {/* Verified DNS area – only after click */}
           {isVerified && (
             <div className="mt-6 w-full flex flex-col items-center gap-3">
-              {/* Table */}
               <DNSTableInterface />
 
-              {/* Success message – new styles */}
+              {/* Success message */}
               <div
                 className="
                   w-[546px]
@@ -75,7 +71,7 @@ export default function VerifyDNSHome() {
                 </p>
               </div>
 
-              {/* Error message – new styles */}
+              {/* Error message */}
               <div
                 className="
                   w-[546px]
@@ -97,8 +93,8 @@ export default function VerifyDNSHome() {
 
         {/* Bottom navigation */}
         <div className="w-full max-w-[1030px] mt-auto mt-10 mb-33 flex justify-between">
-          <PreviousButton />
-          <NextButton />
+          <PreviousButton onClick={onPrevious} />
+          <NextButton onClick={onNext} />
         </div>
       </main>
     </div>

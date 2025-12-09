@@ -33,7 +33,7 @@ export default function WidgetPositionInterface() {
       >
         {/* Left: label + options */}
         <div className="flex flex-col gap-3">
-          <h3 className="text-[15px] font-semibold text-[#111827]">
+          <h3 className="text-[18px] font-medium text-[#111827]">
             Widget Position
           </h3>
           <div className="flex flex-col gap-2">

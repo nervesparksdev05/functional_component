@@ -1,5 +1,7 @@
-// src/tables/ExtendedExistingDocumentsTable.jsx (or keep the old file name)
-import { Search, MoreVertical, FileText } from "lucide-react";
+// src/tables/ExtendedExistingDocumentsTable.jsx
+import { Search, MoreVertical } from "lucide-react";
+import PdfIcon from "../assets/pdf-icon.svg";
+import TextIcon from "../assets/text-icon.svg";
 
 export default function ExtendedRecentChatBotTable() {
   const documents = [
@@ -80,49 +82,65 @@ export default function ExtendedRecentChatBotTable() {
           </thead>
 
           <tbody>
-            {documents.map((doc, index) => (
-              <tr
-                key={doc.id}
-                className={`${
-                  index % 2 === 0 ? "bg-[#F9FAFF]" : "bg-white"
-                } border-t border-[#EEF0F4]`}
-              >
-                {/* File name + icon */}
-                <td className="py-4 px-6 text-[13px] text-gray-900 align-middle">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 flex items-center justify-center rounded-[6px] bg-white shadow-sm border border-[#E5E7EB]">
-                      <FileText className="w-4 h-4 text-[#4B5563]" />
+            {documents.map((doc, index) => {
+              const ext = doc.fileName.toLowerCase();
+              const isPdf = ext.endsWith(".pdf");
+              const isTxt = ext.endsWith(".txt");
+
+              const iconSrc = isPdf ? PdfIcon : isTxt ? TextIcon : PdfIcon;
+
+              return (
+                <tr
+                  key={doc.id}
+                  className={`${
+                    index % 2 === 0 ? "bg-[#F9FAFF]" : "bg-white"
+                  } border-t border-[#EEF0F4]`}
+                >
+                  {/* File name + icon */}
+                  <td className="py-4 px-6 text-[13px] text-gray-900 align-middle">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={iconSrc}
+                        alt={
+                          isPdf
+                            ? "PDF file"
+                            : isTxt
+                            ? "Text file"
+                            : "Document file"
+                        }
+                        className="w-9 h-9 flex-shrink-0"
+                      />
+                      <span className="font-semibold">{doc.fileName}</span>
                     </div>
-                    <span className="font-semibold">{doc.fileName}</span>
-                  </div>
-                </td>
+                  </td>
 
-                {/* File size */}
-                <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
-                  {doc.fileSize}
-                </td>
+                  {/* File size */}
+                  <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
+                    {doc.fileSize}
+                  </td>
 
-                {/* Date uploaded */}
-                <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
-                  {doc.dateUploaded}
-                </td>
+                  {/* Date uploaded */}
+                  <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
+                    {doc.dateUploaded}
+                  </td>
 
-                {/* Uploaded by */}
-                <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
-                  {doc.uploadedBy}
-                </td>
+                  {/* Uploaded by */}
+                  <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
+                    {doc.uploadedBy}
+                  </td>
 
-                {/* Actions (3 dots) */}
-                <td className="py-4 pr-6 text-center align-middle">
-                  <button
-                    type="button"
-                    className="text-gray-400 hover:text-gray-600 p-1"
-                  >
-                    <MoreVertical size={16} />
-                  </button>
-                </td>
-              </tr>
-            ))}
+                  {/* Actions (3 dots) */}
+                  <td className="py-4 pr-6 text-center align-middle">
+                    <button
+                      type="button"
+                      className="text-gray-400 hover:text-gray-600 p-1"
+                    >
+                      <MoreVertical size={16} />
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

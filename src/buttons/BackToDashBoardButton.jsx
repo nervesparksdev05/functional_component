@@ -6,15 +6,15 @@ export default function BackToDashBoardButton({ onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="mb-5 flex items-center gap-2 text-[#4443E4]"
+      className="text-[21px]  flex items-center gap-1 text-[#4443E4]"
     >
       <img
         src={BlueArrowIcon}
         alt="Back"
-        className="w-5 h-5"
+        className="w-6 h-6 font-semibold"
       />
 
-      <span className="w-180px h-26px font-normal hover:underline">
+      <span className="font-normal ">
         Back to Dashboard
       </span>
     </button>

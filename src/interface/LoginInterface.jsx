@@ -1,21 +1,12 @@
-import { useState } from "react";
-
-import ContinueButton from "../buttons/ContinueButton.jsx";
+// src/interface/LoginInterface.jsx
 import GoogleButton from "../buttons/GoogleButton.jsx";
 import AppleButton from "../buttons/AppleButton.jsx";
 import FacebookButton from "../buttons/FacebookButton.jsx";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
-import SignUpPage from "./SignUpInterface.jsx";
+import NextButton from "../buttons/NextButton.jsx";
 
-const LoginPage = () => {
-  const [showSignUp, setShowSignUp] = useState(false);
-
-  // If user clicked “Register Now”, show the SignUpPage instead
-  if (showSignUp) {
-    return <SignUpPage />;
-  }
-
+const LoginPage = ({ onNext, onPrevious }) => {
   return (
     <div className="w-full min-h-screen flex flex-col bg-white">
       {/* Top logo bar */}
@@ -86,9 +77,9 @@ const LoginPage = () => {
               </button>
             </div>
 
-            {/* Continue button */}
-            <div className="mt-1 w-full">
-              <ContinueButton />
+            {/* Next button – goes to Home1 via onNext from DashBoard2 */}
+            <div className="mt-2 w-full flex justify-end">
+              <NextButton onClick={onNext} />
             </div>
 
             {/* Divider */}
@@ -112,7 +103,7 @@ const LoginPage = () => {
               Don&apos;t have an account?{" "}
               <button
                 type="button"
-                onClick={() => setShowSignUp(true)}
+                onClick={onPrevious} // back to signup
                 className="text-[#4443E4] font-medium hover:underline"
               >
                 Register Now

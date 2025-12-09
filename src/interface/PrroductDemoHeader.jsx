@@ -2,7 +2,7 @@ import NodaIcon from "../assets/noda-icon.svg";
 import Container2 from "../interface/Container2.jsx";
 import AlarmIcon from "../assets/alarm-icon.svg";
 import FemaleIcon from "../assets/female-icon.svg";
-import BotIcon from "../assets/bot.svg";
+import BulbIcon from "../assets/bulb.svg";
 
 export default function ComplexHeaderInterface() {
   return (
@@ -51,9 +51,9 @@ export default function ComplexHeaderInterface() {
         <div className="w-full flex items-center px-4 md:px-6">
           {/* Bot label (left-aligned with logo above) */}
           <div className="flex items-center gap-2 ml-18">
-            <img src={BotIcon} alt="Bot" className="w-7 h-7" />
+            <img src={BulbIcon} alt="Bot" className="w-7 h-7" />
             <span className="text-[18px] font-medium text-[#171A1F]">
-              Navigation Helper Bot
+              Product Demo Assistant
             </span>
           </div>
         </div>

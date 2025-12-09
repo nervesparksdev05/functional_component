@@ -1,5 +1,4 @@
-// src/screens/WidgetHome.jsx
-
+// src/screen2/WidgetHome.jsx
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
 import BackToDashBoardButton from "../buttons/BackToDashBoardButton.jsx";
 import IncreasingDotsInterface from "../interface/IncreasingDotsInterface.jsx";
@@ -8,7 +7,7 @@ import WidgetPositionInterface from "../interface/WidgetPositionInterface.jsx";
 import PreviousButton from "../buttons/PreviousButton.jsx";
 import DoneAndProcessingButton from "../buttons/DoneAndProcessing.jsx";
 
-export default function WidgetHome() {
+export default function WidgetHome({ onNext, onPrevious }) {
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
@@ -27,9 +26,10 @@ export default function WidgetHome() {
         </div>
 
         {/* Center description */}
-        <section className="w-full max-w-[1030px] mt-10 flex flex-col items-center text-center">
-          <p className="text-[13px] leading-[20px] text-[#111827] max-w-[700px] font-semibold">
-            Generate the widget code and configure where it appears on your website.
+        <section className="w-full max-w-[1030px] mt-2 flex flex-col items-center text-center">
+          <p className="text-[14px] leading-[20px] text-[#111827] max-w-[700px] font-medium">
+            Generate the widget code and configure where it appears on your
+            website.
           </p>
         </section>
 
@@ -37,25 +37,19 @@ export default function WidgetHome() {
         <section className="w-full max-w-[1030px] mt-10 flex justify-between">
           {/* LEFT: Widget Color */}
           <div className="flex flex-col">
-            <h2 className="text-[16px] font-medium text-[#111827] mb-4">
-              Widget Color
-            </h2>
             <WidgetColorInterface />
           </div>
 
           {/* RIGHT: Widget Position */}
           <div className="flex flex-col items-start">
-            <h2 className="text-[16px] font-medium text-[#111827] mb-4">
-              Widget Position
-            </h2>
             <WidgetPositionInterface />
           </div>
         </section>
 
         {/* Bottom navigation */}
-        <div className="w-full max-w-[1030px] mt-16 mb-10 flex items-center justify-between">
-          <PreviousButton />
-          <DoneAndProcessingButton />
+        <div className="w-full max-w-[1030px] mt-16 mb-6 flex items-center justify-between">
+          <PreviousButton onClick={onPrevious} />
+          <DoneAndProcessingButton onClick={onNext} />
         </div>
       </main>
     </div>

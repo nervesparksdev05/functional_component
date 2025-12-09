@@ -5,7 +5,7 @@ export default function EnterWebsiteLinkInterface() {
       {/* Label */}
       <label
         className="
-          text-[17px] leading-[20px]
+          text-[18px] leading-[20px]
           text-[#171A1F]
           mb-1 font-semibold
         "

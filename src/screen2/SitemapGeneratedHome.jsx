@@ -1,4 +1,4 @@
-// src/screens/SitemapGeneratedHome.jsx
+// src/screen2/SitemapGeneratedHome.jsx
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
@@ -11,7 +11,7 @@ import EnterWebsiteLinkInterface from "../interface/EnterWebsiteLinkInterface.js
 import SitemapGeneratedButton from "../buttons/SiteMapGeneratedButton.jsx";
 import Table21 from "../Tables/Table21.jsx";
 
-export default function SitemapGeneratedHome() {
+export default function SitemapGeneratedHome({ onNext, onPrevious }) {
   const [isGenerated, setIsGenerated] = useState(false);
 
   const handleGenerateClick = () => {
@@ -46,14 +46,14 @@ export default function SitemapGeneratedHome() {
           </p>
 
           {/* Enter Website Link field */}
-          <div className="mt-8 w-full flex justify-center">
+           <div className="mt-8 ml-8 w-full flex justify-center">
             <div className="w-[833px] text-left">
               <EnterWebsiteLinkInterface />
             </div>
           </div>
 
           {/* Button area – switches after generation */}
-          <div className="mt-6">
+          <div className="mt-4">
             {isGenerated ? (
               <SitemapGeneratedButton />
             ) : (
@@ -77,16 +77,16 @@ export default function SitemapGeneratedHome() {
             </div>
 
             {/* Prev / Next full-width row, extremes left/right */}
-            <div className="mt-10 mb-20 w-full flex items-center justify-between">
-              <PreviousButton />
-              <NextButton />
+            <div className="mt-10 mb-6 w-full flex items-center justify-between">
+              <PreviousButton onClick={onPrevious} />
+              <NextButton onClick={onNext} />
             </div>
           </section>
         ) : (
           // When sitemap not generated yet
-          <div className="w-full max-w-[1030px] mt-40 mb-20 flex items-center justify-between">
-            <PreviousButton />
-            <NextButton />
+          <div className="w-full max-w-[1030px] mt-40 mb-6 flex items-center justify-between">
+            <PreviousButton onClick={onPrevious} />
+            <NextButton onClick={onNext} />
           </div>
         )}
       </main>

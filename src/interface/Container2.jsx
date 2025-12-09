@@ -10,6 +10,7 @@ export default function Container2() {
         className="
           w-[299px] h-[40px]
           rounded-[4px]
+          -mr-8
           flex items-center justify-between
           px-2
         "

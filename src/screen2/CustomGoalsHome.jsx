@@ -1,4 +1,4 @@
-// src/screens/CustomGoalsHome.jsx
+// src/screen2/CustomGoalsHome.jsx
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
@@ -9,8 +9,7 @@ import EnterGreetingMessageInterface from "../interface/EnterGreetingMessageInte
 import PreviousButton from "../buttons/PreviousButton.jsx";
 import NextButton from "../buttons/NextButton.jsx";
 
-export default function CustomGoalsHome() {
-  // suggested goals
+export default function CustomGoalsHome({ onNext, onPrevious }) {
   const suggestedGoals = [
     "Generate Sales Leads",
     "Book a demo",
@@ -18,8 +17,6 @@ export default function CustomGoalsHome() {
     "Process Simple Transactions",
   ];
   const [selectedSuggested, setSelectedSuggested] = useState([]);
-
-  // custom goals (the chips below input)
   const [customGoals, setCustomGoals] = useState([
     "Resolve Purchase-Inhibiting Questions",
     "Guide Product Discovery",
@@ -27,9 +24,7 @@ export default function CustomGoalsHome() {
 
   const toggleSuggested = (goal) => {
     setSelectedSuggested((prev) =>
-      prev.includes(goal)
-        ? prev.filter((g) => g !== goal)
-        : [...prev, goal]
+      prev.includes(goal) ? prev.filter((g) => g !== goal) : [...prev, goal]
     );
   };
 
@@ -114,8 +109,8 @@ export default function CustomGoalsHome() {
 
         {/* Bottom navigation */}
         <div className="w-full max-w-[1030px] mt-8 mb-10 flex justify-between">
-          <PreviousButton />
-          <NextButton />
+          <PreviousButton onClick={onPrevious} />
+          <NextButton onClick={onNext} />
         </div>
       </main>
     </div>

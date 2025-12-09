@@ -1,22 +1,12 @@
-// src/screens/SignUpInterface.jsx
-import { useState } from "react";
-
+// src/interface/SignUpInterface.jsx
 import ContinueButton from "../buttons/ContinueButton.jsx";
 import GoogleButton from "../buttons/GoogleButton.jsx";
 import AppleButton from "../buttons/AppleButton.jsx";
 import FacebookButton from "../buttons/FacebookButton.jsx";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
-import LoginPage from "./LoginInterface.jsx";
 
-const SignUpPage = () => {
-  const [showLogin, setShowLogin] = useState(false);
-
-  // If user clicked “Sign in”, show the LoginPage instead
-  if (showLogin) {
-    return <LoginPage />;
-  }
-
+const SignUpPage = ({ onNext }) => {
   return (
     <div className="w-full min-h-screen flex flex-col bg-white">
       {/* Top logo bar */}
@@ -122,7 +112,7 @@ const SignUpPage = () => {
 
             {/* Continue button */}
             <div className="mt-2 w-full">
-              <ContinueButton />
+              <ContinueButton onClick={onNext} />
             </div>
 
             {/* Divider: Or sign in with */}
@@ -146,7 +136,7 @@ const SignUpPage = () => {
               Already have an account?{" "}
               <button
                 type="button"
-                onClick={() => setShowLogin(true)}
+                onClick={onNext} // signup -> login (next step)
                 className="text-[#4443E4] font-medium hover:underline"
               >
                 Sign in

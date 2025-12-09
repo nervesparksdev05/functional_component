@@ -4,7 +4,7 @@ import AlarmIcon from "../assets/alarm-icon.svg";
 import FemaleIcon from "../assets/female-icon.svg";
 import BotIcon from "../assets/bot.svg";
 
-export default function ComplexHeaderInterface() {
+export default function ComplexHeaderRagInterface() {
   return (
     <header className="w-full bg-[#FFFFFF]">
       {/* Top bar – 76px height */}
@@ -52,8 +52,8 @@ export default function ComplexHeaderInterface() {
           {/* Bot label (left-aligned with logo above) */}
           <div className="flex items-center gap-2 ml-18">
             <img src={BotIcon} alt="Bot" className="w-7 h-7" />
-            <span className="text-[18px] font-medium text-[#171A1F]">
-              Navigation Helper Bot
+            <span className="text-[22px] font-medium text-[#171A1F]">
+              Rag Slack Bot Manager
             </span>
           </div>
         </div>

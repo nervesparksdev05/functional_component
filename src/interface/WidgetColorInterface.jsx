@@ -19,7 +19,7 @@ export default function WidgetColorInterface() {
       <div className="w-[490px] h-[100px] flex flex-col">
         {/* Label */}
         <div className="ml-[18px] mb-2">
-          <span className="text-[15px] leading-[20px] font-medium text-[#171A1F]">
+          <span className="text-[18px] leading-[20px] font-medium text-[#171A1F]">
             Widget Color
           </span>
         </div>

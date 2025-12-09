@@ -1,4 +1,4 @@
-// src/screens/UploadDocumentHome.jsx
+// src/screen2/UploadDocumentHome.jsx
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
@@ -10,7 +10,7 @@ import NextButton from "../buttons/NextButton.jsx";
 import PdfIcon from "../assets/pdf-icon.svg";
 import TxtIcon from "../assets/text-icon.svg";
 
-export default function UploadDocumentHome() {
+export default function UploadDocumentHome({ onNext }) {
   const [files, setFiles] = useState([]);
   const [progress, setProgress] = useState({});
 
@@ -153,7 +153,7 @@ export default function UploadDocumentHome() {
 
         {/* Next button bottom-right */}
         <div className="w-full max-w-[1030px] mt-auto mb-8 flex justify-end">
-          <NextButton />
+          <NextButton onClick={onNext} />
         </div>
       </main>
     </div>

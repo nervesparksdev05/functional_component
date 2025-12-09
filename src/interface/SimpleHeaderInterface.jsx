@@ -10,7 +10,7 @@ export default function SimpleHeaderInterface() {
       "
     >
       <div className="w-full flex items-center px-8 md:px-8">
-        <img src={NodaIcon} alt="Noda Technologies" className="h-10 w-auto" />
+        <img src={NodaIcon} alt="Noda Technologies" className="h-12 w-auto ml-5" />
       </div>
     </header>
   );

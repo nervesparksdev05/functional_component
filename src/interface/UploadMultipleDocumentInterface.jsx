@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import CloudUpload from "../assets/cloud-upload.svg";
 import PinIcon from "../assets/pin-icon.svg";
-import Radio from "../assets/radio.svg";        // filled radio
-import EmptyRadio from "../assets/empty-radio.svg"; // empty radio
+import Radio from "../assets/radio.svg";        
+import EmptyRadio from "../assets/empty-radio.svg"; 
 
 export default function MultipleDocumentUploadInterface() {
   const [docType, setDocType] = useState("pdf");
@@ -112,12 +112,12 @@ export default function MultipleDocumentUploadInterface() {
             mb-4
           "
         >
-          <img src={CloudUpload} alt="Cloud upload" className="w-10 h-10" />
+          <img src={CloudUpload} alt="Cloud upload" className="w-16 h-16" />
 
           <p className="mt-3 text-[14px] text-[#111827]">
             Drag &amp; drop your files here
           </p>
-          <p className="text-[12px] text-[#6B7280] mt-1 mb-2">OR</p>
+          <p className="text-[14px] text-[#6B7280] mt-1 mb-1">OR</p>
 
           <button
             type="button"

@@ -1,4 +1,4 @@
-// src/screens/LastHome.jsx
+// src/screen2/LastHome.jsx
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
 import TickDotInterface from "../interface/TickDotInterface.jsx";
 import BackToDashBoardButton from "../buttons/BackToDashBoardButton.jsx";
@@ -29,21 +29,17 @@ export default function LastHome() {
 
         {/* Center content */}
         <section className="w-full max-w-[1030px] mt-8 flex flex-col items-center text-center">
-          {/* Small note above button */}
-          <p className="text-[13px] text-[#000000]  font-semibold mb-2">
+          <p className="text-[13px] text-[#000000] font-semibold mb-2">
             Chat Bot backend code is Ready!!! You can copy the Code or Download
             Chat Bot code and integrate it into code
           </p>
 
-          {/* Instruction line */}
           <p className="text-[15px] text-[#111827] mb-6">
             Click on this file to Start download your chat bot backend file
           </p>
 
-          {/* Download button */}
           <DownloadFileButton />
 
-          {/* "What you'll get..." section */}
           <div className="mt-6 text-left max-w-[420px] text-[14px] leading-[18px] text-[#111827]">
             <p className="font-semibold mb-1">What you&apos;ll get in this file</p>
             <ul className="list-disc list-inside space-y-1">
@@ -62,16 +58,11 @@ export default function LastHome() {
             How to use this file?
           </h2>
 
-          {/* 3-step strip */}
           <div className="w-full flex items-start justify-center gap-10">
             {/* Step 1 */}
             <div className="flex flex-col items-center max-w-[220px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center mb-4">
-                <img
-                  src={SearchIcon}
-                  alt="Search"
-                  className="w-[90px] h-[90px]"
-                />
+                <img src={SearchIcon} alt="Search" className="w-[90px] h-[90px]" />
               </div>
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
@@ -82,7 +73,7 @@ export default function LastHome() {
               </p>
             </div>
 
-            {/* Dots between Step 1 & Step 2 */}
+            {/* Dots */}
             <div className="flex items-center h-[90px]">
               <img
                 src={DotsLine}
@@ -94,11 +85,7 @@ export default function LastHome() {
             {/* Step 2 */}
             <div className="flex flex-col items-center max-w-[220px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center mb-4">
-                <img
-                  src={HandIcon}
-                  alt="Hand"
-                  className="w-[90px] h-[90px]"
-                />
+                <img src={HandIcon} alt="Hand" className="w-[90px] h-[90px]" />
               </div>
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
@@ -109,7 +96,7 @@ export default function LastHome() {
               </p>
             </div>
 
-            {/* Dots between Step 2 & Step 3 */}
+            {/* Dots */}
             <div className="flex items-center h-[90px]">
               <img
                 src={DotsLine}
@@ -119,7 +106,7 @@ export default function LastHome() {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center max-w-[220px]">
+            <div className="flex flex-col items-center max-w_[220px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center mb-4">
                 <img
                   src={BuildingIcon}
