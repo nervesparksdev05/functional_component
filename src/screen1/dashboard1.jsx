@@ -31,8 +31,8 @@ export default function Dashboard1() {
   return (
     <div>
       {/* Top navigation bar – full-width white bar with bottom border */}
-      <header className="w-full bg-[#FFFFFF] border-b border-[#bfc1d3] -mt-4 -mb-1">
-        <div className="max-w-10xl mx-18 flex items-center justify-between px-4 md:px-6 py-3">
+      <header className="w-full bg-[#FFFFFF] border-b border-[#bfc1d3] -mb-1">
+        <div className="max-w-10xl mx-18 flex items-center justify-between px-4 md:px-6 py-1">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
