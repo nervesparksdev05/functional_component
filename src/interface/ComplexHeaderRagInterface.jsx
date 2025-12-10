@@ -6,7 +6,7 @@ import BotIcon from "../assets/bot.svg";
 
 export default function ComplexHeaderRagInterface() {
   return (
-    <header className="w-full bg-[#FFFFFF]">
+    <header className="w-full bg-[#FFFFFF] sticky top-0 z-50">
       {/* Top bar – 76px height */}
       <div className="w-full h-[75.92px] border-b border-[#797a85] flex items-center">
         <div className="w-full flex items-center justify-between px-4 md:px-6">

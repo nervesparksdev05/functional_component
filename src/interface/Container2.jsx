@@ -1,7 +1,11 @@
 // Container2.jsx
+import { useState } from "react";
+
 export default function Container2() {
   const tabs = ["Dashboard", "Playbook", "Agent", "Help"];
-  const activeTab = "Agent";
+
+  // default active tab
+  const [activeTab, setActiveTab] = useState("Agent");
 
   return (
     <div className="w-full flex justify-center py-4">
@@ -18,8 +22,10 @@ export default function Container2() {
         {tabs.map((tab) => {
           const isActive = tab === activeTab;
           return (
-            <div
+            <button
               key={tab}
+              type="button"
+              onClick={() => setActiveTab(tab)}
               className={`
                 flex items-center justify-center
                 w-[89px] h-[24px]
@@ -35,7 +41,7 @@ export default function Container2() {
               `}
             >
               {tab}
-            </div>
+            </button>
           );
         })}
       </div>

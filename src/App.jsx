@@ -7,11 +7,11 @@ import LastHome from "./screen2/LastHome.jsx";
 import SitemapGeneratedHome from "./screen2/SitemapGeneratedHome.jsx";
 // import UploadDocumentHome from "./screen2/UploadDocumentHome.jsx";
 // import ExtendedChatBotHome from "./screen2/ExtendedChatBotHome";
-// import Home1 from "./screen2/Home1.jsx";
+import Home1 from "./screen2/Home1.jsx";
 // import SignUpInterface from "./interface/SignUpInterface.jsx";
-import DashBoard1 from "./screen1/dashboard1.jsx";
+// import DashBoard1 from "./screen1/dashboard1.jsx";
 // import DashBoard2 from "./screen2/dashboard2.jsx"; 
-// import RagSlackBotHome from "./screen3/RagSlackBotHome.jsx"; 
+import RagSlackBotHome from "./screen3/RagSlackBotHome.jsx"; 
 
 export default function App() {
   return <>
@@ -26,9 +26,9 @@ export default function App() {
   {/* <Home1 /> */}
   {/* <ExtendedChatBotHome /> */}
   {/* <SignUpInterface /> */}
-  <DashBoard1 />
+  {/* <DashBoard1 /> */}
   {/* <DashBoard2 /> */}
-  {/* <RagSlackBotHome /> */}
+  <RagSlackBotHome />
   </div>
   </>
 }
