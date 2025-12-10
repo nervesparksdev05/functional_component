@@ -13,7 +13,7 @@ export default function WelcomeScreen({ onStartDemo }) {
     <div className="w-full flex justify-center py-8">
       <section
         className="
-          w-[638px] h-[380px]
+          w-[638px] h-[360px]
           rounded-[20px]
           bg-white
           border border-[#E5E7EB]
@@ -88,6 +88,7 @@ export default function WelcomeScreen({ onStartDemo }) {
           className="
             w-[578px] h-[40px]
             rounded-[50px]
+            mb-0
             bg-[#4443E4]
             text-white
             text-[14px] font-medium

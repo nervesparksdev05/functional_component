@@ -31,8 +31,8 @@ export default function Dashboard1() {
   return (
     <div>
       {/* Top navigation bar – full-width white bar with bottom border */}
-      <header className="w-full border-b border-[#797a85] -mt-4 -mb-2">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-3">
+      <header className="w-full bg-[#FFFFFF] border-b border-[#bfc1d3] -mt-4 -mb-1">
+        <div className="max-w-10xl mx-18 flex items-center justify-between px-4 md:px-6 py-3">
           {/* Logo */}
           <div className="flex items-center gap-2">
             <img
@@ -70,14 +70,14 @@ export default function Dashboard1() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full ">
         {/* FULL-WIDTH strip for Product Demo Assistant + button */}
-        <div className="w-full bg-white border-b border-[#E5E7EB]">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+        <div className="w-full bg-[#FFFFFF] h-[200] border border-[#bfc0d0] ">
+          <div className="max-w-8xl mx-18 px-3 md:px-6 py-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-2">
               {/* Lightbulb icon */}
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm border border-[#E5E7EB]">
-                <img src={BulbIcon} alt="Idea" className="h-6 w-6" />
+              <span className="inline-flex items-center justify-center rounded-full">
+                <img src={BulbIcon} alt="Idea" className="h-10 w-10" />
               </span>
               <h1 className="text-xl md:text-2xl font-semibold text-[#2F3542]">
                 Product Demo Assistant
