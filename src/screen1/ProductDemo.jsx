@@ -11,7 +11,7 @@ import ChatWithBotInterface from "../interface/ChatWithBotInterface.jsx";
 import UploadKnowledgeBaseContainer from "../interface/UploadKnowlodgeBaseContainer.jsx";
 import WelcomeScreen from "../interface/WelcomeScreen.jsx";
 
-export default function Dashboard1() {
+export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
   const [panelSlideIn, setPanelSlideIn] = useState(false);
