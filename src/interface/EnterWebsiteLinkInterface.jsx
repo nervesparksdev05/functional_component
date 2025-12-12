@@ -7,7 +7,7 @@ export default function EnterWebsiteLinkInterface() {
         className="
           text-[18px] leading-[20px]
           text-[#171A1F]
-          mb-1 font-semibold
+          mb-1 font-medium
         "
       >
         Enter Website Link

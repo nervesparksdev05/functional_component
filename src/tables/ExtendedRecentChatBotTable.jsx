@@ -1,51 +1,51 @@
-// src/tables/ExtendedExistingDocumentsTable.jsx (or keep the old file name)
-import { Search, MoreVertical, FileText } from "lucide-react";
+import { Search, MoreVertical } from "lucide-react";
 
 export default function ExtendedRecentChatBotTable() {
-  const documents = [
+  const chatBots = [
     {
       id: 1,
-      fileName: "Tech requirements.pdf",
-      fileSize: "200 KB",
-      dateUploaded: "Jan 4, 2022",
-      uploadedBy: "Olivia Rhye",
+      websiteName: "Apollo.io",
+      websiteUrl: "www.apollo.io",
+      uploadedFile: "Tech requirements.pdf",
+      botCreated: "Jan 4, 2025",
     },
     {
       id: 2,
-      fileName: "Dashboard screenshot.png",
-      fileSize: "720 KB",
-      dateUploaded: "Jan 4, 2022",
-      uploadedBy: "Phoenix Baker",
+      websiteName: "Apollo.io",
+      websiteUrl: "www.apollo.io",
+      uploadedFile: "Tech requirements.pdf",
+      botCreated: "Jan 4, 2025",
     },
     {
       id: 3,
-      fileName: "General information.txt",
-      fileSize: "16 KB",
-      dateUploaded: "Jan 2, 2022",
-      uploadedBy: "Lana Steiner",
+      websiteName: "Apollo.io",
+      websiteUrl: "www.apollo.io",
+      uploadedFile: "Tech requirements.pdf",
+      botCreated: "Jan 2, 2025",
     },
     {
       id: 4,
-      fileName: "Dashboard screenshot.png",
-      fileSize: "720 KB",
-      dateUploaded: "Jan 4, 2022",
-      uploadedBy: "Phoenix Baker",
+      websiteName: "Apollo.io",
+      websiteUrl: "www.apollo.io",
+      uploadedFile: "Tech requirements.pdf",
+      botCreated: "Jan 4, 2025",
     },
     {
       id: 5,
-      fileName: "General information.txt",
-      fileSize: "16 KB",
-      dateUploaded: "Jan 2, 2022",
-      uploadedBy: "Lana Steiner",
+      websiteName: "Apollo.io",
+      websiteUrl: "www.apollo.io",
+      uploadedFile: "Tech requirements.pdf",
+      botCreated: "Jan 2, 2025",
     },
+    
   ];
 
   return (
-    <div className="w-full max-w-[1030px] rounded-[10px] border border-[#E5E7EB] bg-white shadow-sm overflow-hidden">
+    <div className="w-full max-w-[1030px] rounded-[10px] border border-[#E5E7EB] bg-white shadow-sm ">
       {/* Top header row with title + search */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-[#E5E7EB]">
         <h2 className="text-[15px] font-semibold text-[#111827]">
-          Existing Documents
+          Recent Chat Bots
         </h2>
 
         <div className="w-[260px] h-[40px] flex items-center rounded-[8px] border border-[#E5E7EB] bg-[#F9FAFB] px-3">
@@ -64,60 +64,44 @@ export default function ExtendedRecentChatBotTable() {
           <thead>
             <tr className="text-left">
               <th className="text-[11px] font-medium text-gray-500 tracking-wide pt-4 pb-3 px-6">
-                File name
+                Website Name
               </th>
               <th className="text-[11px] font-medium text-gray-500 tracking-wide pt-4 pb-3 px-6">
-                File size
+                Website URL
               </th>
               <th className="text-[11px] font-medium text-gray-500 tracking-wide pt-4 pb-3 px-6">
-                Date uploaded
+                Uploaded file
               </th>
               <th className="text-[11px] font-medium text-gray-500 tracking-wide pt-4 pb-3 px-6">
-                Uploaded by
+                Bot Created
               </th>
               <th className="w-10 pt-4 pb-3 pr-6" />
             </tr>
           </thead>
 
           <tbody>
-            {documents.map((doc, index) => (
+            {chatBots.map((bot, index) => (
               <tr
-                key={doc.id}
-                className={`${
-                  index % 2 === 0 ? "bg-[#F9FAFF]" : "bg-white"
-                } border-t border-[#EEF0F4]`}
+                key={bot.id}
+                className={`
+                  ${index % 2 === 0 ? "bg-[#F9FAFF]" : "bg-white"}
+                  border-t border-[#EEF0F4]
+                `}
               >
-                {/* File name + icon */}
-                <td className="py-4 px-6 text-[13px] text-gray-900 align-middle">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 flex items-center justify-center rounded-[6px] bg-white shadow-sm border border-[#E5E7EB]">
-                      <FileText className="w-4 h-4 text-[#4B5563]" />
-                    </div>
-                    <span className="font-semibold">{doc.fileName}</span>
-                  </div>
+                <td className="py-4 px-6 text-[13px] text-gray-900 font-semibold align-middle">
+                  {bot.websiteName}
                 </td>
-
-                {/* File size */}
                 <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
-                  {doc.fileSize}
+                  {bot.websiteUrl}
                 </td>
-
-                {/* Date uploaded */}
                 <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
-                  {doc.dateUploaded}
+                  {bot.uploadedFile}
                 </td>
-
-                {/* Uploaded by */}
                 <td className="py-4 px-6 text-[13px] text-gray-500 align-middle">
-                  {doc.uploadedBy}
+                  {bot.botCreated}
                 </td>
-
-                {/* Actions (3 dots) */}
                 <td className="py-4 pr-6 text-center align-middle">
-                  <button
-                    type="button"
-                    className="text-gray-400 hover:text-gray-600 p-1"
-                  >
+                  <button className="text-gray-400 hover:text-gray-600 p-1">
                     <MoreVertical size={16} />
                   </button>
                 </td>

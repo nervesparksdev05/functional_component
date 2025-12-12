@@ -60,14 +60,16 @@ export default function LastHome() {
 
           <div className="w-full flex items-start justify-center gap-10">
             {/* Step 1 */}
-            <div className="flex flex-col items-center max-w-[220px]">
-              <div className="w-[90px] h-[90px] flex items-center justify-center mb-4">
-                <img src={SearchIcon} alt="Search" className="w-[90px] h-[90px]" />
-              </div>
+            <div className="flex flex-col items-center w-[260px] h-[254px]">
+              <img
+                src={SearchIcon}
+                alt="Search"
+                className="w-[90px] h-[90px] mb-4 flex-shrink-0"
+              />
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
               </h3>
-              <p className="text-[12px] leading-[18px] text-[#4B5563]">
+              <p className="text-[12px] leading-[18px] text-[#4B5563] text-center">
                 Lorem ipsum dolor sit amet consectetur. Congue et fringilla
                 dictum ac id elit porttitor interdum sit.
               </p>
@@ -83,14 +85,16 @@ export default function LastHome() {
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col items-center max-w-[220px]">
-              <div className="w-[90px] h-[90px] flex items-center justify-center mb-4">
-                <img src={HandIcon} alt="Hand" className="w-[90px] h-[90px]" />
-              </div>
+            <div className="flex flex-col items-center w-[260px] h-[254px]">
+              <img
+                src={HandIcon}
+                alt="Hand"
+                className="w-[90px] h-[90px] mb-4 flex-shrink-0"
+              />
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
               </h3>
-              <p className="text-[12px] leading-[18px] text-[#4B5563]">
+              <p className="text-[12px] leading-[18px] text-[#4B5563] text-center">
                 Lorem ipsum dolor sit amet consectetur. Congue et fringilla
                 dictum ac id elit porttitor interdum sit.
               </p>
@@ -106,23 +110,22 @@ export default function LastHome() {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center max-w_[220px]">
-              <div className="w-[90px] h-[90px] flex items-center justify-center mb-4">
-                <img
-                  src={BuildingIcon}
-                  alt="Building"
-                  className="w-[90px] h-[90px]"
-                />
-              </div>
+            <div className="flex flex-col items-center w-[260px] h-[254px]">
+              <img
+                src={BuildingIcon}
+                alt="Building"
+                className="w-[90px] h-[90px] mb-4 flex-shrink-0"
+              />
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
               </h3>
-              <p className="text-[12px] leading-[18px] text-[#4B5563]">
+              <p className="text-[12px] leading-[18px] text-[#4B5563] text-center">
                 Lorem ipsum dolor sit amet consectetur. Congue et fringilla
                 dictum ac id elit porttitor interdum sit.
               </p>
             </div>
           </div>
+
         </section>
       </main>
     </div>

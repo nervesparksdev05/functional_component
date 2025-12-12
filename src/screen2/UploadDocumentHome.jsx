@@ -152,7 +152,7 @@ export default function UploadDocumentHome({ onNext }) {
         </div>
 
         {/* Next button bottom-right */}
-        <div className="w-full max-w-[1030px] mt-auto mb-8 flex justify-end">
+        <div className="w-full max-w-[1030px] mt-auto mb-4 flex justify-end">
           <NextButton onClick={onNext} />
         </div>
       </main>

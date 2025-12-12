@@ -7,13 +7,13 @@ import NextButton from "../buttons/NextButton.jsx";
 
 export default function ExtendedChatBotHome({ onNext, onPrevious }) {
   return (
-    <div className="w-full h-screen flex flex-col bg-[#F5F7FB]">
+    <div className="w-full flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
       <ComplexHeaderInterface />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
-        <div className="w-full max-w-[1030px] mx-auto flex flex-col mt-4 mb-4">
+        <div className="w-full max-w-[1030px] mx-auto flex flex-col mt-3 mb-3">
           {/* Back to dashboard button (kept for UX) */}
           <BackToDashBoardButton />
 
@@ -22,7 +22,7 @@ export default function ExtendedChatBotHome({ onNext, onPrevious }) {
         </div>
 
         {/* Wizard navigation */}
-        <div className="w-full max-w-[1030px] mt-auto mb-8 flex justify-between">
+        <div className="w-full max-w-[1030px] mt-auto mb-1 flex justify-between">
           <PreviousButton onClick={onPrevious} />
           <NextButton onClick={onNext} />
         </div>

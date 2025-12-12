@@ -47,7 +47,7 @@ export default function WidgetHome({ onNext, onPrevious }) {
         </section>
 
         {/* Bottom navigation */}
-        <div className="w-full max-w-[1030px] mt-16 mb-6 flex items-center justify-between">
+        <div className="w-full max-w-[1030px] mt-16 mb-3 flex items-center justify-between">
           <PreviousButton onClick={onPrevious} />
           <DoneAndProcessingButton onClick={onNext} />
         </div>

@@ -9,7 +9,7 @@ import NextButton from "../buttons/NextButton.jsx";
 import IncreasingDotsInterface from "../interface/IncreasingDotsInterface.jsx";
 import EnterWebsiteLinkInterface from "../interface/EnterWebsiteLinkInterface.jsx";
 import SitemapGeneratedButton from "../buttons/SiteMapGeneratedButton.jsx";
-import Table21 from "../Tables/Table21.jsx";
+import ApllloTable from "../tables/ApllloTable.jsx";
 
 export default function SitemapGeneratedHome({ onNext, onPrevious }) {
   const [isGenerated, setIsGenerated] = useState(false);
@@ -26,7 +26,7 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-6 mb-4">
+        <div className="w-full max-w-[1030px] mt-2 mb-2">
           <BackToDashBoardButton />
         </div>
 
@@ -36,9 +36,9 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
         </div>
 
         {/* Center content */}
-        <section className="w-full max-w-[1030px] mt-8 flex flex-col items-center text-center">
+        <section className="w-full max-w-[1030px] mt-2 flex flex-col items-center text-center">
           {/* Description text */}
-          <p className="max-w-[820px] text-[14px] -mt-3 leading-[20px] font-medium text-[#0c0b0d] font-medium">
+          <p className="max-w-[820px] text-[14px]  leading-[20px] font-medium text-[#0c0b0d] font-medium">
             Give us your website link. We&apos;ll send a smart program to read
             all of your pages and map out how everything is connected. Then,
             our AI will figure out the top reasons people visit, so the bot
@@ -46,7 +46,7 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
           </p>
 
           {/* Enter Website Link field */}
-           <div className="mt-8 ml-8 w-full flex justify-center">
+           <div className="mt-6 ml-8 w-full flex justify-center">
             <div className="w-[833px] text-left">
               <EnterWebsiteLinkInterface />
             </div>
@@ -64,27 +64,27 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
 
         {/* Bottom section when sitemap is generated */}
         {isGenerated ? (
-          <section className="w-full max-w-[1030px] mt-10 mb-10 flex flex-col items-center">
+          <section className="w-full max-w-[1030px] mt-4 mb-1 flex flex-col items-center">
             {/* Heading + table centered at 833px */}
             <div className="w-[833px]">
-              <h2 className="text-[18px] font-medium text-[#111827] mb-4 text-left">
+              <h2 className="text-[19px] font-medium text-[#111827] mb-2 ml-5 text-left">
                 Generate Sitemap
               </h2>
 
-              <div className="border border-[#E5E7EB] rounded-[4px] overflow-hidden bg-white">
-                <Table21 />
+              <div className="border border-[#E5E7EB] rounded-[4px] ml-5 bg-white">
+                <ApllloTable/>
               </div>
             </div>
 
             {/* Prev / Next full-width row, extremes left/right */}
-            <div className="mt-10 mb-6 w-full flex items-center justify-between">
+            <div className="mt-6 mb-2 w-full flex items-center justify-between">
               <PreviousButton onClick={onPrevious} />
               <NextButton onClick={onNext} />
             </div>
           </section>
         ) : (
           // When sitemap not generated yet
-          <div className="w-full max-w-[1030px] mt-40 mb-6 flex items-center justify-between">
+          <div className="w-full max-w-[1030px] mt-40 mb-2 flex items-center justify-between">
             <PreviousButton onClick={onPrevious} />
             <NextButton onClick={onNext} />
           </div>

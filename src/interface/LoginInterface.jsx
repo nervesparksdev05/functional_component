@@ -1,7 +1,7 @@
 // src/interface/LoginInterface.jsx
 import GoogleButton from "../buttons/GoogleButton.jsx";
 import AppleButton from "../buttons/AppleButton.jsx";
-import FacebookButton from "../buttons/FacebookButton.jsx";
+import FacebookButton from "../buttons/FaceBookButton.jsx";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
 import NextButton from "../buttons/NextButton.jsx";

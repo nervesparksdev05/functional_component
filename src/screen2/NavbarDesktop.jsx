@@ -3,15 +3,15 @@ import { useState } from "react";
 
 import SignUpInterface from "../interface/SignUpInterface.jsx";
 import LoginPage from "../interface/LoginInterface.jsx";
-import Home1 from "../screen2/Home1.jsx";
-import ExtendedChatBotHome from "../screen2/ExtendedChatBotHome.jsx";
-import UploadDocumentHome from "../screen2/UploadDocumentHome.jsx";
-import SitemapGeneratedHome from "../screen2/SitemapGeneratedHome.jsx";
-import CustomGoalsHome from "../screen2/CustomGoalsHome.jsx";
-import ChatBotHome from "../screen2/ChatBotHome.jsx";
-import VerifyDNSHome from "../screen2/VerifyDNSHome.jsx";
-import WidgetHome from "../screen2/WidgetHome.jsx";
-import LastHome from "../screen2/LastHome.jsx";
+import Home1 from "./Home1.jsx";
+import ExtendedChatBotHome from "./ExtendedChatBotHome.jsx";
+import UploadDocumentHome from "./UploadDocumentHome.jsx";
+import SitemapGeneratedHome from "./SitemapGeneratedHome.jsx";
+import CustomGoalsHome from "./CustomGoalsHome.jsx";
+import ChatBotHome from "./ChatBotHome.jsx";
+import VerifyDNSHome from "./VerifyDNSHome.jsx";
+import WidgetHome from "./WidgetHome.jsx";
+import LastHome from "./LastHome.jsx";
 
 const STEPS = [
   { id: "signup", Component: SignUpInterface },

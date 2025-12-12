@@ -75,7 +75,7 @@ export default function CandidatesResumeResultTable() {
       </div>
 
       <div className="flex items-center justify-between mb-6">
-        <div className="flex border border-gray-300 rounded-lg overflow-hidden">
+        <div className="flex border border-gray-300 rounded-lg ">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -176,7 +176,7 @@ export default function CandidatesResumeResultTable() {
                   <td className="py-4 px-4">
                     <div className="flex items-center gap-3">
                       
-                      <div className="flex-1 h-[6px] rounded-full overflow-hidden bg-transparent">
+                      <div className="flex-1 h-[6px] rounded-full  bg-transparent">
                         <div
                           className="h-full"
                           style={{ width: `${resume.score}%` }}

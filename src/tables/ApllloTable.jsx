@@ -1,4 +1,4 @@
-export default function Table21() {
+export default function ApllloTable() {
   const data = [
     {
       sr: 1,
@@ -10,7 +10,7 @@ export default function Table21() {
   ];
 
   return (
-    <div className="w-[833px] rounded-[2px]">
+    <div className=" rounded-[2px]">
       {/* 1px black border on the table */}
       <table className="w-full border border-black">
         <thead>

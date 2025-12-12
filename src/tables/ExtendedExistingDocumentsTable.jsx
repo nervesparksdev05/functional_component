@@ -33,17 +33,10 @@ export default function ExtendedRecentChatBotTable() {
       dateUploaded: "Jan 4, 2022",
       uploadedBy: "Phoenix Baker",
     },
-    {
-      id: 5,
-      fileName: "General information.txt",
-      fileSize: "16 KB",
-      dateUploaded: "Jan 2, 2022",
-      uploadedBy: "Lana Steiner",
-    },
   ];
 
   return (
-    <div className="w-full max-w-[1030px] rounded-[10px] border border-[#E5E7EB] bg-white shadow-sm overflow-hidden">
+    <div className="w-full max-w-[1030px] rounded-[10px] border border-[#E5E7EB] bg-white ">
       {/* Top header row with title + search */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-[#E5E7EB]">
         <h2 className="text-[15px] font-semibold text-[#111827]">

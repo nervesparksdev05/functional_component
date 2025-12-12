@@ -10,9 +10,9 @@ export default function RagSlackBotHome2() {
       <ComplexHeaderInterface />
 
       {/* Main content */}
-      <main className="flex-1 w-full flex flex-col items-center px-4">
+      <main className="w-full flex flex-col items-center px-4">
         {/* Page content wrapper (matches card width / centering from design) */}
-        <div className="w-full max-w-[1100px] mt-6 mb-10">
+        <div className="w-full max-w-[1100px] mt-3 mb-4">
           {/* Back to Dashboard link */}
           <div className="mb-4">
             <BackToDashBoardButton />

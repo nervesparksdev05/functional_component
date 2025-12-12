@@ -2,7 +2,7 @@ import NodaIcon from "../assets/noda-icon.svg";
 import Container2 from "../interface/Container2.jsx";
 import AlarmIcon from "../assets/alarm-icon.svg";
 import FemaleIcon from "../assets/female-icon.svg";
-import BotIcon from "../assets/bot.svg";
+import SlackIcon from "../assets/slack.svg";
 
 export default function ComplexHeaderRagInterface() {
   return (
@@ -51,9 +51,9 @@ export default function ComplexHeaderRagInterface() {
         <div className="w-full flex items-center px-4 md:px-6">
           {/* Bot label (left-aligned with logo above) */}
           <div className="flex items-center gap-2 ml-18">
-            <img src={BotIcon} alt="Bot" className="w-7 h-7" />
+            <img src={SlackIcon} alt="Slack" className="w-7 h-7" />
             <span className="text-[22px] font-medium text-[#171A1F]">
-              Rag Slack Bot Manager
+              RAG Slack Bot Manager
             </span>
           </div>
         </div>

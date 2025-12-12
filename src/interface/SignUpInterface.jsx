@@ -111,7 +111,7 @@ const SignUpPage = ({ onNext }) => {
             </div>
 
             {/* Continue button */}
-            <div className="mt-2 w-full">
+            <div className="mt-2 w-[">
               <ContinueButton onClick={onNext} />
             </div>
 

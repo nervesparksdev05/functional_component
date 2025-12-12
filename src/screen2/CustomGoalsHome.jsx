@@ -16,11 +16,11 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
     "Troubleshoot Issues",
     "Process Simple Transactions",
   ];
+
   const [selectedSuggested, setSelectedSuggested] = useState([]);
-  const [customGoals, setCustomGoals] = useState([
-    "Resolve Purchase-Inhibiting Questions",
-    "Guide Product Discovery",
-  ]);
+
+  // ⬇️ customGoals now starts empty (no default chips)
+  const [customGoals, setCustomGoals] = useState([]);
 
   const toggleSuggested = (goal) => {
     setSelectedSuggested((prev) =>
@@ -54,7 +54,7 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
         </div>
 
         {/* CENTER CONTENT */}
-        <section className="w-full max-w-[1030px] mt-10 flex flex-col items-center text-center">
+        <section className="w-full max-w-[1030px] mt-3 flex flex-col items-center text-center">
           {/* Description */}
           <p className="text-[14px] text-[#0e1111] font-semibold leading-[20px] max-w-[800px]">
             Select suggested goals or add multiple custom goals that your bot
@@ -62,7 +62,7 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
           </p>
 
           {/* Suggested Goals */}
-          <div className="w-full max-w-[850px] mt-10 text-left">
+          <div className="w-full max-w-[850px] mt-5 text-left">
             <h2 className="text-[16px] font-medium text-[#111827] mb-3">
               Suggested Goals
             </h2>
@@ -93,7 +93,7 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
           </div>
 
           {/* Add Custom Goals row + chips */}
-          <div className="w-full max-w-[850px] mt-10 text-left">
+          <div className="w-full max-w-[850px] mt-5 text-left">
             <AddCustomGoalsInterface
               customGoals={customGoals}
               onAddGoal={handleAddCustomGoal}
@@ -102,13 +102,13 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
           </div>
 
           {/* Enter Greeting Message */}
-          <div className="w-full max-w-[850px] mt-10 text-left">
+          <div className="w-full max-w-[850px] mt-5 text-left">
             <EnterGreetingMessageInterface />
           </div>
         </section>
 
         {/* Bottom navigation */}
-        <div className="w-full max-w-[1030px] mt-8 mb-10 flex justify-between">
+        <div className="w-full max-w-[1030px] mt-4 mb-6 flex justify-between">
           <PreviousButton onClick={onPrevious} />
           <NextButton onClick={onNext} />
         </div>

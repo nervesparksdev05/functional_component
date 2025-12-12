@@ -50,14 +50,14 @@ export default function RagSlackBotHome() {
   ];
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
+    <div className="w-full flex flex-col bg-[#F5F7FB]">
       {/* Top header (logo + nav) */}
       <ComplexHeaderInterface />
 
       {/* Main content */}
       <main className="flex-1 w-full flex justify-center px-4">
         {/* Fixed content width like design */}
-        <div className="w-[1038px] mt-6 mb-10">
+        <div className="w-[1038px] mt-4 mb-2">
           {/* Top row: Start Adding Documents (left) + System Overview (right) */}
           <div className="w-full flex items-stretch gap-4 mb-6">
             <StartUploadingDocumentInterface
@@ -74,7 +74,7 @@ export default function RagSlackBotHome() {
             <button
               type="button"
               onClick={() => setShowAll(true)}
-              className="text-[14px] font-medium text-[#4443E4] hover:underline"
+              className="text-[14px] font-medium text-[#4443E4] "
             >
               Show All
             </button>

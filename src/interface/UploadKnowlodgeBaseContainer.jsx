@@ -30,9 +30,9 @@ export default function UploadKnowlodgeBaseContainer({ onClose }) {
             type="button"
             onClick={onClose}
             className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-[#F3F4F6]"
-            aria-label="Close"
+          
           >
-            <span className="text-[18px] leading-none text-[#6B7280]">×</span>
+            <span className="text-[36px] leading-none text-[#6B7280]">×</span>
           </button>
         </div>
 

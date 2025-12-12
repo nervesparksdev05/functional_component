@@ -18,7 +18,6 @@ export default function FaceBookButton() {
         cursor-pointer
       "
     >
-      {/* Facebook icon from assets */}
       <img
         src={FaceBookIcon}
         alt="Facebook"

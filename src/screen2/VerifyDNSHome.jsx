@@ -25,7 +25,7 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-6 mb-4">
+        <div className="w-full max-w-[1030px] mt-3 mb-2">
           <BackToDashBoardButton />
         </div>
 
@@ -52,7 +52,7 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
 
           {/* Verified DNS area – only after click */}
           {isVerified && (
-            <div className="mt-6 w-full flex flex-col items-center gap-3">
+            <div className="mt-4 w-full flex flex-col items-center gap-3">
               <DNSTableInterface />
 
               {/* Success message */}
@@ -91,11 +91,20 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
           )}
         </section>
 
-        {/* Bottom navigation */}
-        <div className="w-full max-w-[1030px] mt-auto mt-10 mb-33 flex justify-between">
-          <PreviousButton onClick={onPrevious} />
-          <NextButton onClick={onNext} />
-        </div>
+        {/* Bottom navigation – DIFFERENT spacing before vs after verify */}
+        {!isVerified ? (
+          // Before clicking "Verify DNS" → push buttons lower
+          <div className="w-full max-w-[1030px] mt-70 mb-3 flex justify-between">
+            <PreviousButton onClick={onPrevious} />
+            <NextButton onClick={onNext} />
+          </div>
+        ) : (
+          // After DNS is verified → a bit closer to content
+          <div className="w-full max-w-[1030px] mt-2 mb-3 flex justify-between">
+            <PreviousButton onClick={onPrevious} />
+            <NextButton onClick={onNext} />
+          </div>
+        )}
       </main>
     </div>
   );

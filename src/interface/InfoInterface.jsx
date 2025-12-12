@@ -7,7 +7,7 @@ export default function InfoInterface() {
           border border-[#D1D5DB]  
           rounded-md
           bg-white
-          overflow-hidden
+          
         "
       >
         <Row label="Domain name" value="Lorem ipsum" />

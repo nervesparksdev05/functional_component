@@ -11,7 +11,6 @@ export default function ExistingDocumentsTable({ documents = [] }) {
           rounded-[8px]
           border border-[#E5E7EB]
           bg-white
-          overflow-hidden
           shadow-sm
         "
       >

@@ -7,12 +7,6 @@ export default function DNSTable() {
       websiteLink: "www.apollo.io",
       status: "Successful",
     },
-    {
-      id: 2,
-      websiteName: "Apollo",
-      websiteLink: "www.apollo.io",
-      status: "Failed",
-    },
   ];
 
   return (
@@ -24,7 +18,7 @@ export default function DNSTable() {
         </h2>
 
         {/* Table card */}
-        <div className="w-full h-[108px] rounded-[6px] border border-[#0c0b0d] overflow-hidden bg-white">
+        <div className="w-full h-[80px] rounded-[6px] border border-[#0c0b0d]  bg-white">
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-[#4443E4]/10">

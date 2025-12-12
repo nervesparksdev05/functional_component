@@ -8,7 +8,7 @@ export default function ContinueButton() {
       onClick={handleClick}
       className="
         inline-flex items-center justify-center
-        w-[516px] h-[52px]
+        w-[464px] h-[52px]
         rounded-[26px]
         border border-[#00000000]
         bg-[#4443E4]

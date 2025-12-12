@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import CloudUpload from "../assets/cloud-upload.svg";
 import PinIcon from "../assets/pin-icon.svg";
-import Radio from "../assets/radio.svg";        
-import EmptyRadio from "../assets/empty-radio.svg"; 
+import Radio from "../assets/radio.svg";
+import EmptyRadio from "../assets/empty-radio.svg";
 
 export default function MultipleDocumentUploadInterface() {
-  const [docType, setDocType] = useState("pdf");
+  const [docType, setDocType] = useState("pdf"); // "pdf" or "text"
   const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => {
@@ -25,7 +25,7 @@ export default function MultipleDocumentUploadInterface() {
   };
 
   return (
-    <div className="w-full flex justify-center py-8">
+    <div className="w-full flex justify-center py-5">
       <section
         className="
           w-[1076px] h-[458px]
@@ -78,7 +78,7 @@ export default function MultipleDocumentUploadInterface() {
         </div>
 
         {/* Document ID input */}
-        <div className="mb-6">
+        <div className="mb-4">
           <label className="block text-[13px] leading-[18px] text-[#4B5563] mb-1">
             Document ID (unique)
             <span className="text-[#EF4444]">*</span>
@@ -100,51 +100,78 @@ export default function MultipleDocumentUploadInterface() {
           />
         </div>
 
-        {/* Dropzone */}
-        <div
-          className="
-            flex-1
-            rounded-[16px]
-            border border-dashed border-[#4443E4]
-            bg-[#F5F6FF]
-            flex flex-col items-center justify-center
-            text-center
-            mb-4
-          "
-        >
-          <img src={CloudUpload} alt="Cloud upload" className="w-16 h-16" />
-
-          <p className="mt-3 text-[14px] text-[#111827]">
-            Drag &amp; drop your files here
-          </p>
-          <p className="text-[14px] text-[#6B7280] mt-1 mb-1">OR</p>
-
-          <button
-            type="button"
-            onClick={handleBrowseClick}
+        {/* PDF dropzone OR Text textarea */}
+        {docType === "pdf" ? (
+          /* Dropzone for PDF */
+          <div
             className="
-              inline-flex items-center justify-center
-              h-[34px] px-5
-              rounded-[6px]
-              bg-[#4443E4]
-              text-white text-[14px] font-normal
-              cursor-pointer
+              flex-1
+              rounded-[16px]
+              border border-dashed border-[#4443E4]
+              bg-[#F5F6FF]
+              flex flex-col items-center justify-center
+              text-center
+              mb-4
             "
           >
-            Browse files
-          </button>
+            <img src={CloudUpload} alt="Cloud upload" className="w-16 h-16" />
 
-          <input
-            ref={fileInputRef}
-            type="file"
-            multiple
-            className="hidden"
-            onChange={handleFilesSelected}
-          />
-        </div>
+            <p className="mt-3 text-[14px] text-[#111827]">
+              Drag &amp; drop your files here
+            </p>
+            <p className="text-[14px] text-[#6B7280] mt-1 mb-1">OR</p>
+
+            <button
+              type="button"
+              onClick={handleBrowseClick}
+              className="
+                inline-flex items-center justify-center
+                h-[34px] px-5
+                rounded-[6px]
+                bg-[#4443E4]
+                text-white text-[14px] font-normal
+                cursor-pointer
+              "
+            >
+              Browse files
+            </button>
+
+            <input
+              ref={fileInputRef}
+              type="file"
+              multiple
+              className="hidden"
+              onChange={handleFilesSelected}
+            />
+          </div>
+        ) : (
+          /* Text area for Text Document */
+          <div className="mb-4">
+            <label className="block text-[13px] leading-[18px] text-[#4B5563] mb-1">
+              Document Text
+              <span className="text-[#EF4444]">*</span>
+            </label>
+            <textarea
+              placeholder="Write about document...."
+              className="
+                w-full
+                min-h-[160px]
+                rounded-[6px]
+                bg-[#F5F6FA]
+                border border-transparent
+                px-3 pt-1
+                text-[14px] text-[#111827]
+                placeholder:text-[#9CA3AF] 
+                outline-none
+                resize-none
+                focus:border-[#4443E4]
+              "
+            />
+          </div>
+        )}
 
         {/* Upload and Process button */}
-        <div className="flex justify-end">
+        <div className="mt-auto flex justify-end">
           <button
             type="button"
             onClick={handleUpload}

@@ -56,7 +56,7 @@ export default function RagSlackBotHome3() {
           </div>
 
           {/* Show All link */}
-          <div className="mt-4 flex justify-center">
+          <div className="mt-3 flex justify-center">
             <button
               type="button"
               className="text-[14px] mb-2 font-medium text-[#2828b5] hover:underline"
