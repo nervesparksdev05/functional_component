@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import NodaIcon from "../assets/noda-icon.svg";
 import BulbIcon from "../assets/bulb.svg";
-import Container2 from "../interface/Container2.jsx";
+import HeaderRightTop from "../interface/HeaderRightTopInterface.jsx";
 import AlarmIcon from "../assets/alarm-icon.svg";
 import FemaleIcon from "../assets/female-icon.svg";
 import UpdateKnowledgeButton from "../buttons/UpdateKnowledgeButton.jsx";
@@ -44,7 +44,7 @@ export default function ProductDemo() {
 
           {/* Tabs + actions */}
           <div className="flex items-center gap-2">
-            <Container2 />
+            <HeaderRightTop />
 
             {/* Vertical divider between Help and bell */}
             <div className="h-10 w-px bg-[#b4bcc9]" />

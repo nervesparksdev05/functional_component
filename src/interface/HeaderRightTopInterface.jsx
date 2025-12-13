@@ -1,7 +1,7 @@
-// Container2.jsx
+// HeaderRightTop.jsx
 import { useState } from "react";
 
-export default function Container2() {
+export default function HeaderRightTop() {
   const tabs = ["Dashboard", "Playbook", "Agent", "Help"];
 
   // default active tab

@@ -1,4 +1,4 @@
-// src/screens/DashBoard2.jsx
+// src/screens/NavbarDesktop.jsx
 import { useState } from "react";
 
 import SignUpInterface from "../interface/SignUpInterface.jsx";
@@ -27,7 +27,7 @@ const STEPS = [
   { id: "last", Component: LastHome },
 ];
 
-export default function DashBoard2() {
+export default function NavbarDesktop() {
   const [stepIndex, setStepIndex] = useState(0);
 
   const goNext = () => {
