@@ -7,9 +7,9 @@ export default function App() {
   return <>
   <div className="bg-[#F5F7FB]">
 
-  {/* <ProductDemo /> */}
+  <ProductDemo />
   {/* <NavbarDesktop /> */}
-  <RagSlackBotHome />
+  {/* <RagSlackBotHome /> */}
   {/* <LastHome/> */}
   </div>
   </>

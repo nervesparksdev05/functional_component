@@ -225,6 +225,7 @@ export default function UploadKnowlodgeBaseContainer({ onClose = () => {} }) {
           </button>
         </div>
 
+        {/* BODY (no overflow-hidden; use min-h-0 so inner scroll works) */}
         <div className="px-8 pt-8 flex-1 min-h-0">
           {/* Screen2 */}
           {isUploadScreen && (
@@ -261,7 +262,7 @@ export default function UploadKnowlodgeBaseContainer({ onClose = () => {} }) {
             </div>
           )}
 
-          
+          {/* Screen5 (scrolls if needed; no overflow-hidden used) */}
           {isForm && (
             <div className="h-full min-h-0 overflow-auto pb-6">
               <div className="pt-1">

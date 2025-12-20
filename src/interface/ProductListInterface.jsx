@@ -1,95 +1,105 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import WordIcon from "../assets/word-icon.svg";
 import TrashIcon from "../assets/trash-icon.svg";
+import VideoIcon from "../assets/video-icon.svg";
 
-const DEFAULT_FILES = [
-  { id: 1, name: "Product_Roadmap_Q3_2025", type: "PDF" },
-  { id: 2, name: "AI_Module_Integration_Guide", type: "DOCX" },
-  { id: 3, name: "API_Reference_v2.4", type: "MP4" },
-  // extra dummy files
-  { id: 4, name: "Pricing_Sheet_2025", type: "XLSX" },
-  { id: 5, name: "Onboarding_Playbook", type: "PDF" },
-  { id: 6, name: "Sales_Enablement_Deck", type: "PPTX" },
-  { id: 7, name: "Customer_FAQ_v1.2", type: "DOCX" },
-  { id: 7, name: "Customer_FAQ_v1.2", type: "DOCX" },
-];
+function getIconForType(type) {
+  const t = String(type || "").toUpperCase();
+  if (t === "MP3" || t === "MP4" || t === "MOV" || t === "AVI") return VideoIcon;
+  return WordIcon;
+}
 
-const MAX_ROWS_BEFORE_SCROLL = 7;
+function bytesToPretty(bytes) {
+  if (bytes === 0) return "0 mb";
+  if (bytes == null || Number.isNaN(bytes)) return "";
+  const mb = bytes / (1024 * 1024);
+  if (mb < 1024) return `${mb.toFixed(0)} mb`;
+  const gb = mb / 1024;
+  return `${gb.toFixed(1)} gb`;
+}
 
-export default function ProductListInterface({ files = DEFAULT_FILES }) {
-  const [showAll, setShowAll] = useState(false);
+export default function ProductListInterface({
+  files = [],
+  mode = "documents", // "documents" | "videos"
+  onProcess = () => {}, // ✅ row-level process
+  onRemove = () => {},
+  maxRowsBeforeScroll = 3, // ✅ show max 3 rows height, then scroll
+}) {
+  const shouldScroll = files.length > maxRowsBeforeScroll;
 
-  // When collapsed → only first 3
-  // When expanded → all files (but container height is capped)
-  const visibleFiles = showAll ? files : files.slice(0, 3);
-
-  const shouldScroll = showAll && files.length > MAX_ROWS_BEFORE_SCROLL;
+  // A simple “row-height based” max-height
+  // (3 rows + gaps ≈ 220px; adjust if you want tighter/looser)
+  const listClass = useMemo(() => {
+    return shouldScroll ? "max-h-[220px] overflow-auto pr-1" : "";
+  }, [shouldScroll]);
 
   return (
-    <div
-      className="
-        w-[360px] min-h-[188px]
-        bg-white
-        rounded-[12px]
-        border border-[#E5E7EB]
-        shadow-sm
-        p-4
-        flex flex-col
-      "
-    >
-      {/* Files list */}
-      <div
-        className={`
-          flex-1 space-y-3
-          ${shouldScroll ? "max-h-[260px] overflow-y-auto pr-1" : ""}
-        `}
-      >
-        {visibleFiles.map((file) => (
-          <div
-            key={file.id}
-            className="flex items-center justify-between"
-          >
-            <div className="flex items-center gap-3 min-w-0">
-              {/* File icon */}
-              <div className="w-9 h-9 rounded-[10px] bg-[#EEF0FF] flex items-center justify-center flex-shrink-0">
-                <img
-                  src={WordIcon}
-                  alt={`${file.type} file icon`}
-                  className="w-4 h-4"
-                />
+    <div className="w-full flex flex-col h-full overflow-hidden">
+      <div className={`${listClass} space-y-4`}>
+        {files.map((file) => {
+          const icon = getIconForType(file.type);
+          const size = file.sizeText || bytesToPretty(file.sizeBytes) || "—";
+          const isVideoMode = mode === "videos";
+          const isProcessed = !!file.processed;
+
+          return (
+            <div key={file.id} className="flex items-center justify-between">
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-[48px] h-[48px] rounded-[12px] bg-[#EEF2FF] flex items-center justify-center flex-shrink-0">
+                  <img src={icon} alt="" className="w-6 h-6" />
+                </div>
+
+                <div className="flex flex-col min-w-0">
+                  <div className="text-[16px] text-[#111827] truncate">
+                    {file.name}
+                    {isProcessed && (
+                      <span className="ml-2 text-[12px] font-semibold text-[#16A34A]">
+                        • Processed
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="text-[12px] text-[#6B7280] uppercase">
+                    {file.type}
+                    <span className="ml-2 normal-case">({size})</span>
+                  </div>
+                </div>
               </div>
 
-              {/* File name + type */}
-              <div className="flex flex-col min-w-0">
-                <span className="text-[13px] leading-4 text-[#111827] truncate">
-                  {file.name}
-                </span>
-                <span className="text-[11px] leading-[14px] text-[#9CA3AF] uppercase">
-                  {file.type}
-                </span>
+              <div className="flex items-center gap-3 flex-shrink-0">
+                {/* ✅ Process button INSIDE list row (videos only) */}
+                {isVideoMode && (
+                  <button
+                    type="button"
+                    onClick={() => onProcess(file.id)}
+                    disabled={isProcessed}
+                    className={`h-[36px] px-5 rounded-full text-[14px] font-semibold ${
+                      isProcessed
+                        ? "bg-[#E5E7EB] text-[#64748B] cursor-not-allowed"
+                        : "bg-[#4443E4] text-white hover:opacity-95"
+                    }`}
+                  >
+                    {isProcessed ? "Processed" : "Process"}
+                  </button>
+                )}
+
+                <button
+                  type="button"
+                  onClick={() => onRemove(file.id)}
+                  className="p-2 rounded-full hover:bg-[#F3F4F6]"
+                  aria-label={`Remove ${file.name}`}
+                >
+                  <img src={TrashIcon} alt="" className="w-5 h-5" />
+                </button>
               </div>
             </div>
+          );
+        })}
 
-            {/* Delete icon */}
-            <button
-              type="button"
-              className="p-1 rounded-full hover:bg-[#F3F4F6] flex-shrink-0"
-              aria-label={`Remove ${file.name}`}
-            >
-              <img src={TrashIcon} alt="" className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        ))}
+        {files.length === 0 && (
+          <div className="text-[14px] text-[#6B7280]">No files uploaded.</div>
+        )}
       </div>
-
-      {/* View all / View less link */}
-      <button
-        type="button"
-        onClick={() => setShowAll((prev) => !prev)}
-        className="mt-2 self-end text-[12px] font-medium text-[#4443E4] hover:underline"
-      >
-        {showAll ? "View Less" : "View All Files"}
-      </button>
     </div>
   );
 }

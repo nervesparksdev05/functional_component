@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import NodaIcon from "../assets/noda-icon.svg";
 import BulbIcon from "../assets/bulb.svg";
@@ -14,50 +14,27 @@ import WelcomeScreen from "../interface/WelcomeScreen.jsx";
 export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
-  const [panelSlideIn, setPanelSlideIn] = useState(false);
-
-  useEffect(() => {
-    if (showUploadPanel) {
-      setPanelSlideIn(false);
-      const id = requestAnimationFrame(() => {
-        setPanelSlideIn(true);
-      });
-      return () => cancelAnimationFrame(id);
-    } else {
-      setPanelSlideIn(false);
-    }
-  }, [showUploadPanel]);
 
   return (
     <div>
-      {/* Top navigation bar – full-width white bar with bottom border */}
+      {/* Top navigation bar */}
       <header className="w-full bg-[#FFFFFF] border-b border-[#bfc1d3] -mb-1">
         <div className="max-w-10xl mx-18 flex items-center justify-between px-4 md:px-6 py-1">
-          {/* Logo */}
           <div className="flex items-center gap-2">
-            <img
-              src={NodaIcon}
-              alt="Noda Technologies"
-              className="h-14 w-auto"
-            />
+            <img src={NodaIcon} alt="Noda Technologies" className="h-14 w-auto" />
           </div>
 
-          {/* Tabs + actions */}
           <div className="flex items-center gap-2">
             <HeaderRightTop />
-
-            {/* Vertical divider between Help and bell */}
             <div className="h-10 w-px bg-[#b4bcc9]" />
 
-            {/* Bell icon */}
             <button
               type="button"
-              className="hidden sm:flex items-center justify-center w-18 h-18 rounded-full "
+              className="hidden sm:flex items-center justify-center w-18 h-18 rounded-full"
             >
               <img src={AlarmIcon} alt="Notifications" />
             </button>
 
-            {/* Profile avatar */}
             <div>
               <img
                 src={FemaleIcon}
@@ -70,12 +47,10 @@ export default function ProductDemo() {
       </header>
 
       {/* Main content */}
-      <main className="flex-1 w-full ">
-        {/* FULL-WIDTH strip for Product Demo Assistant + button */}
-        <div className="w-full bg-[#FFFFFF] h-[200] border border-[#bfc0d0] ">
+      <main className="flex-1 w-full">
+        <div className="w-full bg-[#FFFFFF] h-[200] border border-[#bfc0d0]">
           <div className="max-w-8xl mx-18 px-3 md:px-6 py-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-2">
-              {/* Lightbulb icon */}
               <span className="inline-flex items-center justify-center rounded-full">
                 <img src={BulbIcon} alt="Idea" className="h-10 w-10" />
               </span>
@@ -84,22 +59,23 @@ export default function ProductDemo() {
               </h1>
             </div>
 
-            {/* Update Knowledge Base button */}
             <div className="self-start md:self-auto">
-              <UpdateKnowledgeButton onClick={() => setShowUploadPanel(true)} />
+              <UpdateKnowledgeButton
+                onClick={() => {
+                  if (showWelcome) return; // prevent opening behind welcome
+                  setShowUploadPanel(true);
+                }}
+              />
             </div>
           </div>
         </div>
 
-        {/* Content below (avatar + chat) */}
         <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 pb-6">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-center gap-4">
-            {/* Left: AI Avatar card */}
             <section className="lg:w-auto">
               <AIAvatarInterface />
             </section>
 
-            {/* Right: Chat card */}
             <section className="lg:w-auto">
               <ChatWithBotInterface />
             </section>
@@ -114,19 +90,21 @@ export default function ProductDemo() {
         </div>
       )}
 
-      {/* Upload panel – slide in on the RIGHT (only after welcome is gone) */}
+      {/* ✅ Upload modal overlay (centered + instant) */}
       {showUploadPanel && !showWelcome && (
-        <div className="fixed inset-0 z-50 flex justify-end bg-black/20 backdrop-blur-[2px]">
+        <div className="fixed inset-0 z-50">
+          {/* overlay */}
           <div
-            className={`
-              h-full flex items-start pt-4 pr-4
-              transform transition-transform duration-300
-              ${panelSlideIn ? "translate-x-0" : "translate-x-full"}
-            `}
-          >
-            <UploadKnowledgeBaseContainer
-              onClose={() => setShowUploadPanel(false)}
-            />
+            className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"
+            onClick={() => setShowUploadPanel(false)} // click outside closes
+          />
+
+          {/* modal mount (center) */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {/* small scale/fade animation (requires keyframes in CSS) */}
+            <div className="animate-[modalIn_160ms_ease-out]">
+              <UploadKnowledgeBaseContainer onClose={() => setShowUploadPanel(false)} />
+            </div>
           </div>
         </div>
       )}
