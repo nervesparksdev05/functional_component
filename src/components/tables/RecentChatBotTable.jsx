@@ -1,5 +1,6 @@
 // src/Tables/RecentChatBotTable.jsx
 import { MoreVertical } from "lucide-react";
+import Table from "../Table.jsx";
 
 export default function RecentChatBotTable() {
   const chatBots = [
@@ -26,66 +27,39 @@ export default function RecentChatBotTable() {
     },
   ];
 
+  const columns = [
+    { key: "websiteName", label: "Website Name" },
+    { key: "websiteUrl", label: "Website URL" },
+    { key: "uploadedFile", label: "Uploaded file" },
+    { key: "botCreated", label: "Bot Created" },
+    { key: "actions", label: "", width: "40px", align: "center" },
+  ];
+
   return (
-    <div className="w-[1030px] bg-white rounded-[10px] border border-[#E5E7EB] px-7 pt-5 pb-4 flex flex-col shadow-sm">
-      {/* Header */}
-      <h2 className="text-[14px] font-semibold text-[#111827] mb-4">
-        Recent Chat Bots
-      </h2>
-
-      {/* Table */}
-      <div>
-        <table className="w-full">
-          <thead>
-            <tr className="text-left">
-              <th className="text-[11px] font-medium text-gray-500 tracking-wide pb-3">
-                Website Name
-              </th>
-              <th className="text-[11px] font-medium text-gray-500 tracking-wide pb-3">
-                Website URL
-              </th>
-              <th className="text-[11px] font-medium text-gray-500 tracking-wide pb-3">
-                Uploaded file
-              </th>
-              <th className="text-[11px] font-medium text-gray-500 tracking-wide pb-3">
-                Bot Created
-              </th>
-              <th className="w-10 pb-3" />
-            </tr>
-          </thead>
-
-          <tbody>
-            {chatBots.map((bot, index) => (
-              <tr
-                key={bot.id}
-                className={
-                  index !== chatBots.length - 1
-                    ? "border-b border-gray-200"
-                    : ""
-                }
-              >
-                <td className="py-3 text-[13px] text-gray-900 font-semibold">
-                  {bot.websiteName}
-                </td>
-                <td className="py-3 text-[13px] text-gray-500">
-                  {bot.websiteUrl}
-                </td>
-                <td className="py-3 text-[13px] text-gray-500">
-                  {bot.uploadedFile}
-                </td>
-                <td className="py-3 text-[13px] text-gray-500">
-                  {bot.botCreated}
-                </td>
-                <td className="py-3 text-center">
-                  <button className="text-gray-400 hover:text-gray-600 p-1">
-                    <MoreVertical size={16} />
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <div className="w-[1030px]">
+      <Table
+        columns={columns}
+        data={chatBots}
+        variant="twin-color"
+        title="Recent Chat Bots"
+        maxWidth="1030px"
+        className="px-7 pt-5 pb-4"
+        rowBgColor1="bg-white"
+        rowBgColor2="bg-white"
+        renderCell={(column, row, value, rowIndex) => {
+          if (column.key === "actions") {
+            return (
+              <button className="text-gray-400 hover:text-gray-600 p-1">
+                <MoreVertical size={16} />
+              </button>
+            );
+          }
+          if (column.key === "websiteName") {
+            return <span className="font-semibold">{value}</span>;
+          }
+          return <span className="text-gray-500">{value}</span>;
+        }}
+      />
     </div>
   );
 }

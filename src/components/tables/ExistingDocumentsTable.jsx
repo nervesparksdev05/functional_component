@@ -1,111 +1,80 @@
 // src/interface/ExistingDocumentsTable.jsx
 import PdfIcon from "../../assets/pdf-icon.svg";
 import TextIcon from "../../assets/text-icon.svg";
+import Table from "../Table.jsx";
 
 export default function ExistingDocumentsTable({ documents = [] }) {
+  const columns = [
+    { key: "fileName", label: "File name" },
+    { key: "fileSize", label: "File size" },
+    { key: "dateUploaded", label: "Date uploaded" },
+    { key: "uploadedBy", label: "Uploaded by" },
+    { key: "actions", label: "", width: "40px", align: "right" },
+  ];
+
+  // Map documents to match column keys
+  const data = documents.map((doc) => ({
+    id: doc.id,
+    fileName: doc.name,
+    fileSize: doc.size,
+    dateUploaded: doc.dateUploaded,
+    uploadedBy: doc.uploadedBy,
+    type: doc.type,
+  }));
+
   return (
     <div className="w-full flex justify-center">
-      <div
-        className="
-          w-[1038px] h-[327px]
-          rounded-[8px]
-          border border-[#E5E7EB]
-          bg-white
-          shadow-sm
-        "
-      >
-        {/* Header title */}
-        <div className="px-6 py-4 border-b border-[#E5E7EB]">
-          <h2 className="text-[16px] font-semibold text-[#111827]">
-            Existing Documents
-          </h2>
-        </div>
+      <Table
+        columns={columns}
+        data={data}
+        variant="twin-color"
+        title="Existing Documents"
+        maxWidth="1038px"
+        rowBgColor1="bg-[#4443E4]/5"
+        rowBgColor2="bg-white"
+        className="h-[327px]"
+        renderCell={(column, row, value, rowIndex) => {
+          if (column.key === "fileName") {
+            const isPdf =
+              row.type === "pdf" ||
+              row.fileName?.toLowerCase().endsWith(".pdf");
+            const isTxt =
+              row.type === "txt" ||
+              row.fileName?.toLowerCase().endsWith(".txt");
+            const iconSrc = isPdf ? PdfIcon : TextIcon;
 
-        <table className="w-full text-left">
-          <thead className="text-[12px] font-medium text-[#6B7280]">
-            <tr>
-              <th className="px-6 py-3">File name</th>
-              <th className="px-6 py-3">File size</th>
-              <th className="px-6 py-3">Date uploaded</th>
-              <th className="px-6 py-3">Uploaded by</th>
-              <th className="px-6 py-3 w-10" />
-            </tr>
-          </thead>
+            return (
+              <div className="flex items-center gap-3">
+                <img
+                  src={iconSrc}
+                  alt={isPdf ? "PDF file" : "Text file"}
+                  className="w-9 h-9 shrink-0"
+                />
+                <span className="text-[14px] text-[#111827]">{value}</span>
+              </div>
+            );
+          }
 
-          <tbody className="text-[14px] text-[#111827]">
-            {documents.map((doc, index) => {
-              const isPdf =
-                doc.type === "pdf" ||
-                doc.name?.toLowerCase().endsWith(".pdf");
+          if (column.key === "actions") {
+            return (
+              <button
+                type="button"
+                className="inline-flex items-center justify-center w-6 h-6 rounded-full hover:bg-[#E5E7EB]"
+              >
+                <span className="text-[#6B7280] text-[18px] leading-none">
+                  ···
+                </span>
+              </button>
+            );
+          }
 
-              const isTxt =
-                doc.type === "txt" ||
-                doc.name?.toLowerCase().endsWith(".txt");
+          if (column.key === "fileSize" || column.key === "dateUploaded" || column.key === "uploadedBy") {
+            return <span className="text-[14px] text-[#4B5563]">{value}</span>;
+          }
 
-              const iconSrc = isPdf ? PdfIcon : TextIcon;
-
-              const rowBg =
-                index % 2 === 0 ? "bg-[#4443E4]/5" : "bg-white"; // alternate rows
-
-              return (
-                <tr key={doc.id ?? index} className={rowBg}>
-                  {/* File name + icon */}
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={iconSrc}
-                        alt={isPdf ? "PDF file" : "Text file"}
-                        className="w-9 h-9 shrink-0"
-                      />
-                      <span className="text-[14px] text-[#111827]">
-                        {doc.name}
-                      </span>
-                    </div>
-                  </td>
-
-                  {/* File size */}
-                  <td className="px-6 py-4 text-[14px] text-[#4B5563]">
-                    {doc.size}
-                  </td>
-
-                  {/* Date uploaded */}
-                  <td className="px-6 py-4 text-[14px] text-[#4B5563]">
-                    {doc.dateUploaded}
-                  </td>
-
-                  {/* Uploaded by */}
-                  <td className="px-6 py-4 text-[14px] text-[#4B5563]">
-                    {doc.uploadedBy}
-                  </td>
-
-                  {/* Actions (3 dots) */}
-                  <td className="px-6 py-4 text-right align-middle">
-                    <button
-                      type="button"
-                      className="inline-flex items-center justify-center w-6 h-6 rounded-full hover:bg-[#E5E7EB]"
-                    >
-                      <span className="text-[#6B7280] text-[18px] leading-none">
-                        ···
-                      </span>
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-
-            {documents.length === 0 && (
-              <tr>
-                <td
-                  colSpan={5}
-                  className="px-6 py-10 text-center text-[14px] text-[#6B7280]"
-                >
-                  No documents found.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+          return <span>{value}</span>;
+        }}
+      />
     </div>
   );
 }

@@ -1,13 +1,13 @@
-// src/screens/NavbarDesktopScreen/SitemapGeneratedHome.jsx
+// src/screens/NavbarDesktopScreen/VerifyDNSHome.jsx
 import { useState } from "react";
 
 import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
-import ApllloTable from "../../components/tables/ApllloTable.jsx";
+import DNSTable from "../../components/tables/DNSTable.jsx";
 
-export default function SitemapGeneratedHome({ onNext, onPrevious }) {
+export default function VerifyDNSHome({ onNext, onPrevious }) {
   const steps = [
     "Upload Sources",
     "Generate Sitemap",
@@ -17,7 +17,7 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
     "Deploy Widget",
   ];
 
-  const [selectedIndex, setSelectedIndex] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(4);
 
   const handleStepClick = (index) => {
     setSelectedIndex(index);
@@ -26,21 +26,21 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
   const progressRatio =
     steps.length > 1 ? selectedIndex / (steps.length - 1) : 0;
 
-  const [isGenerated, setIsGenerated] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
 
-  const handleGenerateClick = () => {
-    setIsGenerated(true);
+  const handleVerifyClick = () => {
+    setIsVerified(true);
   };
 
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col">
       {/* Top header */}
       <Navbar />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-2 mb-2">
+        <div className="w-full max-w-[1030px] mt-3 mb-2 flex justify-start">
           <Button
             type="button"
             variant="ghost"
@@ -156,44 +156,16 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
           </div>
         </div>
 
-        {/* Center content */}
-        <section className="w-full max-w-[1030px] mt-2 flex flex-col items-center text-center">
-          {/* Description text */}
-          <p className="max-w-[820px] text-[14px] leading-[20px] font-medium text-[#0c0b0d]">
-            Give us your website link. We&apos;ll send a smart program to read
-            all of your pages and map out how everything is connected. Then,
-            our AI will figure out the top reasons people visit, so the bot
-            knows how to quickly help them get what they need.
+        {/* Central content */}
+        <section className="w-full max-w-[1030px] mt-16 flex flex-col items-center">
+          <p className="max-w-[900px] -mt-14 text-[15px] leading-[20px] text-[#0c0b0d] font-semibold text-center">
+            Verify that your domain is accessible and ready for bot deployment.
+            This ensures the widget will work properly on your website.
           </p>
 
-          {/* Enter Website Link field */}
-           <div className="mt-6 ml-8 w-full flex justify-center">
-            <div className="w-[833px] text-left">
-              <div className="w-full flex flex-col">
-                <label className="text-[18px] leading-[20px] text-[#171A1F] mb-1 font-medium">
-                  Enter Website Link
-                </label>
-                <input
-                  type="url"
-                  placeholder="www.example.in Or https://example.in/"
-                  className="
-                    w-[833px] h-[35px]
-                    rounded-[10px]
-                    border border-[#D3D8E3]
-                    bg-white
-                    px-3
-                    text-[14px] text-[#171A1F]
-                    placeholder:text-[#9CA3AF]
-                    outline-none
-                  "
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Button area – switches after generation */}
-          <div className="mt-4">
-            {isGenerated ? (
+          {/* Button area */}
+          <div className="mt-4 w-full flex justify-center">
+            {isVerified ? (
               <Button
                 variant="muted"
                 size="lg"
@@ -202,64 +174,91 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
                 loading
                 disabled
               >
-                Generated SiteMap...
+                Verifying DNS...
               </Button>
             ) : (
               <Button
-                onClick={handleGenerateClick}
+                onClick={handleVerifyClick}
                 variant="default"
                 size="lg"
                 radius="2xl"
-                width="272px"
+                width="356px"
               >
-                Generate SiteMap
+                Verify DNS
               </Button>
             )}
           </div>
-        </section>
 
-        {/* Bottom section when sitemap is generated */}
-        {isGenerated ? (
-          <section className="w-full max-w-[1030px] mt-4 mb-1 flex flex-col items-center">
-            {/* Heading + table centered at 833px */}
-            <div className="w-[833px]">
-              <h2 className="text-[19px] font-medium text-[#111827] mb-2 ml-5 text-left">
-                Generate Sitemap
-              </h2>
+          {/* Verified DNS area – only after click */}
+          {isVerified && (
+            <div className="mt-4 w-full flex flex-col items-center gap-3">
+              <DNSTable />
 
-              <div className="border border-[#E5E7EB] rounded-[4px] ml-5 bg-white">
-                <ApllloTable/>
+              {/* Success message */}
+              <div
+                className="
+                  w-[546px]
+                  rounded-[15px]
+                  border border-[#2ECB29]
+                  bg-[#29CB2E03]
+                  px-6 py-4
+                  text-left
+                "
+              >
+                <p className="text-[15px] text-[#2ECB29] font-semibold">
+                  Great! Your DNS has been verified
+                </p>
+              </div>
+
+              {/* Error message */}
+              <div
+                className="
+                  w-[546px]
+                  rounded-[15px]
+                  border border-[#CB2936]
+                  bg-[#CB29360D]
+                  px-6 py-3
+                  text-left
+                "
+              >
+                <p className="text-[15px] text-[#CB2936] font-medium">
+                  Oops! We couldn&apos;t verify your DNS because a bot is
+                  already registered and active under this domain.
+                </p>
               </div>
             </div>
+          )}
+        </section>
 
-            {/* Prev / Next full-width row, extremes left/right */}
-            <div className="mt-6 mb-2 w-full flex items-center justify-between">
-              <Button
-                onClick={onPrevious}
-                variant="outline"
-                size="default"
-                radius="md"
-                width="112px"
-                leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
-                className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
-              >
-                Previous
-              </Button>
-              <Button
-                onClick={onNext}
-                variant="default"
-                size="default"
-                radius="md"
-                width="87px"
-                rightIcon={<ArrowRight size={16} className="text-white" />}
-              >
-                Next
-              </Button>
-            </div>
-          </section>
+        {/* Bottom navigation – DIFFERENT spacing before vs after verify */}
+        {!isVerified ? (
+          // Before clicking "Verify DNS" → push buttons lower
+          <div className="w-full max-w-[1030px] mt-70 mb-3 flex justify-between">
+            <Button
+              onClick={onPrevious}
+              variant="outline"
+              size="default"
+              radius="md"
+              width="112px"
+              leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
+              className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
+            >
+              Previous
+            </Button>
+            <Button
+              onClick={onNext}
+              variant="default"
+              size="default"
+              radius="md"
+              width="87px"
+              rightIcon={<ArrowRight size={16} className="text-white" />}
+            >
+              Next
+            </Button>
+          </div>
         ) : (
-          // When sitemap not generated yet
-          <div className="w-full max-w-[1030px] mt-40 mb-2 flex items-center justify-between">
+          // After DNS is verified → a bit closer to content
+          <div className="w-full max-w-[1030px] mt-2 mb-3 flex justify-between">
             <Button
               onClick={onPrevious}
               variant="outline"

@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import SignUp from "../../components/SignUp.jsx";
 import Login from "../../components/Login.jsx";
-import Home1 from "./Home1.jsx";
+import Home1 from "./Navbot-Dashboard.jsx";
 import ExtendedChatBotHome from "./ExtendedChatBotHome.jsx";
 import UploadDocumentHome from "./UploadDocumentHome.jsx";
 import SitemapGeneratedHome from "./SitemapGeneratedHome.jsx";
@@ -11,7 +11,7 @@ import CustomGoalsHome from "./CustomGoalsHome.jsx";
 import ChatBotHome from "./ChatBotHome.jsx";
 import VerifyDNSHome from "./VerifyDNSHome.jsx";
 import WidgetHome from "./WidgetHome.jsx";
-import LastHome from "./LastHome.jsx";
+import LastHome from "./LastPage-DownloadScreen.jsx";
 
 const STEPS = [
   { id: "signup", Component: SignUp },

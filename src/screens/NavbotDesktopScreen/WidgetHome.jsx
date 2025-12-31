@@ -61,7 +61,7 @@ export default function WidgetHome({ onNext, onPrevious }) {
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-6 mb-4">
+        <div className="w-full max-w-[1030px] mt-6 mb-4 flex justify-start">
           <Button
             type="button"
             variant="ghost"

@@ -1,6 +1,6 @@
 // src/screens/NavbarDesktopScreen/LastHome.jsx
 import Navbar from "../../components/Navbar.jsx";
-import { Button } from "../../components/ui/button.jsx";
+import { Button } from "../../components/ui/button";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import TickIcon from "../../assets/TickIcon.svg";
 import SearchIcon from "../../assets/search-icon.svg";
@@ -17,7 +17,7 @@ export default function LastHome() {
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-6 mb-4">
+        <div className="w-full max-w-[1030px] mt-6 mb-4 flex justify-start">
           <Button
             type="button"
             variant="ghost"

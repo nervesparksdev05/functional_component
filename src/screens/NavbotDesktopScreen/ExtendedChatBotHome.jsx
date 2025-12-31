@@ -15,16 +15,18 @@ export default function ExtendedChatBotHome({ onNext, onPrevious }) {
       <main className="flex-1 w-full flex flex-col items-center px-4">
         <div className="w-full max-w-[1030px] mx-auto flex flex-col mt-3 mb-3">
           {/* Back to dashboard button (kept for UX) */}
-          <Button
-            type="button"
-            variant="ghost"
-            size="default"
-            radius="default"
-            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
-            className="text-[21px] text-[#4443E4] font-normal"
-          >
-            Back to Dashboard
-          </Button>
+          <div className="flex justify-start">
+            <Button
+              type="button"
+              variant="ghost"
+              size="default"
+              radius="default"
+              leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
+              className="text-[21px] text-[#4443E4] font-normal"
+            >
+              Back to Dashboard
+            </Button>
+          </div>
 
           {/* Extended table */}
           <ExtendedRecentChatBotTable />
