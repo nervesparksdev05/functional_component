@@ -13,6 +13,7 @@ import PlayIcon from "../../assets/play-icon.svg";
 import UploadIcon from "../../assets/blue-upload.svg";
 import MicIcon from "../../assets/green-mic.svg";
 import AnswerIcon from "../../assets/answer-icon.svg";
+import Navbar from "../../components/Navbar.jsx";
 
 export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);
@@ -26,76 +27,11 @@ export default function ProductDemo() {
 
   return (
     <div>
-      {/* Top navigation bar */}
-      <header className="w-full bg-[#FFFFFF] border-b border-[#bfc1d3] -mb-1">
-        <div className="max-w-10xl mx-18 flex items-center justify-between px-4 md:px-6 py-1">
-          <div className="flex items-center gap-2">
-            <img src={NodaIcon} alt="Noda Technologies" className="h-14 w-auto" />
-          </div>
-
-          <div className="flex items-center gap-2">
-            {/* Header Right Top Tabs */}
-            <div className="w-full flex justify-center py-4">
-              <div
-                className="
-                  w-[299px] h-[40px]
-                  rounded-[4px]
-                  -mr-8
-                  flex items-center justify-between
-                  px-2
-                "
-              >
-                {tabs.map((tab) => {
-                  const isActive = tab === activeTab;
-                  return (
-                    <button
-                      key={tab}
-                      type="button"
-                      onClick={() => setActiveTab(tab)}
-                      className={`
-                        flex items-center justify-center
-                        w-[89px] h-[24px]
-                        rounded-[5px]
-                        px-[10px] py-[3px]
-                        text-[14px] leading-[18px]
-                        cursor-pointer
-                        ${
-                          isActive
-                            ? "bg-[#d5daf2] text-[#4443E4]"
-                            : "bg-transparent text-[#2F3542]"
-                        }
-                      `}
-                    >
-                      {tab}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="h-10 w-px bg-[#b4bcc9]" />
-
-            <button
-              type="button"
-              className="hidden sm:flex items-center justify-center w-18 h-18 rounded-full"
-            >
-              <img src={AlarmIcon} alt="Notifications" />
-            </button>
-
-            <div>
-              <img
-                src={FemaleIcon}
-                alt="Profile"
-                className="w-10 h-10 mr-5 ml-1 rounded-full"
-              />
-            </div>
-          </div>
-        </div>
-      </header>
-
+      <Navbar />
       {/* Main content */}
-      <main className="flex-1 w-full">
-        <div className="w-full bg-[#FFFFFF] h-[200] border border-[#bfc0d0]">
-          <div className="max-w-8xl mx-18 px-3 md:px-6 py-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <main className="flex flex-col w-full h-full">
+        <div className="w-full bg-[#FFFFFF] border border-[#bfc0d0]">
+          <div className="max-w-8xl mx-18 md:px-6 py-2 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center justify-center rounded-full">
                 <img src={BulbIcon} alt="Idea" className="h-10 w-10" />
@@ -116,13 +52,13 @@ export default function ProductDemo() {
                 radius="full"
                 width="205px"
               >
-                Upload Knowledge Base
+                Upload Resources
               </Button>
             </div>
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 pb-6">
+        <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-center gap-4">
             <section className="lg:w-auto">
               {/* AI Avatar Container */}

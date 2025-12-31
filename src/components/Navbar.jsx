@@ -10,7 +10,7 @@ export default function Navbar({
   isLoggedIn = true,
   bottomBarIcon = BotIcon, 
   bottomBarText = "Navigation Helper Bot",
-  bottomBarTextSize = "text-[18px]"
+  bottomBarTextSize = "text-[14px]"
 }) {
   const tabs = ["Dashboard", "Playbook", "Agent", "Help"];
   const [activeTab, setActiveTab] = useState("Agent");
@@ -105,7 +105,7 @@ export default function Navbar({
       </div>
 
       {/* Bottom bar – 68px height */}
-      <div className="w-full h-[68px] border-b border-[#797a85] flex items-center">
+      {/* <div className="w-full h-[60px] border-b border-[#797a85] flex items-center">
         <div className="w-full flex items-center px-4 md:px-6">
           <div className="flex items-center gap-2 ml-18">
             <img src={bottomBarIcon} alt="Icon" className="w-7 h-7" />
@@ -114,7 +114,7 @@ export default function Navbar({
             </span>
           </div>
         </div>
-      </div>
+      </div> */}
     </header>
   );
 }

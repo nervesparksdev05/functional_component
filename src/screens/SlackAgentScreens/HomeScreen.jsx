@@ -55,7 +55,7 @@ export default function HomeScreen() {
       <Navbar 
         bottomBarIcon={SlackIcon}
         bottomBarText="RAG Slack Bot Manager"
-        bottomBarTextSize="text-[22px]"
+        bottomBarTextSize="text-[20px]"
       />
 
       {/* Main content */}
