@@ -1,6 +1,6 @@
 // src/screens/NavbarDesktopScreen/ExtendedChatBotHome.jsx
 import Navbar from "../../components/Navbar.jsx";
-import ExtendedRecentChatBotTable from "../../components/tables/ExtendedRecentChatBotTable.js";
+import ExtendedRecentChatBotTable from "../../components/tables/ExtendedRecentChatBotTable.jsx";
 import { Button } from "../../components/ui/button.jsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";

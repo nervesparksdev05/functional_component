@@ -5,7 +5,7 @@ import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button.jsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
-import ApllloTable from "../../components/tables/ApllloTable.js";
+import ApllloTable from "../../components/tables/ApllloTable.jsx";
 
 export default function SitemapGeneratedHome({ onNext, onPrevious }) {
   const steps = [
