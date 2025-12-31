@@ -1,7 +1,7 @@
 // src/screens/NavbarDesktopScreen/ChatBotHome.jsx
 import { useState } from "react";
 import Navbar from "../../components/Navbar.jsx";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button.jsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import SparklesIconImg from "../../assets/sparkles-1.svg";

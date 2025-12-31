@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 
 import Navbar from "../../components/Navbar.jsx";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button.jsx";
 import { ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import CloudUpload from "../../assets/cloud-upload.svg";

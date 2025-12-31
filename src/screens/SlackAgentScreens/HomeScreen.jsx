@@ -1,25 +1,25 @@
-// src/screens/RagSlackBotScreen/RagSlackBotHome.jsx
+// src/screens/RagSlackBotScreen/HomeScreen.jsx
 import { useState } from "react";
 
 import Navbar from "../../components/Navbar.jsx";
 import SlackIcon from "../../assets/slack.svg";
-import { Button } from "../../components/ui/button";
-import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable";
-import RagSlackBotHome2 from "./RagSlackBotHome2";
-import RagSlackBotHome3 from "./RagSlackBotHome3";
+import { Button } from "../../components/ui/button.jsx";
+import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable.jsx";
+import ExtendedTable from "./ExtendedTable.jsx";
+import UploadDocsScreen from "./UploadDocsScreen.jsx";
 
-export default function RagSlackBotHome() {
+export default function HomeScreen() {
   const [showAll, setShowAll] = useState(false);
   const [showUploadPage, setShowUploadPage] = useState(false);
 
   // Upload page
   if (showUploadPage) {
-    return <RagSlackBotHome3 />;
+    return <UploadDocsScreen />;
   }
 
   // Extended table page
   if (showAll) {
-    return <RagSlackBotHome2 />;
+    return <ExtendedTable />;
   }
 
   const documents = [

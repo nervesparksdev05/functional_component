@@ -1,9 +1,9 @@
 // src/screens/RagSlackBotScreen/RagSlackBotHome2.jsx
 import Navbar from "../../components/Navbar.jsx";
 import SlackIcon from "../../assets/slack.svg";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button.jsx";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
-import ExistingDocumentsTable from "../../components/tables/ExtendedExistingDocumentsTable";
+import ExistingDocumentsTable from "../../components/tables/ExtendedExistingDocumentsTable.jsx";
 
 export default function RagSlackBotHome2() {
   return (

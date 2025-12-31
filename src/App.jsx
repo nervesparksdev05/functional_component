@@ -1,6 +1,6 @@
-import ProductDemo from "./screens/ProductDemoScreen/ProductDemo.jsx";
-import NavbarDesktop from "./screens/NavbotDesktopScreen/NavbarDesktop.jsx"; 
-import RagSlackBotHome from "./screens/RagSlackBotScreen/RagSlackBotHome.jsx"; 
+import ProductDemo from "./screens/DemoDiscoveryScreens/ProductDemo.jsx";
+import NavbarDesktop from "./screens/NavbotAgentScreens/NavbarDesktop.jsx"; 
+import RagSlackBotHome from "./screens/SlackAgentScreens/HomeScreen.jsx"; 
 
 
 export default function App() {
@@ -8,8 +8,8 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-[#F5F7FB]">
       <main className="flex-1">
         {/* <ProductDemo /> */}
-        <NavbarDesktop />
-        {/* <RagSlackBotHome /> */}
+        {/* <NavbarDesktop /> */}
+        <RagSlackBotHome />
       </main>
     </div>
   );

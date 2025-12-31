@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import SignUp from "../../components/SignUp.jsx";
 import Login from "../../components/Login.jsx";
-import Home1 from "./Navbot-Dashboard.jsx";
+import NavbotDashboard from "./NavbotDashboard.jsx";
 import ExtendedChatBotHome from "./ExtendedChatBotHome.jsx";
 import UploadDocumentHome from "./UploadDocumentHome.jsx";
 import SitemapGeneratedHome from "./SitemapGeneratedHome.jsx";
@@ -11,12 +11,12 @@ import CustomGoalsHome from "./CustomGoalsHome.jsx";
 import ChatBotHome from "./ChatBotHome.jsx";
 import VerifyDNSHome from "./VerifyDNSHome.jsx";
 import WidgetHome from "./WidgetHome.jsx";
-import LastHome from "./LastPageDownloadScreen.jsx";
+import LastPageDownloadScreen from "./LastPageDownloadScreen.jsx";
 
 const STEPS = [
   { id: "signup", Component: SignUp },
   { id: "login", Component: Login },
-  { id: "home1", Component: Home1 },
+  { id: "home1", Component: NavbotDashboard },
   { id: "extendedChat", Component: ExtendedChatBotHome },
   { id: "upload", Component: UploadDocumentHome },
   { id: "sitemap", Component: SitemapGeneratedHome },
@@ -24,7 +24,7 @@ const STEPS = [
   { id: "chatbot", Component: ChatBotHome },
   { id: "verifyDns", Component: VerifyDNSHome },
   { id: "widget", Component: WidgetHome },
-  { id: "last", Component: LastHome },
+  { id: "last", Component: LastPageDownloadScreen },
 ];
 
 export default function NavbarDesktop() {

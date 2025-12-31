@@ -1,16 +1,16 @@
-// src/screens/RagSlackBotScreen/RagSlackBotHome3.jsx
+// src/screens/RagSlackBotScreen/UploadDocsScreen.jsx
 import { useRef, useState } from "react";
 import Navbar from "../../components/Navbar.jsx";
 import SlackIcon from "../../assets/slack.svg";
-import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable";
-import { Button } from "../../components/ui/button";
+import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable.jsx";
+import { Button } from "../../components/ui/button.jsx";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import CloudUpload from "../../assets/cloud-upload.svg";
 import PinIcon from "../../assets/pin-icon.svg";
 import Radio from "../../assets/radio.svg";
 import EmptyRadio from "../../assets/empty-radio.svg";
 
-export default function RagSlackBotHome3() {
+export default function UploadDocsScreen() {
   const [docType, setDocType] = useState("pdf");
   const fileInputRef = useRef(null);
 

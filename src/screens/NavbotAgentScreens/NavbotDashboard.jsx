@@ -1,9 +1,9 @@
 // src/screens/NavbarDesktopScreen/Home1.jsx
 import Navbar from "../../components/Navbar.jsx";
 import RecentChatBotTable from "../../components/tables/RecentChatBotTable.jsx";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button.jsx";
 
-export default function Home1({ onNext }) {
+export default function NavbotDashboard({ onNext }) {
   return (
     <div className="w-full h-screen flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
