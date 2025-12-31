@@ -5,11 +5,11 @@ import BulbIcon from "../assets/bulb.svg";
 import HeaderRightTop from "../interface/HeaderRightTopInterface.jsx";
 import AlarmIcon from "../assets/alarm-icon.svg";
 import FemaleIcon from "../assets/female-icon.svg";
-import UpdateKnowledgeButton from "../buttons/UpdateKnowledgeButton.jsx";
+import { Button } from "../components/ui/button";
 import AIAvatarInterface from "../interface/AIAvatarInterface.jsx";
 import ChatWithBotInterface from "../interface/ChatWithBotInterface.jsx";
-import UploadKnowledgeBaseContainer from "../interface/UploadKnowlodgeBaseContainer.jsx";
-import WelcomeScreen from "../interface/WelcomeScreen.jsx";
+import UploadKnowledgeBaseContainer from "../interface/UploadKnowledgeBaseContainer.jsx";
+import WelcomeScreenInterface from "../interface/WelcomeScreenInterface.jsx";
 
 export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);
@@ -60,12 +60,18 @@ export default function ProductDemo() {
             </div>
 
             <div className="self-start md:self-auto">
-              <UpdateKnowledgeButton
+              <Button
                 onClick={() => {
                   if (showWelcome) return; // prevent opening behind welcome
                   setShowUploadPanel(true);
                 }}
-              />
+                variant="default"
+                size="2xl"
+                radius="full"
+                width="205px"
+              >
+                Upload Knowledge Base
+              </Button>
             </div>
           </div>
         </div>
@@ -86,7 +92,7 @@ export default function ProductDemo() {
       {/* Welcome overlay */}
       {showWelcome && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
-          <WelcomeScreen onStartDemo={() => setShowWelcome(false)} />
+          <WelcomeScreenInterface onStartDemo={() => setShowWelcome(false)} />
         </div>
       )}
 

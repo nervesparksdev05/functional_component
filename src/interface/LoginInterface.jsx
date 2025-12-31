@@ -1,10 +1,11 @@
 // src/interface/LoginInterface.jsx
-import GoogleButton from "../buttons/GoogleButton.jsx";
-import AppleButton from "../buttons/AppleButton.jsx";
-import FacebookButton from "../buttons/FaceBookButton.jsx";
+import { Button } from "../components/ui/button";
+import { ArrowRight } from "lucide-react";
+import GoogleLogo from "../assets/logo-google.svg";
+import AppleIcon from "../assets/apple.svg";
+import FaceBookIcon from "../assets/facebook-icon.svg";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
-import NextButton from "../buttons/NextButton.jsx";
 
 const LoginPage = ({ onNext, onPrevious }) => {
   return (
@@ -79,7 +80,16 @@ const LoginPage = ({ onNext, onPrevious }) => {
 
             {/* Next button – goes to Home1 via onNext from DashBoard2 */}
             <div className="mt-2 w-full flex justify-end">
-              <NextButton onClick={onNext} />
+              <Button
+                onClick={onNext}
+                variant="default"
+                size="default"
+                radius="md"
+                width="87px"
+                rightIcon={<ArrowRight size={16} className="text-white" />}
+              >
+                Next
+              </Button>
             </div>
 
             {/* Divider */}
@@ -93,9 +103,37 @@ const LoginPage = ({ onNext, onPrevious }) => {
 
             {/* Social buttons */}
             <div className="flex items-center justify-between gap-3 mt-1">
-              <GoogleButton />
-              <AppleButton />
-              <FacebookButton />
+              <Button
+                variant="outline"
+                size="default"
+                radius="xl"
+                width="164px"
+                height="36px"
+                leftIcon={<img src={GoogleLogo} alt="Google logo" className="w-4 h-4 block" />}
+                className="whitespace-nowrap pt-[10px]"
+              >
+                <span className="leading-none">Google</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="default"
+                radius="xl"
+                width="164px"
+                height="36px"
+                leftIcon={<img src={AppleIcon} alt="Apple" className="w-4 h-4" />}
+              >
+                Apple
+              </Button>
+              <Button
+                variant="outline"
+                size="default"
+                radius="xl"
+                width="164px"
+                height="36px"
+                leftIcon={<img src={FaceBookIcon} alt="Facebook" className="w-4 h-4" />}
+              >
+                Facebook
+              </Button>
             </div>
 
             {/* Bottom link */}

@@ -1,8 +1,8 @@
 // src/interface/SignUpInterface.jsx
-import ContinueButton from "../buttons/ContinueButton.jsx";
-import GoogleButton from "../buttons/GoogleButton.jsx";
-import AppleButton from "../buttons/AppleButton.jsx";
-import FacebookButton from "../buttons/FacebookButton.jsx";
+import { Button } from "../components/ui/button";
+import GoogleLogo from "../assets/logo-google.svg";
+import AppleIcon from "../assets/apple.svg";
+import FaceBookIcon from "../assets/facebook-icon.svg";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
 
@@ -111,8 +111,16 @@ const SignUpPage = ({ onNext }) => {
             </div>
 
             {/* Continue button */}
-            <div className="mt-2 w-[">
-              <ContinueButton onClick={onNext} />
+            <div className="mt-2 w-full">
+              <Button
+                onClick={onNext}
+                variant="default"
+                size="xl"
+                radius="2xl"
+                width="464px"
+              >
+                Continue
+              </Button>
             </div>
 
             {/* Divider: Or sign in with */}
@@ -126,9 +134,37 @@ const SignUpPage = ({ onNext }) => {
 
             {/* Social buttons row */}
             <div className="flex items-center justify-between gap-3 mt-1">
-              <GoogleButton />
-              <AppleButton />
-              <FacebookButton />
+              <Button
+                variant="outline"
+                size="default"
+                radius="xl"
+                width="164px"
+                height="36px"
+                leftIcon={<img src={GoogleLogo} alt="Google logo" className="w-4 h-4 block" />}
+                className="whitespace-nowrap pt-[10px]"
+              >
+                <span className="leading-none">Google</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="default"
+                radius="xl"
+                width="164px"
+                height="36px"
+                leftIcon={<img src={AppleIcon} alt="Apple" className="w-4 h-4" />}
+              >
+                Apple
+              </Button>
+              <Button
+                variant="outline"
+                size="default"
+                radius="xl"
+                width="164px"
+                height="36px"
+                leftIcon={<img src={FaceBookIcon} alt="Facebook" className="w-4 h-4" />}
+              >
+                Facebook
+              </Button>
             </div>
 
             {/* Already have account */}

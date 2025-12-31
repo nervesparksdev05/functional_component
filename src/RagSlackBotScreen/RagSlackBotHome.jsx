@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderRagInterface";
 import StartUploadingDocumentInterface from "../interface/StartUploadingDocumentInterface";
-import SmallSystemviewInterface from "../interface/SmallSytemOverviewInterface";
+import SmallSystemOverviewInterface from "../interface/SmallSystemOverviewInterface";
 import ExistingDocumentsTable from "../tables/ExistingDocumentsTable";
 import RagSlackBotHome2 from "./RagSlackBotHome2";
 import RagSlackBotHome3 from "./RagSlackBotHome3";
@@ -63,7 +63,7 @@ export default function RagSlackBotHome() {
             <StartUploadingDocumentInterface
               onStartUpload={() => setShowUploadPage(true)}
             />
-            <SmallSystemviewInterface />
+            <SmallSystemOverviewInterface />
           </div>
 
           {/* Existing documents table */}

@@ -1,5 +1,5 @@
 // src/interface/StartUploadingDocumentInterface.jsx
-import StartUploadingDocumentButton from "../buttons/StartUploadingDocumentButton";
+import { Button } from "../components/ui/button";
 
 export default function StartUploadingDocumentInterface({ onStartUpload }) {
   return (
@@ -24,7 +24,16 @@ export default function StartUploadingDocumentInterface({ onStartUpload }) {
       </p>
 
       {/* Button */}
-      <StartUploadingDocumentButton onClick={onStartUpload} />
+      <Button
+        type="button"
+        onClick={onStartUpload}
+        variant="default"
+        size="md"
+        radius="xl"
+        width="250px"
+      >
+        Start Uploading Documents
+      </Button>
     </div>
   );
 }

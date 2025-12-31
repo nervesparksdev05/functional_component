@@ -2,12 +2,12 @@
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
-import BackToDashBoardButton from "../buttons/BackToDashBoardButton.jsx";
+import { Button } from "../components/ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import BlueArrowIcon from "../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../interface/IncreasingDotsInterface.jsx";
 import AddCustomGoalsInterface from "../interface/AddCustomGoalsInterface.jsx";
 import EnterGreetingMessageInterface from "../interface/EnterGreetingMessageInterface.jsx";
-import PreviousButton from "../buttons/PreviousButton.jsx";
-import NextButton from "../buttons/NextButton.jsx";
 
 export default function CustomGoalsHome({ onNext, onPrevious }) {
   const suggestedGoals = [
@@ -45,7 +45,16 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
         <div className="w-full max-w-[1030px] mt-6 mb-4">
-          <BackToDashBoardButton />
+          <Button
+            type="button"
+            variant="ghost"
+            size="default"
+            radius="default"
+            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
+            className="text-[21px] text-[#4443E4] font-normal"
+          >
+            Back to Dashboard
+          </Button>
         </div>
 
         {/* Stepper */}
@@ -109,8 +118,27 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
 
         {/* Bottom navigation */}
         <div className="w-full max-w-[1030px] mt-4 mb-6 flex justify-between">
-          <PreviousButton onClick={onPrevious} />
-          <NextButton onClick={onNext} />
+          <Button
+            onClick={onPrevious}
+            variant="outline"
+            size="default"
+            radius="md"
+            width="112px"
+            leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
+            className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
+          >
+            Previous
+          </Button>
+          <Button
+            onClick={onNext}
+            variant="default"
+            size="default"
+            radius="md"
+            width="87px"
+            rightIcon={<ArrowRight size={16} className="text-white" />}
+          >
+            Next
+          </Button>
         </div>
       </main>
     </div>

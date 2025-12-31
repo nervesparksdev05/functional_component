@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddButton from "../buttons/AddButton.jsx";
+import { Button } from "../components/ui/button";
 
 export default function AddCustomGoalsInterface({
   customGoals = [],
@@ -59,7 +59,15 @@ export default function AddCustomGoalsInterface({
         />
 
         {/* Add button aligned to the right */}
-        <AddButton onClick={handleAdd} />
+        <Button
+          onClick={handleAdd}
+          variant="default"
+          size="default"
+          radius="default"
+          width="68px"
+        >
+          Add
+        </Button>
       </div>
 
       {/* Custom goal chips */}

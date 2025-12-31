@@ -2,10 +2,11 @@
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
-import BackToDashBoardButton from "../buttons/BackToDashBoardButton.jsx";
+import { Button } from "../components/ui/button";
+import { ArrowRight } from "lucide-react";
+import BlueArrowIcon from "../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../interface/IncreasingDotsInterface.jsx";
-import DragOrBrowsefilesInterface from "../interface/DragOrBrowsefilesInterface.jsx";
-import NextButton from "../buttons/NextButton.jsx";
+import DragOrBrowseFilesInterface from "../interface/DragOrBrowseFilesInterface.jsx";
 
 import PdfIcon from "../assets/pdf-icon.svg";
 import TxtIcon from "../assets/text-icon.svg";
@@ -59,7 +60,16 @@ export default function UploadDocumentHome({ onNext }) {
       <main className="flex-1 w-full flex flex-col items-center px-4 relative">
         {/* Back button */}
         <div className="w-full max-w-[1030px] mt-6 mb-4">
-          <BackToDashBoardButton />
+          <Button
+            type="button"
+            variant="ghost"
+            size="default"
+            radius="default"
+            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
+            className="text-[21px] text-[#4443E4] font-normal"
+          >
+            Back to Dashboard
+          </Button>
         </div>
 
         {/* Stepper */}
@@ -75,7 +85,7 @@ export default function UploadDocumentHome({ onNext }) {
           </p>
 
           {/* Drag box – 696px */}
-          <DragOrBrowsefilesInterface onFilesUploaded={handleFilesUploaded} />
+          <DragOrBrowseFilesInterface onFilesUploaded={handleFilesUploaded} />
 
           {/* Uploading files label – aligned with 696px content */}
           {files.length > 0 && (
@@ -153,7 +163,16 @@ export default function UploadDocumentHome({ onNext }) {
 
         {/* Next button bottom-right */}
         <div className="w-full max-w-[1030px] mt-auto mb-4 flex justify-end">
-          <NextButton onClick={onNext} />
+          <Button
+            onClick={onNext}
+            variant="default"
+            size="default"
+            radius="md"
+            width="87px"
+            rightIcon={<ArrowRight size={16} className="text-white" />}
+          >
+            Next
+          </Button>
         </div>
       </main>
     </div>

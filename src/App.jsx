@@ -8,9 +8,9 @@ export default function App() {
   <div className="bg-[#F5F7FB]">
 
   <ProductDemo />
-  {/* <NavbarDesktop /> */}
-  {/* <RagSlackBotHome /> */}
-  {/* <LastHome/> */}
+  <NavbarDesktop />
+  <RagSlackBotHome />
+  <LastHome/>
   </div>
   </>
 }

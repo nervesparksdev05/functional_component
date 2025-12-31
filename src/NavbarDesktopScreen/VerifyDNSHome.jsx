@@ -2,13 +2,11 @@
 import { useState } from "react";
 
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
-import BackToDashBoardButton from "../buttons/BackToDashBoardButton.jsx";
+import { Button } from "../components/ui/button";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import BlueArrowIcon from "../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../interface/IncreasingDotsInterface.jsx";
-import VerifyDnsButton from "../buttons/VerifyDnsButton.jsx";
-import VerifyingDNSButton from "../buttons/VerifyingDNSButton.jsx";
 import DNSTableInterface from "../tables/DNSTable.jsx";
-import PreviousButton from "../buttons/PreviousButton.jsx";
-import NextButton from "../buttons/NextButton.jsx";
 
 export default function VerifyDNSHome({ onNext, onPrevious }) {
   const [isVerified, setIsVerified] = useState(false);
@@ -26,7 +24,16 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
         <div className="w-full max-w-[1030px] mt-3 mb-2">
-          <BackToDashBoardButton />
+          <Button
+            type="button"
+            variant="ghost"
+            size="default"
+            radius="default"
+            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
+            className="text-[21px] text-[#4443E4] font-normal"
+          >
+            Back to Dashboard
+          </Button>
         </div>
 
         {/* Stepper */}
@@ -44,9 +51,26 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
           {/* Button area */}
           <div className="mt-4 w-full flex justify-center">
             {isVerified ? (
-              <VerifyingDNSButton />
+              <Button
+                variant="muted"
+                size="lg"
+                radius="2xl"
+                width="356px"
+                loading
+                disabled
+              >
+                Verifying DNS...
+              </Button>
             ) : (
-              <VerifyDnsButton onClick={handleVerifyClick} />
+              <Button
+                onClick={handleVerifyClick}
+                variant="default"
+                size="lg"
+                radius="2xl"
+                width="356px"
+              >
+                Verify DNS
+              </Button>
             )}
           </div>
 
@@ -95,14 +119,52 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
         {!isVerified ? (
           // Before clicking "Verify DNS" → push buttons lower
           <div className="w-full max-w-[1030px] mt-70 mb-3 flex justify-between">
-            <PreviousButton onClick={onPrevious} />
-            <NextButton onClick={onNext} />
+            <Button
+              onClick={onPrevious}
+              variant="outline"
+              size="default"
+              radius="md"
+              width="112px"
+              leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
+              className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
+            >
+              Previous
+            </Button>
+            <Button
+              onClick={onNext}
+              variant="default"
+              size="default"
+              radius="md"
+              width="87px"
+              rightIcon={<ArrowRight size={16} className="text-white" />}
+            >
+              Next
+            </Button>
           </div>
         ) : (
           // After DNS is verified → a bit closer to content
           <div className="w-full max-w-[1030px] mt-2 mb-3 flex justify-between">
-            <PreviousButton onClick={onPrevious} />
-            <NextButton onClick={onNext} />
+            <Button
+              onClick={onPrevious}
+              variant="outline"
+              size="default"
+              radius="md"
+              width="112px"
+              leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
+              className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
+            >
+              Previous
+            </Button>
+            <Button
+              onClick={onNext}
+              variant="default"
+              size="default"
+              radius="md"
+              width="87px"
+              rightIcon={<ArrowRight size={16} className="text-white" />}
+            >
+              Next
+            </Button>
           </div>
         )}
       </main>

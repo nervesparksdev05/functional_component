@@ -2,7 +2,8 @@
 import ComplexHeaderRagInterface from "../interface/ComplexHeaderRagInterface";
 import MultipleDocumentUploadInterface from "../interface/UploadMultipleDocumentInterface";
 import ExistingDocumentsTable from "../tables/ExistingDocumentsTable";
-import BackToDashBoardButton from "../buttons/BackToDashBoardButton";
+import { Button } from "../components/ui/button";
+import BlueArrowIcon from "../assets/blue-arrow.svg";
 
 export default function RagSlackBotHome3() {
   // same demo data as the design
@@ -43,8 +44,17 @@ export default function RagSlackBotHome3() {
         {/* Fixed content width like design */}
         <div className="w-[1038px] mt-3 ">
           {/* Back to Dashboard link */}
-          <div >
-            <BackToDashBoardButton />
+          <div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="default"
+              radius="default"
+              leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
+              className="text-[21px] text-[#4443E4] font-normal"
+            >
+              Back to Dashboard
+            </Button>
           </div>
 
           {/* Upload card */}

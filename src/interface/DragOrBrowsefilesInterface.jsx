@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import CloudUpload from "../assets/cloud-upload.svg";
 
-export default function DragOrBrowsefilesInterface({ onFilesUploaded }) {
+export default function DragOrBrowseFilesInterface({ onFilesUploaded }) {
   const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => fileInputRef.current?.click();

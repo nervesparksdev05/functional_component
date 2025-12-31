@@ -1,4 +1,4 @@
-import CreateNewChatBotButton from "../buttons/CreateNewChatbotButton.jsx";
+import { Button } from "../components/ui/button";
 
 export default function CreateNewChatBotInterface() {
   return (
@@ -23,7 +23,16 @@ export default function CreateNewChatBotInterface() {
           click this button to get started!
         </p>
 
-        <CreateNewChatBotButton />
+        <Button
+          variant="default"
+          size="md"
+          radius="xl"
+          width="250px"
+          leftIcon={<span>+</span>}
+          className="mb-5"
+        >
+          Start creating new chat bot
+        </Button>
       </div>
     </div>
   );

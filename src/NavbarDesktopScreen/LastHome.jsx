@@ -1,8 +1,8 @@
 // src/screen2/LastHome.jsx
 import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
 import TickDotInterface from "../interface/TickDotInterface.jsx";
-import BackToDashBoardButton from "../buttons/BackToDashBoardButton.jsx";
-import DownloadFileButton from "../buttons/DownloadFileButton.jsx";
+import { Button } from "../components/ui/button";
+import BlueArrowIcon from "../assets/blue-arrow.svg";
 
 import SearchIcon from "../assets/search-icon.svg";
 import HandIcon from "../assets/hand-icon.svg";
@@ -19,7 +19,16 @@ export default function LastHome() {
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
         <div className="w-full max-w-[1030px] mt-6 mb-4">
-          <BackToDashBoardButton />
+          <Button
+            type="button"
+            variant="ghost"
+            size="default"
+            radius="default"
+            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
+            className="text-[21px] text-[#4443E4] font-normal"
+          >
+            Back to Dashboard
+          </Button>
         </div>
 
         {/* Full completed stepper */}
@@ -38,7 +47,14 @@ export default function LastHome() {
             Click on this file to Start download your chat bot backend file
           </p>
 
-          <DownloadFileButton />
+          <Button
+            variant="default"
+            size="lg"
+            radius="2xl"
+            width="330px"
+          >
+            Download Your File
+          </Button>
 
           <div className="mt-6 text-left max-w-[420px] text-[14px] leading-[18px] text-[#111827]">
             <p className="font-semibold mb-1">What you&apos;ll get in this file</p>
