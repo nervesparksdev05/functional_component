@@ -2,19 +2,23 @@ import { useState } from "react";
 
 import NodaIcon from "../../assets/noda-icon.svg";
 import BulbIcon from "../../assets/bulb.svg";
-import HeaderRightTop from "../../components/interface/HeaderRightTopInterface.jsx";
 import AlarmIcon from "../../assets/alarm-icon.svg";
 import FemaleIcon from "../../assets/female-icon.svg";
 import { Button } from "../../components/ui/button.jsx";
-import AIAvatarInterface from "../../components/interface/AIAvatarInterface.jsx";
-import UploadKnowledgeBaseContainer from "../../components/interface/UploadKnowledgeBaseContainer.jsx";
-import WelcomeScreenInterface from "../../components/interface/WelcomeScreenInterface.jsx";
+import UploadKnowledgeBaseContainer from "../../components/UploadKnowledgeBaseContainer.jsx";
 import SparklesIconImg from "../../assets/sparkles-1.svg";
 import SendIconImg from "../../assets/paper-plane-dark.svg";
+import Avatar from "../../assets/ai-avatar.svg";
+import PlayIcon from "../../assets/play-icon.svg";
+import UploadIcon from "../../assets/blue-upload.svg";
+import MicIcon from "../../assets/green-mic.svg";
+import AnswerIcon from "../../assets/answer-icon.svg";
 
 export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
+  const tabs = ["Dashboard", "Playbook", "Agent", "Help"];
+  const [activeTab, setActiveTab] = useState("Agent");
 
   const handleSend = () => {
     console.log("Send clicked from chat input");
@@ -30,7 +34,44 @@ export default function ProductDemo() {
           </div>
 
           <div className="flex items-center gap-2">
-            <HeaderRightTop />
+            {/* Header Right Top Tabs */}
+            <div className="w-full flex justify-center py-4">
+              <div
+                className="
+                  w-[299px] h-[40px]
+                  rounded-[4px]
+                  -mr-8
+                  flex items-center justify-between
+                  px-2
+                "
+              >
+                {tabs.map((tab) => {
+                  const isActive = tab === activeTab;
+                  return (
+                    <button
+                      key={tab}
+                      type="button"
+                      onClick={() => setActiveTab(tab)}
+                      className={`
+                        flex items-center justify-center
+                        w-[89px] h-[24px]
+                        rounded-[5px]
+                        px-[10px] py-[3px]
+                        text-[14px] leading-[18px]
+                        cursor-pointer
+                        ${
+                          isActive
+                            ? "bg-[#d5daf2] text-[#4443E4]"
+                            : "bg-transparent text-[#2F3542]"
+                        }
+                      `}
+                    >
+                      {tab}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
             <div className="h-10 w-px bg-[#b4bcc9]" />
 
             <button
@@ -84,7 +125,72 @@ export default function ProductDemo() {
         <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 pb-6">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-center gap-4">
             <section className="lg:w-auto">
-              <AIAvatarInterface />
+              {/* AI Avatar Container */}
+              <div className="w-full flex justify-center py-4">
+                {/* Outer card */}
+                <div
+                  className="
+                    w-[505px] h-[500px]
+                    rounded-[10px]
+                    border border-[#E5E7EB]
+                    bg-white
+                    px-[10px] pt-4 pb-0
+                    flex flex-col
+                  "
+                >
+                  {/* Header */}
+                  <div className="flex items-center gap-2 mb-3">
+                    {/* Imported avatar icon */}
+                    <img
+                      src={Avatar}
+                      alt="AI Avatar"
+                      className="w-5 h-5"
+                    />
+                    <span className="text-[16px] font-medium text-[#171A1F]">
+                      AI Avatar
+                    </span>
+                  </div>
+
+                  {/* Inner grey box with button INSIDE */}
+                  <div
+                    className="
+                      relative
+                      w-full h-[436px]
+                      rounded-[10px]
+                      bg-[#F4F5FB]
+                      text-center text-[14px] text-[#9CA3AF]
+                    "
+                  >
+                    {/* Centered text */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      Start session to activate avatar
+                    </div>
+
+                    {/* Button at bottom, inside grey box */}
+                    <button
+                      type="button"
+                      onClick={() => console.log("Start Avatar Session clicked")}
+                      className="
+                        absolute
+                        left-1/2 -translate-x-1/2
+                        bottom-2
+                        inline-flex items-center justify-center
+                        w-[201.5px] h-[30px]
+                        rounded-[50px]
+                        bg-[#1BC469]
+                        text-white text-[12px] font-medium leading-none
+                        px-[30px]
+                        pt-[7px] pb-[6px]
+                        gap-[3px]
+                        cursor-pointer
+                      "
+                    >
+                      <img src={PlayIcon} alt="Play" className="w-3 h-3" />
+                      <span>Start Avatar Session</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <section className="lg:w-auto">
@@ -227,7 +333,96 @@ export default function ProductDemo() {
       {/* Welcome overlay */}
       {showWelcome && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20 backdrop-blur-[2px]">
-          <WelcomeScreenInterface onStartDemo={() => setShowWelcome(false)} />
+          <div className="w-full flex justify-center py-8">
+            <section
+              className="
+                w-[638px] h-[360px]
+                rounded-[20px]
+                bg-white
+                border border-[#E5E7EB]
+                shadow-sm
+                px-8 pt-8 pb-6
+                flex flex-col
+                items-center
+              "
+            >
+              {/* Heading */}
+              <h1 className="text-[24px] leading-[24px] font-medium text-[#2F3542] mb-3 text-center">
+                Welcome to AI Product Demo
+              </h1>
+
+              {/* Subheading */}
+              <p className="text-[14px] leading-[20px] text-[#6B7280] text-center mb-10">
+                Get personalized product demonstrations with our AI Agent
+              </p>
+
+              {/* Three steps */}
+              <div className="flex justify-between w-full mb-10">
+                {/* Upload Content */}
+                <div className="flex flex-col items-center text-center w-1/3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                    <img src={UploadIcon} alt="Upload content" className="w-10 h-10" />
+                  </div>
+                  <p className="text-[14px] font-medium text-[#111827] mb-1">
+                    Upload Content
+                  </p>
+                  <p className="text-[13px] leading-[18px] text-[#6B7280]">
+                    Add documents and
+                    <br />
+                    videos about your product
+                  </p>
+                </div>
+
+                {/* Ask Questions */}
+                <div className="flex flex-col items-center text-center w-1/3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                    <img src={MicIcon} alt="Ask questions" className="w-10 h-10" />
+                  </div>
+                  <p className="text-[14px] font-medium text-[#111827] mb-1">
+                    Ask Questions
+                  </p>
+                  <p className="text-[13px] leading-[18px] text-[#6B7280]">
+                    Use voice or text to interact
+                    <br />
+                    with the AI
+                  </p>
+                </div>
+
+                {/* Get Answers */}
+                <div className="flex flex-col items-center text-center w-1/3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mb-3">
+                    <img src={AnswerIcon} alt="Get answers" className="w-10 h-10" />
+                  </div>
+                  <p className="text-[14px] font-medium text-[#111827] mb-1">
+                    Get Answers
+                  </p>
+                  <p className="text-[13px] leading-[18px] text-[#6B7280]">
+                    Receive instant,
+                    <br />
+                    accurate responses
+                  </p>
+                </div>
+              </div>
+
+              {/* Start Demo button */}
+              <button
+                type="button"
+                onClick={() => setShowWelcome(false)}
+                className="
+                  w-[578px] h-[40px]
+                  rounded-[50px]
+                  mb-0
+                  bg-[#4443E4]
+                  text-white
+                  text-[14px] font-medium
+                  flex items-center justify-center
+                  px-[30px] pt-[12px] pb-[11px]
+                "
+              >
+                Start Demo
+              </button>
+            </section>
+          </div>
         </div>
       )}
 

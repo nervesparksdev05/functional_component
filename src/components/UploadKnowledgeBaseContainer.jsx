@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import DragAndDropInterface from "./DragAndDropInterface.jsx";
-import ProductListInterface from "./ProductListInterface.jsx";
-
-import EmptyRadioIcon from "../../assets/empty-radio.svg";
-import FilledRadioIcon from "../../assets/radio.svg";
-
+import ArrowUpload from "../assets/arrow-upload.svg";
+import WordIcon from "../assets/word-icon.svg";
+import TrashIcon from "../assets/trash-icon.svg";
+import VideoIcon from "../assets/video-icon.svg";
+import EmptyRadioIcon from "../assets/empty-radio.svg";
+import FilledRadioIcon from "../assets/radio.svg";
 
 const makeId = () => Math.floor(Math.random() * 1e9);
 
@@ -41,12 +41,169 @@ function stripForStorage(file) {
   return rest;
 }
 
+function getIconForType(type) {
+  const t = String(type || "").toUpperCase();
+  if (t === "MP3" || t === "MP4" || t === "MOV" || t === "AVI") return VideoIcon;
+  return WordIcon;
+}
+
 function Loader() {
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <div className="w-20 h-20 rounded-full border-4 border-[#E5E7EB] border-t-[#4443E4] animate-spin" />
       <div className="text-[20px] font-semibold text-[#111827] text-center">
         Please wait, generating transcription in progress
+      </div>
+    </div>
+  );
+}
+
+// DragAndDropInterface component (inlined)
+function DragAndDropInterface({
+  accept = "",
+  multiple = true,
+  onFilesSelected = () => {},
+}) {
+  const fileInputRef = useRef(null);
+
+  const handleBrowseClick = () => fileInputRef.current?.click();
+
+  const handleFileChange = (event) => {
+    const files = event.target.files;
+    if (!files || files.length === 0) return;
+    onFilesSelected(Array.from(files));
+    event.target.value = "";
+  };
+
+  const onDrop = (e) => {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    if (!files || files.length === 0) return;
+    onFilesSelected(Array.from(files));
+  };
+
+  const onDragOver = (e) => e.preventDefault();
+
+  return (
+    <div
+      onDrop={onDrop}
+      onDragOver={onDragOver}
+      className="
+        w-full h-[150px]
+        rounded-[12px]
+        flex flex-col items-center justify-center
+        gap-2
+      "
+    >
+      <input
+        ref={fileInputRef}
+        type="file"
+        multiple={multiple}
+        accept={accept}
+        className="hidden"
+        onChange={handleFileChange}
+      />
+
+      <div className="w-12 h-12 flex items-center justify-center">
+        <img src={ArrowUpload} alt="Upload" className="w-10 h-10" />
+      </div>
+
+      <p className="text-[16px] text-center text-[#111827]">
+        <span>Drag and Drop Files, or </span>
+        <button
+          type="button"
+          onClick={handleBrowseClick}
+          className="text-[#2563EB] underline-offset-2 hover:underline"
+        >
+          Browse
+        </button>
+      </p>
+    </div>
+  );
+}
+
+// ProductListInterface component (inlined)
+function ProductListInterface({
+  files = [],
+  mode = "documents", // "documents" | "videos"
+  onProcess = () => {}, // ✅ row-level process
+  onRemove = () => {},
+  maxRowsBeforeScroll = 3, // ✅ show max 3 rows height, then scroll
+}) {
+  const shouldScroll = files.length > maxRowsBeforeScroll;
+
+  // A simple "row-height based" max-height
+  // (3 rows + gaps ≈ 220px; adjust if you want tighter/looser)
+  const listClass = useMemo(() => {
+    return shouldScroll ? "max-h-[220px] overflow-auto pr-1" : "";
+  }, [shouldScroll]);
+
+  return (
+    <div className="w-full flex flex-col h-full overflow-hidden">
+      <div className={`${listClass} space-y-4`}>
+        {files.map((file) => {
+          const icon = getIconForType(file.type);
+          const size = file.sizeText || bytesToPretty(file.sizeBytes) || "—";
+          const isVideoMode = mode === "videos";
+          const isProcessed = !!file.processed;
+
+          return (
+            <div key={file.id} className="flex items-center justify-between">
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-[48px] h-[48px] rounded-[12px] bg-[#EEF2FF] flex items-center justify-center shrink-0">
+                  <img src={icon} alt="" className="w-6 h-6" />
+                </div>
+
+                <div className="flex flex-col min-w-0">
+                  <div className="text-[16px] text-[#111827] truncate">
+                    {file.name}
+                    {isProcessed && (
+                      <span className="ml-2 text-[12px] font-semibold text-[#16A34A]">
+                        • Processed
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="text-[12px] text-[#6B7280] uppercase">
+                    {file.type}
+                    <span className="ml-2 normal-case">({size})</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0">
+                {/* ✅ Process button INSIDE list row (videos only) */}
+                {isVideoMode && (
+                  <button
+                    type="button"
+                    onClick={() => onProcess(file.id)}
+                    disabled={isProcessed}
+                    className={`h-[36px] px-5 rounded-full text-[14px] font-semibold ${
+                      isProcessed
+                        ? "bg-[#E5E7EB] text-[#64748B] cursor-not-allowed"
+                        : "bg-[#4443E4] text-white hover:opacity-95"
+                    }`}
+                  >
+                    {isProcessed ? "Processed" : "Process"}
+                  </button>
+                )}
+
+                <button
+                  type="button"
+                  onClick={() => onRemove(file.id)}
+                  className="p-2 rounded-full hover:bg-[#F3F4F6]"
+                  aria-label={`Remove ${file.name}`}
+                >
+                  <img src={TrashIcon} alt="" className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+          );
+        })}
+
+        {files.length === 0 && (
+          <div className="text-[14px] text-[#6B7280]">No files uploaded.</div>
+        )}
       </div>
     </div>
   );
@@ -178,11 +335,11 @@ export default function UploadKnowledgeBaseContainer({ onClose = () => {} }) {
   const isForm = step === "form";
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40">
+    <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/40">
       {/* Modal */}
       <div className="w-[1071px] h-[704px] rounded-[16px] bg-white border border-[#E5E7EB] relative flex flex-col">
         {/* Header */}
-        <div className="h-[64px] px-8 flex items-center justify-between border-b border-[#E5E7EB] flex-shrink-0">
+        <div className="h-[64px] px-8 flex items-center justify-between border-b border-[#E5E7EB] shrink-0">
           <div className="text-[18px] font-semibold text-[#111827]">
             Upload Knowledge Base
           </div>
@@ -197,7 +354,7 @@ export default function UploadKnowledgeBaseContainer({ onClose = () => {} }) {
         </div>
 
         {/* Top radios */}
-        <div className="px-8 pt-6 flex items-center gap-12 flex-shrink-0">
+        <div className="px-8 pt-6 flex items-center gap-12 shrink-0">
           <button
             type="button"
             onClick={() => switchMode("documents")}
@@ -230,12 +387,12 @@ export default function UploadKnowledgeBaseContainer({ onClose = () => {} }) {
           {/* Screen2 */}
           {isUploadScreen && (
             <div className="h-full flex flex-col min-h-0">
-              <div className="text-[18px] font-semibold text-[#111827] mb-4 flex-shrink-0">
+              <div className="text-[18px] font-semibold text-[#111827] mb-4 shrink-0">
                 {mode === "documents" ? "Upload Document Files" : "Upload Videos Files"}
               </div>
 
               {/* Upload area ONLY */}
-              <div className="border border-dashed border-[#CBD5E1] rounded-[12px] p-5 bg-[#77889A]/20 flex-shrink-0">
+              <div className="border border-dashed border-[#CBD5E1] rounded-[12px] p-5 bg-[#77889A]/20 shrink-0">
                 <DragAndDropInterface accept={accept} multiple onFilesSelected={addNewFiles} />
                 <div className="text-center text-[12px] text-[#6B7280] mt-2">
                   {supportedText}
@@ -337,3 +494,4 @@ export default function UploadKnowledgeBaseContainer({ onClose = () => {} }) {
     </div>
   );
 }
+
