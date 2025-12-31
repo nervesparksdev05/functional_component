@@ -84,11 +84,10 @@ export default function Login({ onNext, onPrevious }) {
                 onClick={onNext}
                 variant="default"
                 size="default"
-                radius="md"
-                width="87px"
-                rightIcon={<ArrowRight size={16} className="text-white" />}
+                radius="2xl"
+                width="100%"
               >
-                Next
+                Login
               </Button>
             </div>
 

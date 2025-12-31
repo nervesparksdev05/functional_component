@@ -5,7 +5,7 @@ import BulbIcon from "../../assets/bulb.svg";
 import AlarmIcon from "../../assets/alarm-icon.svg";
 import FemaleIcon from "../../assets/female-icon.svg";
 import { Button } from "../../components/ui/button.jsx";
-import UploadKnowledgeBaseContainer from "../../components/UploadKnowledgeBaseContainer.jsx";
+import UploadKnowledgeBaseContainer from "../../components/UploadKnowledgeBase.jsx";
 import SparklesIconImg from "../../assets/sparkles-1.svg";
 import SendIconImg from "../../assets/paper-plane-dark.svg";
 import Avatar from "../../assets/ai-avatar.svg";
@@ -58,7 +58,7 @@ export default function ProductDemo() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <div className="max-w-6xl mx-auto px-4 md:px-6  ">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-center gap-4">
             <section className="lg:w-auto">
               {/* AI Avatar Container */}

@@ -335,9 +335,9 @@ export default function UploadKnowledgeBaseContainer({ onClose = () => {} }) {
   const isForm = step === "form";
 
   return (
-    <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/40">
+    <div className="flex items-center justify-center">
       {/* Modal */}
-      <div className="w-[1071px] h-[704px] rounded-[16px] bg-white border border-[#E5E7EB] relative flex flex-col">
+      <div className="w-[1071px] h-[704px] rounded-[16px] bg-white border border-[#E5E7EB] flex flex-col scale-90">
         {/* Header */}
         <div className="h-[64px] px-8 flex items-center justify-between border-b border-[#E5E7EB] shrink-0">
           <div className="text-[18px] font-semibold text-[#111827]">

@@ -25,11 +25,11 @@ export default function NavbotDashboard({ onNext }) {
                 py-7
               "
             >
-              <h2 className="text-[24px] leading-[32px] font-medium text-[#323743] mb-3">
+              <h2 className="text-[24px] leading-[32px] font-medium text-[#323743]">
                 Create New Chat Bot
               </h2>
 
-              <p className="max-w-[458px] h-[44px] leading-[22px] text-[#000000] mb-3">
+              <p className="max-w-[458px] h-[40px] leading-[22px] text-[#000000] mb-3">
                 To create a new Chat Bot without writing a single line of code, just
                 click this button to get started!
               </p>

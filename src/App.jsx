@@ -7,9 +7,9 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5F7FB]">
       <main className="flex-1">
-        <ProductDemo />
+        {/* <ProductDemo /> */}
         {/* <NavbarDesktop /> */}
-        {/* <RagSlackBotHome /> */}
+        <RagSlackBotHome />
       </main>
     </div>
   );
