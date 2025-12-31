@@ -1,6 +1,6 @@
 // src/screen2/LastHome.jsx
-import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
-import TickDotInterface from "../interface/TickDotInterface.jsx";
+import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
+import TickDotInterface from "../components/interface/TickDotInterface.jsx";
 import { Button } from "../components/ui/button";
 import BlueArrowIcon from "../assets/blue-arrow.svg";
 

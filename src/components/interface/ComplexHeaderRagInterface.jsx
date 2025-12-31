@@ -1,10 +1,10 @@
-import NodaIcon from "../assets/noda-icon.svg";
-import HeaderRightTop from "../interface/HeaderRightTopInterface.jsx";
-import AlarmIcon from "../assets/alarm-icon.svg";
-import FemaleIcon from "../assets/female-icon.svg";
-import BotIcon from "../assets/bot.svg";
+import NodaIcon from "../../assets/noda-icon.svg";
+import HeaderRightTop from "./HeaderRightTopInterface.jsx";
+import AlarmIcon from "../../assets/alarm-icon.svg";
+import FemaleIcon from "../../assets/female-icon.svg";
+import SlackIcon from "../../assets/slack.svg";
 
-export default function ComplexHeaderInterface() {
+export default function ComplexHeaderRagInterface() {
   return (
     <header className="w-full bg-[#FFFFFF] sticky top-0 z-50">
       {/* Top bar – 76px height */}
@@ -51,9 +51,9 @@ export default function ComplexHeaderInterface() {
         <div className="w-full flex items-center px-4 md:px-6">
           {/* Bot label (left-aligned with logo above) */}
           <div className="flex items-center gap-2 ml-18">
-            <img src={BotIcon} alt="Bot" className="w-7 h-7" />
-            <span className="text-[18px] font-medium text-[#171A1F]">
-              Navigation Helper Bot
+            <img src={SlackIcon} alt="Slack" className="w-7 h-7" />
+            <span className="text-[22px] font-medium text-[#171A1F]">
+              RAG Slack Bot Manager
             </span>
           </div>
         </div>

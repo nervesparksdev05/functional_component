@@ -1,5 +1,5 @@
-import SparklesIconImg from "../assets/sparkles-1.svg";      // blue sparkles icon
-import SendIconImg from "../assets/paper-plane-dark.svg";   // dark circle + paper plane
+import SparklesIconImg from "../../assets/sparkles-1.svg";      // blue sparkles icon
+import SendIconImg from "../../assets/paper-plane-dark.svg";   // dark circle + paper plane
 
 export default function AskAnythingInterface() {
   const handleSend = () => {

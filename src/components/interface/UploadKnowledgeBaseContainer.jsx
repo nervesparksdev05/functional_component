@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import DragAndDropInterface from "./DragAndDropInterface.jsx";
 import ProductListInterface from "./ProductListInterface.jsx";
 
-import EmptyRadioIcon from "../assets/empty-radio.svg";
-import FilledRadioIcon from "../assets/radio.svg";
+import EmptyRadioIcon from "../../assets/empty-radio.svg";
+import FilledRadioIcon from "../../assets/radio.svg";
 
 
 const makeId = () => Math.floor(Math.random() * 1e9);
@@ -52,7 +52,7 @@ function Loader() {
   );
 }
 
-export default function UploadKnowlodgeBaseContainer({ onClose = () => {} }) {
+export default function UploadKnowledgeBaseContainer({ onClose = () => {} }) {
   const initialDocs = [
     { id: 1, name: "Product_Roadmap_Q3_2025", type: "PDF", sizeText: "—", sizeBytes: null },
     { id: 2, name: "AI_Module_Integration_Guide", type: "DOCX", sizeText: "—", sizeBytes: null },

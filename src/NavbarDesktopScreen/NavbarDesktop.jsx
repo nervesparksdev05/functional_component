@@ -1,8 +1,8 @@
 // src/screens/NavbarDesktop.jsx
 import { useState } from "react";
 
-import SignUpInterface from "../interface/SignUpInterface.jsx";
-import LoginPage from "../interface/LoginInterface.jsx";
+import SignUpInterface from "../components/interface/SignUpInterface.jsx";
+import LoginPage from "../components/interface/LoginInterface.jsx";
 import Home1 from "./Home1.jsx";
 import ExtendedChatBotHome from "./ExtendedChatBotHome.jsx";
 import UploadDocumentHome from "./UploadDocumentHome.jsx";

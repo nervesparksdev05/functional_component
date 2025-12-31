@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import ArrowUpload from "../assets/arrow-upload.svg";
+import ArrowUpload from "../../assets/arrow-upload.svg";
 
 export default function DragAndDropInterface({
   accept = "",

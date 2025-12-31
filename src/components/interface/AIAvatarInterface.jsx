@@ -1,4 +1,4 @@
-import Avatar from "../assets/ai-avatar.svg";
+import Avatar from "../../assets/ai-avatar.svg";
 
 export default function AIAvatarInterface() {
   const handleClick = () => {

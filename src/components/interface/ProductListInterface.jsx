@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import WordIcon from "../assets/word-icon.svg";
-import TrashIcon from "../assets/trash-icon.svg";
-import VideoIcon from "../assets/video-icon.svg";
+import WordIcon from "../../assets/word-icon.svg";
+import TrashIcon from "../../assets/trash-icon.svg";
+import VideoIcon from "../../assets/video-icon.svg";
 
 function getIconForType(type) {
   const t = String(type || "").toUpperCase();

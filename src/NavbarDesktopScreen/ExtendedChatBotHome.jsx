@@ -1,5 +1,5 @@
 // src/screen2/ExtendedChatBotHome.jsx
-import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
+import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
 import ExtendedRecentChatBotTable from "../Tables/ExtendedRecentChatBotTable.jsx";
 import { Button } from "../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";

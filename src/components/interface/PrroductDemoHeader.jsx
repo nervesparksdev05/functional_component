@@ -1,8 +1,8 @@
-import NodaIcon from "../assets/noda-icon.svg";
-import HeaderRightTop from "../interface/HeaderRightTopInterface.jsx";
-import AlarmIcon from "../assets/alarm-icon.svg";
-import FemaleIcon from "../assets/female-icon.svg";
-import BulbIcon from "../assets/bulb.svg";
+import NodaIcon from "../../assets/noda-icon.svg";
+import HeaderRightTop from "./HeaderRightTopInterface.jsx";
+import AlarmIcon from "../../assets/alarm-icon.svg";
+import FemaleIcon from "../../assets/female-icon.svg";
+import BulbIcon from "../../assets/bulb.svg";
 
 export default function ComplexHeaderInterface() {
   return (

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import CloudUpload from "../assets/cloud-upload.svg";
+import CloudUpload from "../../assets/cloud-upload.svg";
 
 export default function UploadDocumentsInterface() {
   const fileInputRef = useRef(null);

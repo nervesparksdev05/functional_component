@@ -1,5 +1,5 @@
-import BracketArrow from "../assets/bracket-arrow.svg";
-import CopyIcon from "../assets/copy-icon.svg";
+import BracketArrow from "../../assets/bracket-arrow.svg";
+import CopyIcon from "../../assets/copy-icon.svg";
 
 const CODE_SNIPPET = `def get_bot_response(user_input):
     """

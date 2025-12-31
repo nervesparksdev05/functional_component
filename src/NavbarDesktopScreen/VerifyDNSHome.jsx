@@ -1,11 +1,11 @@
 // src/screen2/VerifyDNSHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
+import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
 import { Button } from "../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../interface/IncreasingDotsInterface.jsx";
+import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
 import DNSTableInterface from "../tables/DNSTable.jsx";
 
 export default function VerifyDNSHome({ onNext, onPrevious }) {

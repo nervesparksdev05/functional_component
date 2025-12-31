@@ -1,9 +1,9 @@
 // src/interface/LoginInterface.jsx
-import { Button } from "../components/ui/button";
+import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
-import GoogleLogo from "../assets/logo-google.svg";
-import AppleIcon from "../assets/apple.svg";
-import FaceBookIcon from "../assets/facebook-icon.svg";
+import GoogleLogo from "../../assets/logo-google.svg";
+import AppleIcon from "../../assets/apple.svg";
+import FaceBookIcon from "../../assets/facebook-icon.svg";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
 

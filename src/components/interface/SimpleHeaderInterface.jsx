@@ -1,4 +1,4 @@
-import NodaIcon from "../assets/noda-icon.svg";
+import NodaIcon from "../../assets/noda-icon.svg";
 
 export default function SimpleHeaderInterface() {
   return (

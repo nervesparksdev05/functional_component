@@ -1,8 +1,8 @@
 // src/interface/SignUpInterface.jsx
-import { Button } from "../components/ui/button";
-import GoogleLogo from "../assets/logo-google.svg";
-import AppleIcon from "../assets/apple.svg";
-import FaceBookIcon from "../assets/facebook-icon.svg";
+import { Button } from "../ui/button";
+import GoogleLogo from "../../assets/logo-google.svg";
+import AppleIcon from "../../assets/apple.svg";
+import FaceBookIcon from "../../assets/facebook-icon.svg";
 import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
 import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
 

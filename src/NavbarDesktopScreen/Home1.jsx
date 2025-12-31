@@ -1,6 +1,6 @@
 // src/screen2/Home1.jsx
-import ComplexHeaderInterface from "../interface/ComplexHeaderInterface.jsx";
-import CreateNewChatBotInterface from "../interface/CreateNewChatBotInterface.jsx";
+import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
+import CreateNewChatBotInterface from "../components/interface/CreateNewChatBotInterface.jsx";
 import RecentChatBotTable from "../Tables/RecentChatBotTable.jsx";
 
 export default function Home1({ onNext }) {

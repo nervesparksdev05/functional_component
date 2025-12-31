@@ -1,6 +1,6 @@
-import UploadIcon from "../assets/blue-upload.svg";
-import MicIcon from "../assets/green-mic.svg";
-import AnswerIcon from "../assets/answer-icon.svg";
+import UploadIcon from "../../assets/blue-upload.svg";
+import MicIcon from "../../assets/green-mic.svg";
+import AnswerIcon from "../../assets/answer-icon.svg";
 
 export default function WelcomeScreenInterface({ onStartDemo }) {
   const handleStartDemo = () => {

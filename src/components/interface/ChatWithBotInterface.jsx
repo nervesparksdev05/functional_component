@@ -1,64 +1,56 @@
-// src/interface/HorizontalChatBotInterface.jsx
-import SparklesIconImg from "../assets/sparkles-1.svg";
-import SendIconImg from "../assets/paper-plane-dark.svg";
+import SparklesIconImg from "../../assets/sparkles-1.svg";      
+import SendIconImg from "../../assets/paper-plane-dark.svg";   
 
-export default function HorizontalChatBotInterface() {
+export default function ChatWithBotInterface() {
   const handleSend = () => {
-    console.log("Send clicked from horizontal chat input");
+    console.log("Send clicked from chat input");
   };
 
   return (
+    // same outer wrapper as AIAvatarInterface
     <div className="w-full flex justify-center py-4">
-      {/* Outer card – horizontal variant (953 x 450) */}
+      {/* Outer card – same size as AI Avatar (505 x 500) */}
       <div
         className="
-          w-[953px] h-[450px]
-          rounded-[15px]
+          w-[505px] h-[500px]
+          rounded-[10px]
           border border-[#E5E7EB]
           bg-white
-          px-4 pt-4 pb-3
+          px-[10px] pt-4 pb-3
           flex flex-col
         "
       >
         {/* Header: sparkles + title */}
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-3">
           <img src={SparklesIconImg} alt="Sparkles" className="w-5 h-5" />
-          <h2 className="text-[20px] font-medium text-[#171A1F]">
-            Chat With Bot
+          <h2 className="text-[16px] font-medium text-[#171A1F]">
+            Chat
           </h2>
         </div>
 
-        {/* Chat body */}
+        {/* Chat area fills the remaining height */}
         <div
           className="
-            flex-1
+            flex flex-col flex-1
             bg-[#F6F7FB]
-            rounded-[12px]
-            px-5 pt-4 pb-3
-            flex flex-col
+            rounded-[10px]
+            px-4 pt-4 pb-3
           "
         >
-          {/* Messages */}
-          <div className="flex-1 flex flex-col gap-4 pr-2 overflow-y-auto">
+          {/* Messages list */}
+          <div className="flex-1 flex flex-col gap-4 pr-1 overflow-y-auto">
             {/* Bot message 1 */}
             <div className="flex justify-start">
-              <div
-                className="
-                  bg-[#4443E4]/10
-                  rounded-[16px]
-                  text-[16px]
-                  px-4 py-4
-                  w-[595px] min-h-[53px]
-                "
-              >
+              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[80%]">
                 <div className="flex items-start gap-3">
                   <img
                     src={SparklesIconImg}
                     alt="Bot"
                     className="w-5 h-5 mt-[2px]"
                   />
-                  <p className="text-[#111827] text-[16px] leading-[20px] text-left">
-                    Hello! I'm chat bot. How can I assist you today?
+                  <p className="text-[#111827] text-[14px] leading-[20px]">
+                    Hello! I'm chat bot of (Company Name). How can I assist you
+                    today?
                   </p>
                 </div>
               </div>
@@ -66,41 +58,21 @@ export default function HorizontalChatBotInterface() {
 
             {/* User message 1 */}
             <div className="flex justify-end">
-              <div
-                className="
-                  bg-white
-                  text-[#111827]
-                  text-[16px]
-                  leading-[20px]
-                  font-normal
-                  rounded-[16px]
-                  px-5 py-4
-                  w-[595px] min-h-[53px]
-                  shadow-sm
-                  text-left
-                "
-              >
+              <div className="bg-white text-[#111827] text-[14px] leading-[20px] font-normal rounded-[16px] px-4 py-3 max-w-[70%] shadow-sm">
                 Hello! Can you help me how to increase my sales?
               </div>
             </div>
 
             {/* Bot message 2 */}
             <div className="flex justify-start">
-              <div
-                className="
-                  bg-[#4443E4]/10
-                  rounded-[16px]
-                  px-4 py-4
-                  w-[595px] min-h-[53px]
-                "
-              >
+              <div className="bg-[#DFE4FF] rounded-[16px] px-4 py-3 max-w-[80%]">
                 <div className="flex items-start gap-3">
                   <img
                     src={SparklesIconImg}
                     alt="Bot"
                     className="w-5 h-5 mt-[2px]"
                   />
-                  <p className="text-[#111827] text-[16px] leading-[20px] text-left">
+                  <p className="text-[#111827] text-[14px] leading-[20px]">
                     Could you provide me with more details about your product,
                     so I can prepare a detailed strategic plan on how to
                     increase sales.
@@ -111,20 +83,7 @@ export default function HorizontalChatBotInterface() {
 
             {/* User message 2 */}
             <div className="flex justify-end">
-              <div
-                className="
-                  bg-white
-                  text-[#111827]
-                  text-[16px]
-                  leading-[20px]
-                  font-normal
-                  rounded-[16px]
-                  px-5 py-4
-                  w-[595px] min-h-[53px]
-                  shadow-sm
-                  text-left
-                "
-              >
+              <div className="bg-white text-[#111827] text-[14px] leading-[20px] font-normal rounded-[16px] px-4 py-3 max-w-[40%] shadow-sm">
                 Sure!!!
               </div>
             </div>
@@ -143,7 +102,7 @@ export default function HorizontalChatBotInterface() {
                 px-4
               "
             >
-              {/* Left: sparkles + input */}
+              {/* Left: sparkle + input */}
               <div className="flex items-center flex-1 gap-2 mr-2">
                 <img src={SparklesIconImg} alt="Sparkles" className="w-5 h-5" />
                 <input

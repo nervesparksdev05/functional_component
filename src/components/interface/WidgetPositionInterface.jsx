@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BotIcon from "../assets/bot.svg";
+import BotIcon from "../../assets/bot.svg";
 
 export default function WidgetPositionInterface() {
   const [position, setPosition] = useState("bottomRight");
