@@ -1,9 +1,9 @@
-// src/screen2/RagSlackBotHome3.jsx
-import ComplexHeaderRagInterface from "../components/interface/ComplexHeaderRagInterface";
-import MultipleDocumentUploadInterface from "../components/interface/UploadMultipleDocumentInterface";
-import ExistingDocumentsTable from "../components/tables/ExistingDocumentsTable";
-import { Button } from "../components/ui/button";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
+// src/screens/RagSlackBotScreen/RagSlackBotHome3.jsx
+import ComplexHeaderRagInterface from "../../components/interface/ComplexHeaderRagInterface";
+import MultipleDocumentUploadInterface from "../../components/interface/UploadMultipleDocumentInterface";
+import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable";
+import { Button } from "../../components/ui/button";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
 
 export default function RagSlackBotHome3() {
   // same demo data as the design

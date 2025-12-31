@@ -1,13 +1,13 @@
-// src/screen2/CustomGoalsHome.jsx
+// src/screens/NavbarDesktopScreen/CustomGoalsHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import { Button } from "../components/ui/button";
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import AddCustomGoalsInterface from "../components/interface/AddCustomGoalsInterface.jsx";
-import EnterGreetingMessageInterface from "../components/interface/EnterGreetingMessageInterface.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
+import AddCustomGoalsInterface from "../../components/interface/AddCustomGoalsInterface.jsx";
+import EnterGreetingMessageInterface from "../../components/interface/EnterGreetingMessageInterface.jsx";
 
 export default function CustomGoalsHome({ onNext, onPrevious }) {
   const suggestedGoals = [

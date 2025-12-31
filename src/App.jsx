@@ -1,7 +1,7 @@
-import ProductDemo from "./ProductDemoScreen/ProductDemo.jsx";
-import NavbarDesktop from "./NavbarDesktopScreen/NavbarDesktop.jsx"; 
-import RagSlackBotHome from "./RagSlackBotScreen/RagSlackBotHome.jsx"; 
-import LastHome from "./NavbarDesktopScreen/LastHome.jsx";
+import ProductDemo from "./screens/ProductDemoScreen/ProductDemo.jsx";
+import NavbarDesktop from "./screens/NavbarDesktopScreen/NavbarDesktop.jsx"; 
+import RagSlackBotHome from "./screens/RagSlackBotScreen/RagSlackBotHome.jsx"; 
+import LastHome from "./screens/NavbarDesktopScreen/LastHome.jsx";
 
 export default function App() {
   return <>

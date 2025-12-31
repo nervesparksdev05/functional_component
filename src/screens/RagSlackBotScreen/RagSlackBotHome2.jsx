@@ -1,8 +1,8 @@
-// src/screen2/RagSlackBotHome2.jsx
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderRagInterface";
-import { Button } from "../components/ui/button";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import ExistingDocumentsTable from "../components/tables/ExtendedExistingDocumentsTable";
+// src/screens/RagSlackBotScreen/RagSlackBotHome2.jsx
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderRagInterface";
+import { Button } from "../../components/ui/button";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import ExistingDocumentsTable from "../../components/tables/ExtendedExistingDocumentsTable";
 
 export default function RagSlackBotHome2() {
   return (

@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-import NodaIcon from "../assets/noda-icon.svg";
-import BulbIcon from "../assets/bulb.svg";
-import HeaderRightTop from "../components/interface/HeaderRightTopInterface.jsx";
-import AlarmIcon from "../assets/alarm-icon.svg";
-import FemaleIcon from "../assets/female-icon.svg";
-import { Button } from "../components/ui/button";
-import AIAvatarInterface from "../components/interface/AIAvatarInterface.jsx";
-import ChatWithBotInterface from "../components/interface/ChatWithBotInterface.jsx";
-import UploadKnowledgeBaseContainer from "../components/interface/UploadKnowledgeBaseContainer.jsx";
-import WelcomeScreenInterface from "../components/interface/WelcomeScreenInterface.jsx";
+import NodaIcon from "../../assets/noda-icon.svg";
+import BulbIcon from "../../assets/bulb.svg";
+import HeaderRightTop from "../../components/interface/HeaderRightTopInterface.jsx";
+import AlarmIcon from "../../assets/alarm-icon.svg";
+import FemaleIcon from "../../assets/female-icon.svg";
+import { Button } from "../../components/ui/button.jsx";
+import AIAvatarInterface from "../../components/interface/AIAvatarInterface.jsx";
+import ChatWithBotInterface from "../../components/interface/ChatWithBotInterface.jsx";
+import UploadKnowledgeBaseContainer from "../../components/interface/UploadKnowledgeBaseContainer.jsx";
+import WelcomeScreenInterface from "../../components/interface/WelcomeScreenInterface.jsx";
 
 export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);

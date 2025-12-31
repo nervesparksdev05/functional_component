@@ -1,13 +1,13 @@
-// src/screen2/LastHome.jsx
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import TickDotInterface from "../components/interface/TickDotInterface.jsx";
-import { Button } from "../components/ui/button";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
+// src/screens/NavbarDesktopScreen/LastHome.jsx
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import TickDotInterface from "../../components/interface/TickDotInterface.jsx";
+import { Button } from "../../components/ui/button.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
 
-import SearchIcon from "../assets/search-icon.svg";
-import HandIcon from "../assets/hand-icon.svg";
-import BuildingIcon from "../assets/building-icon.svg";
-import DotsLine from "../assets/dots-line.svg";
+import SearchIcon from "../../assets/search-icon.svg";
+import HandIcon from "../../assets/hand-icon.svg";
+import BuildingIcon from "../../assets/building-icon.svg";
+import DotsLine from "../../assets/dots-line.svg";
 
 export default function LastHome() {
   return (
@@ -80,7 +80,7 @@ export default function LastHome() {
               <img
                 src={SearchIcon}
                 alt="Search"
-                className="w-[90px] h-[90px] mb-4 flex-shrink-0"
+                className="w-[90px] h-[90px] mb-4 shrink-0"
               />
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
@@ -105,7 +105,7 @@ export default function LastHome() {
               <img
                 src={HandIcon}
                 alt="Hand"
-                className="w-[90px] h-[90px] mb-4 flex-shrink-0"
+                className="w-[90px] h-[90px] mb-4 shrink-0"
               />
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
@@ -130,7 +130,7 @@ export default function LastHome() {
               <img
                 src={BuildingIcon}
                 alt="Building"
-                className="w-[90px] h-[90px] mb-4 flex-shrink-0"
+                className="w-[90px] h-[90px] mb-4 shrink-0"
               />
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor

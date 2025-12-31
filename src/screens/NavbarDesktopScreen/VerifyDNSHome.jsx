@@ -1,12 +1,12 @@
-// src/screen2/VerifyDNSHome.jsx
+// src/screens/NavbarDesktopScreen/VerifyDNSHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import { Button } from "../components/ui/button";
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import DNSTableInterface from "../components/tables/DNSTable.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
+import DNSTableInterface from "../../components/tables/DNSTable.jsx";
 
 export default function VerifyDNSHome({ onNext, onPrevious }) {
   const [isVerified, setIsVerified] = useState(false);

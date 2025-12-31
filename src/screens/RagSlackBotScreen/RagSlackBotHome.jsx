@@ -1,10 +1,10 @@
-// src/screen2/RagSlackBotHome.jsx
+// src/screens/RagSlackBotScreen/RagSlackBotHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderRagInterface";
-import StartUploadingDocumentInterface from "../components/interface/StartUploadingDocumentInterface";
-import SmallSystemOverviewInterface from "../components/interface/SmallSystemOverviewInterface";
-import ExistingDocumentsTable from "../components/tables/ExistingDocumentsTable";
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderRagInterface";
+import StartUploadingDocumentInterface from "../../components/interface/StartUploadingDocumentInterface";
+import SmallSystemOverviewInterface from "../../components/interface/SmallSystemOverviewInterface";
+import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable";
 import RagSlackBotHome2 from "./RagSlackBotHome2";
 import RagSlackBotHome3 from "./RagSlackBotHome3";
 

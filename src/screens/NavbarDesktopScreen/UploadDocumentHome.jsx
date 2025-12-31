@@ -1,15 +1,15 @@
-// src/screen2/UploadDocumentHome.jsx
+// src/screens/NavbarDesktopScreen/UploadDocumentHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import { Button } from "../components/ui/button";
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import { Button } from "../../components/ui/button";
 import { ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import DragOrBrowseFilesInterface from "../components/interface/DragOrBrowseFilesInterface.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
+import DragOrBrowseFilesInterface from "../../components/interface/DragOrBrowseFilesInterface.jsx";
 
-import PdfIcon from "../assets/pdf-icon.svg";
-import TxtIcon from "../assets/text-icon.svg";
+import PdfIcon from "../../assets/pdf-icon.svg";
+import TxtIcon from "../../assets/text-icon.svg";
 
 export default function UploadDocumentHome({ onNext }) {
   const [files, setFiles] = useState([]);

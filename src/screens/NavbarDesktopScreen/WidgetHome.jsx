@@ -1,11 +1,11 @@
-// src/screen2/WidgetHome.jsx
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import { Button } from "../components/ui/button";
+// src/screens/NavbarDesktopScreen/WidgetHome.jsx
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import { Button } from "../../components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import WidgetColorInterface from "../components/interface/WidgetColorInterface.jsx";
-import WidgetPositionInterface from "../components/interface/WidgetPositionInterface.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
+import WidgetColorInterface from "../../components/interface/WidgetColorInterface.jsx";
+import WidgetPositionInterface from "../../components/interface/WidgetPositionInterface.jsx";
 
 export default function WidgetHome({ onNext, onPrevious }) {
   return (

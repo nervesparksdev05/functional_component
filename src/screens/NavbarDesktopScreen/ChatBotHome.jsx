@@ -1,10 +1,10 @@
-// src/screen2/ChatBotHome.jsx
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import { Button } from "../components/ui/button";
+// src/screens/NavbarDesktopScreen/ChatBotHome.jsx
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import HorizontalChatBotInterface from "../components/interface/HorizontalChatBotInterface.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
+import HorizontalChatBotInterface from "../../components/interface/HorizontalChatBotInterface.jsx";
 
 export default function ChatBotHome({ onNext, onPrevious }) {
   return (

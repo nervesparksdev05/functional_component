@@ -1,13 +1,13 @@
-// src/screen2/SitemapGeneratedHome.jsx
+// src/screens/NavbarDesktopScreen/SitemapGeneratedHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../components/interface/ComplexHeaderInterface.jsx";
-import { Button } from "../components/ui/button";
+import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../assets/blue-arrow.svg";
-import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import EnterWebsiteLinkInterface from "../components/interface/EnterWebsiteLinkInterface.jsx";
-import ApllloTable from "../components/tables/ApllloTable.jsx";
+import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
+import EnterWebsiteLinkInterface from "../../components/interface/EnterWebsiteLinkInterface.jsx";
+import ApllloTable from "../../components/tables/ApllloTable.jsx";
 
 export default function SitemapGeneratedHome({ onNext, onPrevious }) {
   const [isGenerated, setIsGenerated] = useState(false);
