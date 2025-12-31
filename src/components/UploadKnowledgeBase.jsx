@@ -37,7 +37,7 @@ function safeLoadArray(key, fallback) {
 }
 
 function stripForStorage(file) {
-  const { raw, ...rest } = file || {};
+  const { raw: _raw, ...rest } = file || {};
   return rest;
 }
 

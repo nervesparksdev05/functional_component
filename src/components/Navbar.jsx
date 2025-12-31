@@ -8,9 +8,9 @@ import BulbIcon from "../assets/bulb.svg";
 
 export default function Navbar({ 
   isLoggedIn = true,
-  bottomBarIcon = BotIcon, 
-  bottomBarText = "Navigation Helper Bot",
-  bottomBarTextSize = "text-[14px]"
+  bottomBarIcon: _bottomBarIcon = BotIcon, 
+  bottomBarText: _bottomBarText = "Navigation Helper Bot",
+  bottomBarTextSize: _bottomBarTextSize = "text-[14px]"
 }) {
   const tabs = ["Dashboard", "Playbook", "Agent", "Help"];
   const [activeTab, setActiveTab] = useState("Agent");

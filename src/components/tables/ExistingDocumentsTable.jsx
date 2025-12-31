@@ -33,14 +33,11 @@ export default function ExistingDocumentsTable({ documents = [] }) {
         rowBgColor1="bg-[#4443E4]/5"
         rowBgColor2="bg-white"
         className="h-[327px]"
-        renderCell={(column, row, value, rowIndex) => {
+        renderCell={(column, row, value) => {
           if (column.key === "fileName") {
             const isPdf =
               row.type === "pdf" ||
               row.fileName?.toLowerCase().endsWith(".pdf");
-            const isTxt =
-              row.type === "txt" ||
-              row.fileName?.toLowerCase().endsWith(".txt");
             const iconSrc = isPdf ? PdfIcon : TextIcon;
 
             return (

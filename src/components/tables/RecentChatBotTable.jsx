@@ -46,7 +46,7 @@ export default function RecentChatBotTable() {
         className="px-7 pt-5 pb-4"
         rowBgColor1="bg-white"
         rowBgColor2="bg-white"
-        renderCell={(column, row, value, rowIndex) => {
+        renderCell={(column, row, value) => {
           if (column.key === "actions") {
             return (
               <button className="text-gray-400 hover:text-gray-600 p-1">
