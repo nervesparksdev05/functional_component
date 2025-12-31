@@ -5,7 +5,7 @@ import Radio from "../../assets/radio.svg";
 import EmptyRadio from "../../assets/empty-radio.svg";
 
 export default function MultipleDocumentUploadInterface() {
-  const [docType, setDocType] = useState("pdf"); // "pdf" or "text"
+  const [docType, setDocType] = useState("pdf"); 
   const fileInputRef = useRef(null);
 
   const handleBrowseClick = () => {
