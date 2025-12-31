@@ -1,17 +1,45 @@
 // src/screens/NavbarDesktopScreen/WidgetHome.jsx
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
-import WidgetColorInterface from "../../components/interface/WidgetColorInterface.jsx";
-import WidgetPositionInterface from "../../components/interface/WidgetPositionInterface.jsx";
+import { useState, useRef } from "react";
+import BotIcon from "../../assets/bot.svg";
 
 export default function WidgetHome({ onNext, onPrevious }) {
+  const [color, setColor] = useState("#F3A822");
+  const [position, setPosition] = useState("bottomRight");
+  const colorInputRef = useRef(null);
+
+  const handleCustomizeClick = () => {
+    if (colorInputRef.current) {
+      colorInputRef.current.click();
+    }
+  };
+
+  const handleColorChange = (e) => {
+    setColor(e.target.value);
+  };
+
+  const options = [
+    { key: "topLeft", label: "Top Left" },
+    { key: "bottomLeft", label: "Bottom Left" },
+    { key: "topRight", label: "Top Right" },
+    { key: "bottomRight", label: "Bottom Right" },
+  ];
+
+  const iconPositionStyles = {
+    topLeft: { top: "10px", left: "10px" },
+    bottomLeft: { top: "132px", left: "10px" },
+    topRight: { top: "10px", left: "202px" },
+    bottomRight: { top: "132px", left: "202px" },
+  };
+
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
-      <ComplexHeaderInterface />
+      <Navbar />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
@@ -46,12 +74,132 @@ export default function WidgetHome({ onNext, onPrevious }) {
         <section className="w-full max-w-[1030px] mt-10 flex justify-between">
           {/* LEFT: Widget Color */}
           <div className="flex flex-col">
-            <WidgetColorInterface />
+            <div className="w-full flex justify-center py-4">
+              <div className="w-[490px] h-[100px] flex flex-col">
+                <div className="ml-[18px] mb-2">
+                  <span className="text-[18px] leading-[20px] font-medium text-[#171A1F]">
+                    Widget Color
+                  </span>
+                </div>
+                <div className="relative flex items-center gap-4 ml-[14px]">
+                  <div
+                    className="w-[67px] h-[62px] rounded-[100px]"
+                    style={{ backgroundColor: color }}
+                  />
+                  <button
+                    type="button"
+                    onClick={handleCustomizeClick}
+                    className="
+                      inline-flex items-center justify-center
+                      w-[155px] h-[36px]
+                      rounded-[6px]
+                      bg-[#4443E4]
+                      text-white
+                      text-[14px] leading-[22px] font-normal
+                      cursor-pointer
+                    "
+                  >
+                    Customize Color
+                  </button>
+                  <input
+                    ref={colorInputRef}
+                    type="color"
+                    value={color}
+                    onChange={handleColorChange}
+                    className="
+                      absolute
+                      left-[250px]
+                      top-[-2px]
+                      w-[155px] h-[36px]
+                      opacity-0
+                      cursor-pointer
+                    "
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* RIGHT: Widget Position */}
           <div className="flex flex-col items-start">
-            <WidgetPositionInterface />
+            <div className="w-full flex justify-center py-4">
+              <div
+                className="
+                  w-[438px] h-[198px]
+                  flex items-start
+                "
+              >
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-[18px] font-medium text-[#111827]">
+                    Widget Position
+                  </h3>
+                  <div className="flex flex-col gap-2">
+                    {options.map((opt) => {
+                      const isSelected = position === opt.key;
+                      return (
+                        <button
+                          key={opt.key}
+                          type="button"
+                          onClick={() => setPosition(opt.key)}
+                          className="flex items-center gap-2 cursor-pointer"
+                        >
+                          <span
+                            className={`
+                              inline-flex items-center justify-center
+                              w-[18px] h-[18px] rounded-full border
+                              ${
+                                isSelected
+                                  ? "border-[#4443E4] bg-white"
+                                  : "border-[#D1D5DB] bg-white"
+                              }
+                            `}
+                          >
+                            {isSelected && (
+                              <span className="w-[10px] h-[10px] rounded-full bg-[#4443E4]" />
+                            )}
+                          </span>
+                          <span
+                            className={
+                              isSelected
+                                ? "text-[14px] text-[#111827] font-semibold"
+                                : "text-[14px] text-[#4B5563] font-normal"
+                            }
+                          >
+                            {opt.label}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="ml-8">
+                  <div
+                    className="
+                      relative
+                      w-[240px] h-[170px]
+                      border border-[#D1D5DB]
+                      rounded-[5px]
+                      bg-white
+                    "
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <span className="text-[12px] font-medium text-[#111827]">
+                        Desktop Screen
+                      </span>
+                    </div>
+                    <div
+                      className="
+                        absolute
+                        transition-all duration-1000 ease-in-out
+                      "
+                      style={iconPositionStyles[position]}
+                    >
+                      <img src={BotIcon} alt="Chatbot widget" className="w-7 h-7" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

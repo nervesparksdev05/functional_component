@@ -1,5 +1,5 @@
 // src/screens/NavbarDesktopScreen/ExtendedChatBotHome.jsx
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import Navbar from "../../components/Navbar.jsx";
 import ExtendedRecentChatBotTable from "../../components/tables/ExtendedRecentChatBotTable.jsx";
 import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -9,7 +9,7 @@ export default function ExtendedChatBotHome({ onNext, onPrevious }) {
   return (
     <div className="w-full flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
-      <ComplexHeaderInterface />
+      <Navbar />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">

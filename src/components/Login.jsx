@@ -1,17 +1,17 @@
-// src/interface/LoginInterface.jsx
-import { Button } from "../ui/button";
+// src/components/Login.jsx
+import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import GoogleLogo from "../../assets/logo-google.svg";
-import AppleIcon from "../../assets/apple.svg";
-import FaceBookIcon from "../../assets/facebook-icon.svg";
-import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
-import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
+import GoogleLogo from "../assets/logo-google.svg";
+import AppleIcon from "../assets/apple.svg";
+import FaceBookIcon from "../assets/facebook-icon.svg";
+import Navbar from "./Navbar.jsx";
+import Footer from "./Footer.jsx";
 
-const LoginPage = ({ onNext, onPrevious }) => {
+export default function Login({ onNext, onPrevious }) {
   return (
     <div className="w-full min-h-screen flex flex-col bg-white">
-      {/* Top logo bar */}
-      <SimpleHeaderInterface />
+      {/* Top logo bar - not logged in */}
+      <Navbar isLoggedIn={false} />
 
       {/* Center content (slightly compact to match signup and avoid scroll) */}
       <main className="flex-1 flex items-center justify-center">
@@ -152,9 +152,8 @@ const LoginPage = ({ onNext, onPrevious }) => {
       </main>
 
       {/* Bottom footer */}
-      <SimpleFooterInterface />
+      <Footer />
     </div>
   );
-};
+}
 
-export default LoginPage;

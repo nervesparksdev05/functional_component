@@ -1,9 +1,9 @@
 // src/screens/RagSlackBotScreen/RagSlackBotHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderRagInterface";
-import StartUploadingDocumentInterface from "../../components/interface/StartUploadingDocumentInterface";
-import SmallSystemOverviewInterface from "../../components/interface/SmallSystemOverviewInterface";
+import Navbar from "../../components/Navbar.jsx";
+import SlackIcon from "../../assets/slack.svg";
+import { Button } from "../../components/ui/button";
 import ExistingDocumentsTable from "../../components/tables/ExistingDocumentsTable";
 import RagSlackBotHome2 from "./RagSlackBotHome2";
 import RagSlackBotHome3 from "./RagSlackBotHome3";
@@ -52,7 +52,11 @@ export default function RagSlackBotHome() {
   return (
     <div className="w-full flex flex-col bg-[#F5F7FB]">
       {/* Top header (logo + nav) */}
-      <ComplexHeaderInterface />
+      <Navbar 
+        bottomBarIcon={SlackIcon}
+        bottomBarText="RAG Slack Bot Manager"
+        bottomBarTextSize="text-[22px]"
+      />
 
       {/* Main content */}
       <main className="flex-1 w-full flex justify-center px-4">
@@ -60,10 +64,55 @@ export default function RagSlackBotHome() {
         <div className="w-[1038px] mt-4 mb-2">
           {/* Top row: Start Adding Documents (left) + System Overview (right) */}
           <div className="w-full flex items-stretch gap-4 mb-6">
-            <StartUploadingDocumentInterface
-              onStartUpload={() => setShowUploadPage(true)}
-            />
-            <SmallSystemOverviewInterface />
+            {/* Start Adding Documents */}
+            <div
+              className="
+                w-[600px] h-[173px]
+                rounded-[16px]
+                border border-[#4443E4]
+                bg-[#4443E4]/5
+                flex flex-col items-center justify-center
+                text-center px-6
+              "
+            >
+              <h2 className="text-[22px] leading-[28px] font-semibold text-[#111827] mb-1">
+                Start Adding Documents
+              </h2>
+              <p className="text-[14px] leading-[20px] text-[#374151] mb-5">
+                Click on this button to start uploading documents
+              </p>
+              <Button
+                type="button"
+                onClick={() => setShowUploadPage(true)}
+                variant="default"
+                size="md"
+                radius="xl"
+                width="250px"
+              >
+                Start Uploading Documents
+              </Button>
+            </div>
+            {/* System Overview */}
+            <section
+              className="
+                w-[425px] h-[173px]
+                rounded-[6px]
+                border border-[#4443E4]
+                bg-[#4443E4]
+                text-white
+                px-6 pt-5 pb-4
+                flex flex-col
+                cursor-pointer
+              "
+            >
+              <h2 className="text-[30px] leading-[24px] font-semibold tracking-[-0.04em] mb-4">
+                System Overview
+              </h2>
+              <ul className="list-disc list-inside space-y-2 text-[22px] leading-[30px]">
+                <li>Total Documents: N/A</li>
+                <li>LLM Model: gpt-3.5-turbo</li>
+              </ul>
+            </section>
           </div>
 
           {/* Existing documents table */}

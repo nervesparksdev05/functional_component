@@ -1,12 +1,11 @@
 // src/screens/NavbarDesktopScreen/SitemapGeneratedHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
-import EnterWebsiteLinkInterface from "../../components/interface/EnterWebsiteLinkInterface.jsx";
 import ApllloTable from "../../components/tables/ApllloTable.jsx";
 
 export default function SitemapGeneratedHome({ onNext, onPrevious }) {
@@ -19,7 +18,7 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
   return (
     <div className="w-full h-screen flex flex-col">
       {/* Top header */}
-      <ComplexHeaderInterface />
+      <Navbar />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
@@ -45,7 +44,7 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
         {/* Center content */}
         <section className="w-full max-w-[1030px] mt-2 flex flex-col items-center text-center">
           {/* Description text */}
-          <p className="max-w-[820px] text-[14px]  leading-[20px] font-medium text-[#0c0b0d] font-medium">
+          <p className="max-w-[820px] text-[14px] leading-[20px] font-medium text-[#0c0b0d]">
             Give us your website link. We&apos;ll send a smart program to read
             all of your pages and map out how everything is connected. Then,
             our AI will figure out the top reasons people visit, so the bot
@@ -55,7 +54,25 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
           {/* Enter Website Link field */}
            <div className="mt-6 ml-8 w-full flex justify-center">
             <div className="w-[833px] text-left">
-              <EnterWebsiteLinkInterface />
+              <div className="w-full flex flex-col">
+                <label className="text-[18px] leading-[20px] text-[#171A1F] mb-1 font-medium">
+                  Enter Website Link
+                </label>
+                <input
+                  type="url"
+                  placeholder="www.example.in Or https://example.in/"
+                  className="
+                    w-[833px] h-[35px]
+                    rounded-[10px]
+                    border border-[#D3D8E3]
+                    bg-white
+                    px-3
+                    text-[14px] text-[#171A1F]
+                    placeholder:text-[#9CA3AF]
+                    outline-none
+                  "
+                />
+              </div>
             </div>
           </div>
 

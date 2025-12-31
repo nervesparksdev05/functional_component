@@ -1,10 +1,29 @@
-import NodaIcon from "../../assets/noda-icon.svg";
-import HeaderRightTop from "./HeaderRightTopInterface.jsx";
-import AlarmIcon from "../../assets/alarm-icon.svg";
-import FemaleIcon from "../../assets/female-icon.svg";
-import BotIcon from "../../assets/bot.svg";
+import NodaIcon from "../assets/noda-icon.svg";
+import HeaderRightTop from "./interface/HeaderRightTopInterface.jsx";
+import AlarmIcon from "../assets/alarm-icon.svg";
+import FemaleIcon from "../assets/female-icon.svg";
+import BotIcon from "../assets/bot.svg";
+import SlackIcon from "../assets/slack.svg";
+import BulbIcon from "../assets/bulb.svg";
 
-export default function ComplexHeaderInterface() {
+export default function Navbar({ 
+  isLoggedIn = true,
+  bottomBarIcon = BotIcon, 
+  bottomBarText = "Navigation Helper Bot",
+  bottomBarTextSize = "text-[18px]"
+}) {
+  // If user is not logged in, show simple header (just logo)
+  if (!isLoggedIn) {
+    return (
+      <header className="w-full h-[72px] bg-white flex items-center">
+        <div className="w-full flex items-center px-8 md:px-8">
+          <img src={NodaIcon} alt="Noda Technologies" className="h-12 w-auto ml-5" />
+        </div>
+      </header>
+    );
+  }
+
+  // If user is logged in, show full navbar
   return (
     <header className="w-full bg-[#FFFFFF] sticky top-0 z-50">
       {/* Top bar – 76px height */}
@@ -35,7 +54,7 @@ export default function ComplexHeaderInterface() {
             </button>
 
             {/* Profile avatar */}
-            <div >
+            <div>
               <img
                 src={FemaleIcon}
                 alt="Profile"
@@ -49,11 +68,10 @@ export default function ComplexHeaderInterface() {
       {/* Bottom bar – 68px height */}
       <div className="w-full h-[68px] border-b border-[#797a85] flex items-center">
         <div className="w-full flex items-center px-4 md:px-6">
-          {/* Bot label (left-aligned with logo above) */}
           <div className="flex items-center gap-2 ml-18">
-            <img src={BotIcon} alt="Bot" className="w-7 h-7" />
-            <span className="text-[18px] font-medium text-[#171A1F]">
-              Navigation Helper Bot
+            <img src={bottomBarIcon} alt="Icon" className="w-7 h-7" />
+            <span className={`${bottomBarTextSize} font-medium text-[#171A1F]`}>
+              {bottomBarText}
             </span>
           </div>
         </div>
@@ -61,3 +79,4 @@ export default function ComplexHeaderInterface() {
     </header>
   );
 }
+

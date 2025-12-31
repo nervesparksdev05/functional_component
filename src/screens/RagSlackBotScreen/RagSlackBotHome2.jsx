@@ -1,5 +1,6 @@
 // src/screens/RagSlackBotScreen/RagSlackBotHome2.jsx
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderRagInterface";
+import Navbar from "../../components/Navbar.jsx";
+import SlackIcon from "../../assets/slack.svg";
 import { Button } from "../../components/ui/button";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import ExistingDocumentsTable from "../../components/tables/ExtendedExistingDocumentsTable";
@@ -8,7 +9,11 @@ export default function RagSlackBotHome2() {
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
       {/* Top header (logo + nav) */}
-      <ComplexHeaderInterface />
+      <Navbar 
+        bottomBarIcon={SlackIcon}
+        bottomBarText="RAG Slack Bot Manager"
+        bottomBarTextSize="text-[22px]"
+      />
 
       {/* Main content */}
       <main className="w-full flex flex-col items-center px-4">

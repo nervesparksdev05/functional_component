@@ -1,8 +1,8 @@
 // src/screens/NavbarDesktopScreen/NavbarDesktop.jsx
 import { useState } from "react";
 
-import SignUpInterface from "../../components/interface/SignUpInterface.jsx";
-import LoginPage from "../../components/interface/LoginInterface.jsx";
+import SignUp from "../../components/SignUp.jsx";
+import Login from "../../components/Login.jsx";
 import Home1 from "./Home1.jsx";
 import ExtendedChatBotHome from "./ExtendedChatBotHome.jsx";
 import UploadDocumentHome from "./UploadDocumentHome.jsx";
@@ -14,8 +14,8 @@ import WidgetHome from "./WidgetHome.jsx";
 import LastHome from "./LastHome.jsx";
 
 const STEPS = [
-  { id: "signup", Component: SignUpInterface },
-  { id: "login", Component: LoginPage },
+  { id: "signup", Component: SignUp },
+  { id: "login", Component: Login },
   { id: "home1", Component: Home1 },
   { id: "extendedChat", Component: ExtendedChatBotHome },
   { id: "upload", Component: UploadDocumentHome },

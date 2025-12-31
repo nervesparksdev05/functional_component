@@ -1,7 +1,7 @@
 // src/screens/NavbarDesktopScreen/VerifyDNSHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
@@ -18,7 +18,7 @@ export default function VerifyDNSHome({ onNext, onPrevious }) {
   return (
     <div className="w-full min-h-screen flex flex-col">
       {/* Top header */}
-      <ComplexHeaderInterface />
+      <Navbar />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">

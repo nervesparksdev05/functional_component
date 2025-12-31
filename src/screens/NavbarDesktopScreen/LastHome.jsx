@@ -1,5 +1,5 @@
 // src/screens/NavbarDesktopScreen/LastHome.jsx
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import Navbar from "../../components/Navbar.jsx";
 import TickDotInterface from "../../components/interface/TickDotInterface.jsx";
 import { Button } from "../../components/ui/button.jsx";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
@@ -13,7 +13,7 @@ export default function LastHome() {
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
-      <ComplexHeaderInterface />
+      <Navbar />
 
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">

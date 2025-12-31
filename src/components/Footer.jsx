@@ -1,4 +1,4 @@
-export default function SimpleFooterInterface() {
+export default function Footer() {
   return (
     <footer
       className="
@@ -22,3 +22,4 @@ export default function SimpleFooterInterface() {
     </footer>
   );
 }
+

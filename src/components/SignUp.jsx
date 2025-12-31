@@ -1,16 +1,16 @@
-// src/interface/SignUpInterface.jsx
-import { Button } from "../ui/button";
-import GoogleLogo from "../../assets/logo-google.svg";
-import AppleIcon from "../../assets/apple.svg";
-import FaceBookIcon from "../../assets/facebook-icon.svg";
-import SimpleHeaderInterface from "./SimpleHeaderInterface.jsx";
-import SimpleFooterInterface from "./SimpleFooterInterface.jsx";
+// src/components/SignUp.jsx
+import { Button } from "./ui/button";
+import GoogleLogo from "../assets/logo-google.svg";
+import AppleIcon from "../assets/apple.svg";
+import FaceBookIcon from "../assets/facebook-icon.svg";
+import Navbar from "./Navbar.jsx";
+import Footer from "./Footer.jsx";
 
-const SignUpPage = ({ onNext }) => {
+export default function SignUp({ onNext }) {
   return (
     <div className="w-full min-h-screen flex flex-col bg-white">
-      {/* Top logo bar */}
-      <SimpleHeaderInterface />
+      {/* Top logo bar - not logged in */}
+      <Navbar isLoggedIn={false} />
 
       {/* Center content (compact so header+form+footer fit on one screen) */}
       <main className="flex-1 flex items-center justify-center">
@@ -183,9 +183,8 @@ const SignUpPage = ({ onNext }) => {
       </main>
 
       {/* Bottom footer (same height & left padding as header) */}
-      <SimpleFooterInterface />
+      <Footer />
     </div>
   );
-};
+}
 
-export default SignUpPage;

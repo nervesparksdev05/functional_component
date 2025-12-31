@@ -1,13 +1,11 @@
 // src/screens/NavbarDesktopScreen/CustomGoalsHome.jsx
 import { useState } from "react";
 
-import ComplexHeaderInterface from "../../components/interface/ComplexHeaderInterface.jsx";
+import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../../components/interface/IncreasingDotsInterface.jsx";
-import AddCustomGoalsInterface from "../../components/interface/AddCustomGoalsInterface.jsx";
-import EnterGreetingMessageInterface from "../../components/interface/EnterGreetingMessageInterface.jsx";
 
 export default function CustomGoalsHome({ onNext, onPrevious }) {
   const suggestedGoals = [
@@ -36,10 +34,26 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
     setCustomGoals((prev) => prev.filter((_, i) => i !== indexToRemove));
   };
 
+  const [inputValue, setInputValue] = useState("");
+
+  const handleAdd = () => {
+    const trimmed = inputValue.trim();
+    if (!trimmed) return;
+    handleAddCustomGoal(trimmed);
+    setInputValue("");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleAdd();
+    }
+  };
+
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
       {/* Header */}
-      <ComplexHeaderInterface />
+      <Navbar />
 
       {/* MAIN */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
@@ -103,16 +117,106 @@ export default function CustomGoalsHome({ onNext, onPrevious }) {
 
           {/* Add Custom Goals row + chips */}
           <div className="w-full max-w-[850px] mt-5 text-left">
-            <AddCustomGoalsInterface
-              customGoals={customGoals}
-              onAddGoal={handleAddCustomGoal}
-              onRemoveGoal={handleRemoveCustomGoal}
-            />
+            <div className="w-full flex flex-col">
+              <label className="mb-2 text-[15px] leading-[20px] font-medium text-[#111827]">
+                Add Custom Goals
+              </label>
+              <div className="flex items-center gap-3">
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder="e.g., Book a consultation"
+                  className="
+                    flex-1
+                    h-[35px]
+                    rounded-[6px]
+                    border border-[#E5E7EB]
+                    px-3
+                    text-[13px]
+                    text-[#111827]
+                    placeholder:text-[#9CA3AF]
+                    outline-none
+                    focus:border-[#4443E4]
+                  "
+                />
+                <Button
+                  onClick={handleAdd}
+                  variant="default"
+                  size="default"
+                  radius="default"
+                  width="68px"
+                >
+                  Add
+                </Button>
+              </div>
+              {customGoals.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {customGoals.map((goal, index) => (
+                    <div
+                      key={`${goal}-${index}`}
+                      className="
+                        inline-flex items-center
+                        px-4 h-[26px]
+                        rounded-full
+                        bg-[#4443E4]
+                        text-white
+                        text-[13px]
+                      "
+                    >
+                      <span className="whitespace-nowrap leading-none">
+                        {goal}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => handleRemoveCustomGoal(index)}
+                        className="
+                          ml-3
+                          flex items-center justify-center
+                          w-[16px] h-[16px]
+                          rounded-full
+                          hover:bg-[rgba(255,255,255,0.15)]
+                          text-white
+                          text-[22px]
+                          leading-none
+                          cursor-pointer
+                        "
+                      >
+                        ×
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Enter Greeting Message */}
           <div className="w-full max-w-[850px] mt-5 text-left">
-            <EnterGreetingMessageInterface />
+            <div className="w-full flex flex-col">
+              <label className="text-[16px] font-medium leading-[20px] text-[#171A1F] mb-2">
+                Enter Greeting Message
+              </label>
+              <textarea
+                placeholder="Enter Message..."
+                className="
+                  w-[811px]
+                  h-[84px]
+                  border
+                  border-[#D1D5DB]
+                  rounded-[6px]
+                  outline-none
+                  text-[16px]
+                  font-normal
+                  text-[#171A1F]
+                  px-3
+                  py-2
+                  resize-none
+                  placeholder:text-[#9CA3AF]
+                "
+              />
+            </div>
           </div>
         </section>
 
