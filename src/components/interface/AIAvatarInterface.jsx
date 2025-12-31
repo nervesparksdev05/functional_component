@@ -1,4 +1,5 @@
 import Avatar from "../../assets/ai-avatar.svg";
+import PlayIcon from "../../assets/play-icon.svg";
 
 export default function AIAvatarInterface() {
   const handleClick = () => {
@@ -65,25 +66,11 @@ export default function AIAvatarInterface() {
               cursor-pointer
             "
           >
-            <PlayIcon />
+            <img src={PlayIcon} alt="Play" className="w-3 h-3" />
             <span>Start Avatar Session</span>
           </button>
         </div>
       </div>
     </div>
-  );
-}
-
-/* --- Play icon stays the same --- */
-function PlayIcon() {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      className="w-[18px] h-[18px]"
-      fill="white"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M4 3v10l7-5-7-5z" />
-    </svg>
   );
 }

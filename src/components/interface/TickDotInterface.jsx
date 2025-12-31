@@ -1,3 +1,5 @@
+import TickIcon from "../../assets/TickIcon.svg";
+
 export default function TickDotInterface() {
   const steps = [
     "Upload Sources",
@@ -80,21 +82,7 @@ export default function TickDotInterface() {
                   "
                 >
                   {/* Tick icon (small inline SVG) */}
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3 8.5L6.2 11.5L13 4.5"
-                      stroke="#4443E4"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src={TickIcon} alt="Tick" className="w-3 h-3" />
                 </div>
 
                 {/* Label */}

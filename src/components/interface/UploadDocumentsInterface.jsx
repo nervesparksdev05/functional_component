@@ -90,22 +90,4 @@ export default function UploadDocumentsInterface() {
   );
 }
 
-/* --- Icon --- */
 
-function CloudUploadIcon() {
-  return (
-    <svg
-      viewBox="0 0 48 48"
-      className="w-10 h-10"
-      fill="none"
-      stroke="#4443E4"
-      strokeWidth="2.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 20a8 8 0 0 1 15.6-2.4A6 6 0 1 1 34 30H16a6 6 0 0 1 0-12h.4" />
-      <path d="M24 28V18" />
-      <path d="M20 22l4-4 4 4" />
-    </svg>
-  );
-}
