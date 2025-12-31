@@ -1,9 +1,9 @@
-// src/tables/ExtendedExistingDocumentsTable.jsx
+// src/components/tables/ExtendedExistingDocumentsTable.jsx
 import { Search, MoreVertical } from "lucide-react";
-import PdfIcon from "../assets/pdf-icon.svg";
-import TextIcon from "../assets/text-icon.svg";
+import PdfIcon from "../../assets/pdf-icon.svg";
+import TextIcon from "../../assets/text-icon.svg";
 
-export default function ExtendedRecentChatBotTable() {
+export default function ExtendedExistingDocumentsTable() {
   const documents = [
     {
       id: 1,
@@ -101,7 +101,7 @@ export default function ExtendedRecentChatBotTable() {
                             ? "Text file"
                             : "Document file"
                         }
-                        className="w-9 h-9 flex-shrink-0"
+                        className="w-9 h-9 shrink-0"
                       />
                       <span className="font-semibold">{doc.fileName}</span>
                     </div>

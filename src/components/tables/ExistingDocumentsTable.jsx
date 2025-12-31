@@ -1,6 +1,6 @@
 // src/interface/ExistingDocumentsTable.jsx
-import PdfIcon from "../assets/pdf-icon.svg";
-import TextIcon from "../assets/text-icon.svg";
+import PdfIcon from "../../assets/pdf-icon.svg";
+import TextIcon from "../../assets/text-icon.svg";
 
 export default function ExistingDocumentsTable({ documents = [] }) {
   return (
@@ -55,7 +55,7 @@ export default function ExistingDocumentsTable({ documents = [] }) {
                       <img
                         src={iconSrc}
                         alt={isPdf ? "PDF file" : "Text file"}
-                        className="w-9 h-9 flex-shrink-0"
+                        className="w-9 h-9 shrink-0"
                       />
                       <span className="text-[14px] text-[#111827]">
                         {doc.name}

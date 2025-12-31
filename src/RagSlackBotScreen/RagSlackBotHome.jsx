@@ -4,7 +4,7 @@ import { useState } from "react";
 import ComplexHeaderInterface from "../components/interface/ComplexHeaderRagInterface";
 import StartUploadingDocumentInterface from "../components/interface/StartUploadingDocumentInterface";
 import SmallSystemOverviewInterface from "../components/interface/SmallSystemOverviewInterface";
-import ExistingDocumentsTable from "../tables/ExistingDocumentsTable";
+import ExistingDocumentsTable from "../components/tables/ExistingDocumentsTable";
 import RagSlackBotHome2 from "./RagSlackBotHome2";
 import RagSlackBotHome3 from "./RagSlackBotHome3";
 

@@ -1,7 +1,7 @@
 // src/screen2/RagSlackBotHome3.jsx
 import ComplexHeaderRagInterface from "../components/interface/ComplexHeaderRagInterface";
 import MultipleDocumentUploadInterface from "../components/interface/UploadMultipleDocumentInterface";
-import ExistingDocumentsTable from "../tables/ExistingDocumentsTable";
+import ExistingDocumentsTable from "../components/tables/ExistingDocumentsTable";
 import { Button } from "../components/ui/button";
 import BlueArrowIcon from "../assets/blue-arrow.svg";
 

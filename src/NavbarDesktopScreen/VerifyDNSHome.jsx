@@ -6,7 +6,7 @@ import { Button } from "../components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../assets/blue-arrow.svg";
 import IncreasingDotsInterface from "../components/interface/IncreasingDotsInterface.jsx";
-import DNSTableInterface from "../tables/DNSTable.jsx";
+import DNSTableInterface from "../components/tables/DNSTable.jsx";
 
 export default function VerifyDNSHome({ onNext, onPrevious }) {
   const [isVerified, setIsVerified] = useState(false);

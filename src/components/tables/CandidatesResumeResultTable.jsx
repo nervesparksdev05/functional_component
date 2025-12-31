@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 
-import CheckBox from "../assets/checkbox.svg";
-import EmptyCheckbox from "../assets/checkbox-empty.svg";
-import TripleDot from "../assets/triple-dot.svg";
-import CloudUpload from "../assets/upload-cloudtwo.svg";
-import SaveIcon from "../assets/save-icon.svg";
-import FiltersLine from "../assets/filters-line.svg";
-import ProgressBar from "../assets/progress-bar.svg";
+import CheckBox from "../../assets/checkbox-icon.svg";
+import EmptyCheckbox from "../../assets/checkbox-empty.svg";
+import TripleDot from "../../assets/triple-dot.svg";
+import CloudUpload from "../../assets/upload-cloudtwo.svg";
+import SaveIcon from "../../assets/save-icon.svg";
+import FiltersLine from "../../assets/filters-line.svg";
+import ProgressBar from "../../assets/progress-bar.svg";
 
 export default function CandidatesResumeResultTable() {
   const [selectedTab, setSelectedTab] = useState("View all");

@@ -2,7 +2,7 @@
 import ComplexHeaderInterface from "../components/interface/ComplexHeaderRagInterface";
 import { Button } from "../components/ui/button";
 import BlueArrowIcon from "../assets/blue-arrow.svg";
-import ExistingDocumentsTable from "../tables/ExtendedExistingDocumentsTable";
+import ExistingDocumentsTable from "../components/tables/ExtendedExistingDocumentsTable";
 
 export default function RagSlackBotHome2() {
   return (
