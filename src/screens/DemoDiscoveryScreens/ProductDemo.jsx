@@ -1,9 +1,5 @@
 import { useState } from "react";
-
-import NodaIcon from "../../assets/noda-icon.svg";
 import BulbIcon from "../../assets/bulb.svg";
-import AlarmIcon from "../../assets/alarm-icon.svg";
-import FemaleIcon from "../../assets/female-icon.svg";
 import { Button } from "../../components/ui/button.jsx";
 import UploadKnowledgeBaseContainer from "../../components/UploadKnowledgeBase.jsx";
 import SparklesIconImg from "../../assets/sparkles-1.svg";
@@ -18,8 +14,6 @@ import Navbar from "../../components/Navbar.jsx";
 export default function ProductDemo() {
   const [showUploadPanel, setShowUploadPanel] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
-  const tabs = ["Dashboard", "Playbook", "Agent", "Help"];
-  const [activeTab, setActiveTab] = useState("Agent");
 
   const handleSend = () => {
     console.log("Send clicked from chat input");
@@ -44,7 +38,7 @@ export default function ProductDemo() {
             <div className="self-start md:self-auto">
               <Button
                 onClick={() => {
-                  if (showWelcome) return; // prevent opening behind welcome
+                  if (showWelcome) return; 
                   setShowUploadPanel(true);
                 }}
                 variant="default"
