@@ -11,7 +11,7 @@ import CustomGoalsHome from "./CustomGoalsHome.jsx";
 import ChatBotHome from "./ChatBotHome.jsx";
 import VerifyDNSHome from "./VerifyDNSHome.jsx";
 import WidgetHome from "./WidgetHome.jsx";
-import LastHome from "./LastPage-DownloadScreen.jsx";
+import LastHome from "./LastPageDownloadScreen.jsx";
 
 const STEPS = [
   { id: "signup", Component: SignUp },

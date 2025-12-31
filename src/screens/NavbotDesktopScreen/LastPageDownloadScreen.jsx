@@ -1,6 +1,6 @@
 // src/screens/NavbarDesktopScreen/LastHome.jsx
 import Navbar from "../../components/Navbar.jsx";
-import { Button } from "../../components/ui/button";
+import { Button } from "../../components/ui/button.jsx";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import TickIcon from "../../assets/TickIcon.svg";
 import SearchIcon from "../../assets/search-icon.svg";
@@ -8,7 +8,7 @@ import HandIcon from "../../assets/hand-icon.svg";
 import BuildingIcon from "../../assets/building-icon.svg";
 import DotsLine from "../../assets/dots-line.svg";
 
-export default function LastHome() {
+export default function LastPageDownloadScreen() {
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#F5F7FB]">
       {/* Top header */}
@@ -158,12 +158,10 @@ export default function LastHome() {
 
           <div className="w-full flex items-start justify-center gap-10">
             {/* Step 1 */}
-            <div className="flex flex-col items-center w-[260px] h-[254px]">
-              <img
-                src={SearchIcon}
-                alt="Search"
-                className="w-[90px] h-[90px] mb-4 shrink-0"
-              />
+            <div className="flex flex-col items-center w-[260px]">
+              <div className="w-[90px] h-[90px] mb-4 shrink-0 bg-[#4443E4] rounded-2xl flex items-center justify-center">
+                <img src={SearchIcon} alt="Search" className="h-10 w-10" />
+              </div>
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
               </h3>
@@ -178,17 +176,15 @@ export default function LastHome() {
               <img
                 src={DotsLine}
                 alt="Step connector"
-                className="w-[90px] h-auto opacity-90"
+                className="w-full"
               />
             </div>
 
             {/* Step 2 */}
             <div className="flex flex-col items-center w-[260px] h-[254px]">
-              <img
-                src={HandIcon}
-                alt="Hand"
-                className="w-[90px] h-[90px] mb-4 shrink-0"
-              />
+            <div className="w-[90px] h-[90px] mb-4 shrink-0 bg-[#4443E4] rounded-2xl flex items-center justify-center">
+                <img src={HandIcon} alt="Hand" className="h-10 w-10" />
+              </div>
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
               </h3>
@@ -203,17 +199,15 @@ export default function LastHome() {
               <img
                 src={DotsLine}
                 alt="Step connector"
-                className="w-[90px] h-auto opacity-90"
+                className="w-full"
               />
             </div>
 
             {/* Step 3 */}
             <div className="flex flex-col items-center w-[260px] h-[254px]">
-              <img
-                src={BuildingIcon}
-                alt="Building"
-                className="w-[90px] h-[90px] mb-4 shrink-0"
-              />
+            <div className="w-[90px] h-[90px] mb-4 shrink-0 bg-[#4443E4] rounded-2xl flex items-center justify-center">
+                <img src={BuildingIcon} alt="Building" className="h-10 w-10" />
+              </div>
               <h3 className="text-[14px] font-semibold text-[#171A1F] mb-2">
                 Lorem ipsum dolor
               </h3>
