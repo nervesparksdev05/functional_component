@@ -2,10 +2,10 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button.jsx";
+import { ChatInput } from "../../components/ui";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import BlueArrowIcon from "../../assets/blue-arrow.svg";
 import SparklesIconImg from "../../assets/sparkles-1.svg";
-import SendIconImg from "../../assets/paper-plane-dark.svg";
 
 export default function ChatBotHome({ onNext, onPrevious }) {
   const steps = [
@@ -18,6 +18,12 @@ export default function ChatBotHome({ onNext, onPrevious }) {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(3);
+  const [chatInputValue, setChatInputValue] = useState("");
+
+  const handleChatSend = (message) => {
+    console.log("Send clicked:", message);
+    setChatInputValue("");
+  };
 
   const handleStepClick = (index) => {
     setSelectedIndex(index);
@@ -283,50 +289,11 @@ export default function ChatBotHome({ onNext, onPrevious }) {
                   </div>
 
                   {/* Input area */}
-                  <div className="mt-3 flex items-center">
-                    <div
-                      className="
-                        flex-1
-                        h-[48px]
-                        rounded-[25px]
-                        border border-[#D9DCE1]
-                        bg-white
-                        flex items-center
-                        px-4
-                      "
-                    >
-                      {/* Left: sparkles + input */}
-                      <div className="flex items-center flex-1 gap-2 mr-2">
-                        <img src={SparklesIconImg} alt="Sparkles" className="w-5 h-5" />
-                        <input
-                          type="text"
-                          placeholder="Ask anything"
-                          className="
-                            flex-1
-                            bg-transparent
-                            outline-none
-                            border-none
-                            text-[14px] leading-[22px]
-                            text-[#2F3542]
-                            placeholder:text-[#2F3542]/50
-                          "
-                        />
-                      </div>
-
-                      {/* Right: send button */}
-                      <button
-                        type="button"
-                        className="
-                          flex items-center justify-center
-                          w-10 h-10
-                          rounded-[30px]
-                          cursor-pointer
-                        "
-                      >
-                        <img src={SendIconImg} alt="Send" className="w-10 h-10" />
-                      </button>
-                    </div>
-                  </div>
+                  <ChatInput
+                    value={chatInputValue}
+                    onChange={(e) => setChatInputValue(e.target.value)}
+                    onSend={handleChatSend}
+                  />
                 </div>
               </div>
             </div>
