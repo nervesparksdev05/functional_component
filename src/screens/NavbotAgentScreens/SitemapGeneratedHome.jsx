@@ -3,8 +3,7 @@ import { useState } from "react";
 
 import Navbar from "../../components/Navbar.jsx";
 import { Button } from "../../components/ui/button.jsx";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import { Input, BackButton, NavigationButtons } from "../../components/ui";
 import ApllloTable from "../../components/tables/ApllloTable.jsx";
 
 export default function SitemapGeneratedHome({ onNext, onPrevious }) {
@@ -40,18 +39,7 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-2 mb-2 flex justify-start">
-          <Button
-            type="button"
-            variant="ghost"
-            size="default"
-            radius="default"
-            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
-            className="text-[21px] text-[#4443E4] font-normal"
-          >
-            Back to Dashboard
-          </Button>
-        </div>
+        <BackButton className="mt-2 mb-2" />
 
         {/* Stepper */}
         <div className="w-full max-w-[1030px]">
@@ -167,27 +155,15 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
           </p>
 
           {/* Enter Website Link field */}
-           <div className="mt-6 ml-8 w-full flex justify-center">
+          <div className="mt-6 ml-8 w-full flex justify-center">
             <div className="w-[833px] text-left">
-              <div className="w-full flex flex-col">
-                <label className="text-[18px] leading-[20px] text-[#171A1F] mb-1 font-medium">
-                  Enter Website Link
-                </label>
-                <input
-                  type="url"
-                  placeholder="www.example.in Or https://example.in/"
-                  className="
-                    w-[833px] h-[35px]
-                    rounded-[10px]
-                    border border-[#D3D8E3]
-                    bg-white
-                    px-3
-                    text-[14px] text-[#171A1F]
-                    placeholder:text-[#9CA3AF]
-                    outline-none
-                  "
-                />
-              </div>
+              <Input
+                label="Enter Website Link"
+                type="url"
+                placeholder="www.example.in Or https://example.in/"
+                variant="rounded"
+                containerClassName="w-full"
+              />
             </div>
           </div>
 
@@ -259,29 +235,11 @@ export default function SitemapGeneratedHome({ onNext, onPrevious }) {
           </section>
         ) : (
           // When sitemap not generated yet
-          <div className="w-full max-w-[1030px] mt-40 mb-2 flex items-center justify-between">
-            <Button
-              onClick={onPrevious}
-              variant="outline"
-              size="default"
-              radius="md"
-              width="112px"
-              leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
-              className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
-            >
-              Previous
-            </Button>
-            <Button
-              onClick={onNext}
-              variant="default"
-              size="default"
-              radius="md"
-              width="87px"
-              rightIcon={<ArrowRight size={16} className="text-white" />}
-            >
-              Next
-            </Button>
-          </div>
+          <NavigationButtons
+            onPrevious={onPrevious}
+            onNext={onNext}
+            className="mt-40 mb-2"
+          />
         )}
       </main>
     </div>

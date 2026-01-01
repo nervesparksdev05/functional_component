@@ -1,5 +1,6 @@
 // src/components/Login.jsx
 import { Button } from "./ui/button";
+import { Input } from "./ui";
 import { ArrowRight } from "lucide-react";
 import GoogleLogo from "../assets/logo-google.svg";
 import AppleIcon from "../assets/apple.svg";
@@ -27,46 +28,20 @@ export default function Login({ onNext, onPrevious }) {
           {/* Form area */}
           <div className="w-[515px] flex flex-col gap-3">
             {/* Email */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-[13px] leading-[22px] text-[#424856]">
-                Email
-              </label>
-              <input
-                type="email"
-                className="
-                  w-full h-[48px]
-                  rounded-[26px]
-                  border border-[#D3D8E3]
-                  px-5
-                  text-[14px] leading-[24px]
-                  text-[#171A1F]
-                  placeholder:text-[#9CA3AF]
-                  outline-none
-                "
-                placeholder="test@gmail.com"
-              />
-            </div>
+            <Input
+              label="Email"
+              type="email"
+              placeholder="test@gmail.com"
+              variant="default"
+            />
 
             {/* Password */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-[13px] leading-[22px] text-[#424856]">
-                Password
-              </label>
-              <input
-                type="password"
-                className="
-                  w-full h-[48px]
-                  rounded-[26px]
-                  border border-[#D3D8E3]
-                  px-5
-                  text-[14px] leading-[24px]
-                  text-[#171A1F]
-                  placeholder:text-[#9CA3AF]
-                  outline-none
-                "
-                placeholder="••••••••••••••••"
-              />
-            </div>
+            <Input
+              label="Password"
+              type="password"
+              placeholder="••••••••••••••••"
+              variant="default"
+            />
 
             {/* Forgot password */}
             <div className="mt-1">

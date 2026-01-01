@@ -1,5 +1,6 @@
 // src/components/SignUp.jsx
 import { Button } from "./ui/button";
+import { Input } from "./ui";
 import GoogleLogo from "../assets/logo-google.svg";
 import AppleIcon from "../assets/apple.svg";
 import FaceBookIcon from "../assets/facebook-icon.svg";
@@ -27,88 +28,36 @@ export default function SignUp({ onNext }) {
           {/* Form area */}
           <div className="w-[460px] flex flex-col gap-2.5">
             {/* Full name */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-[13px] leading-[20px] text-[#424856]">
-                Full name
-              </label>
-              <input
-                type="text"
-                className="
-                  w-full h-[44px]
-                  rounded-[26px]
-                  border border-[#D3D8E3]
-                  px-5
-                  text-[14px] leading-[22px]
-                  text-[#171A1F]
-                  placeholder:text-[#9CA3AF]
-                  outline-none
-                "
-                placeholder="Tester"
-              />
-            </div>
+            <Input
+              label="Full name"
+              type="text"
+              placeholder="Tester"
+              variant="default"
+            />
 
             {/* Email */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-[13px] leading-[20px] text-[#424856]">
-                Email
-              </label>
-              <input
-                type="email"
-                className="
-                  w-full h-[44px]
-                  rounded-[26px]
-                  border border-[#D3D8E3]
-                  px-5
-                  text-[14px] leading-[22px]
-                  text-[#171A1F]
-                  placeholder:text-[#9CA3AF]
-                  outline-none
-                "
-                placeholder="test@gmail.com"
-              />
-            </div>
+            <Input
+              label="Email"
+              type="email"
+              placeholder="test@gmail.com"
+              variant="default"
+            />
 
             {/* Password */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-[13px] leading-[20px] text-[#424856]">
-                Password
-              </label>
-              <input
-                type="password"
-                className="
-                  w-full h-[44px]
-                  rounded-[26px]
-                  border border-[#D3D8E3]
-                  px-5
-                  text-[14px] leading-[22px]
-                  text-[#171A1F]
-                  placeholder:text-[#9CA3AF]
-                  outline-none
-                "
-                placeholder="••••••••••••••••"
-              />
-            </div>
+            <Input
+              label="Password"
+              type="password"
+              placeholder="••••••••••••••••"
+              variant="default"
+            />
 
             {/* Confirm Password */}
-            <div className="flex flex-col">
-              <label className="mb-1 text-[13px] leading-[20px] text-[#424856]">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                className="
-                  w-full h-[44px]
-                  rounded-[26px]
-                  border border-[#D3D8E3]
-                  px-5
-                  text-[14px] leading-[22px]
-                  text-[#171A1F]
-                  placeholder:text-[#9CA3AF]
-                  outline-none
-                "
-                placeholder="••••••••••••••••"
-              />
-            </div>
+            <Input
+              label="Confirm Password"
+              type="password"
+              placeholder="••••••••••••••••"
+              variant="default"
+            />
 
             {/* Continue button */}
             <div className="mt-2 w-full">

@@ -1,10 +1,7 @@
 // src/screens/NavbarDesktopScreen/ChatBotHome.jsx
 import { useState } from "react";
 import Navbar from "../../components/Navbar.jsx";
-import { Button } from "../../components/ui/button.jsx";
-import { ChatInput } from "../../components/ui";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import BlueArrowIcon from "../../assets/blue-arrow.svg";
+import { ChatInput, BackButton, NavigationButtons } from "../../components/ui";
 import SparklesIconImg from "../../assets/sparkles-1.svg";
 
 export default function ChatBotHome({ onNext, onPrevious }) {
@@ -40,18 +37,7 @@ export default function ChatBotHome({ onNext, onPrevious }) {
       {/* Main content */}
       <main className="flex-1 w-full flex flex-col items-center px-4">
         {/* Back to Dashboard */}
-        <div className="w-full max-w-[1030px] mt-3 mb-4 flex justify-start">
-          <Button
-            type="button"
-            variant="ghost"
-            size="default"
-            radius="default"
-            leftIcon={<img src={BlueArrowIcon} alt="Back" className="w-6 h-6" />}
-            className="text-[21px] text-[#4443E4] font-normal"
-          >
-            Back to Dashboard
-          </Button>
-        </div>
+        <BackButton />
 
         {/* Stepper */}
         <div className="w-full max-w-[1030px]">
@@ -301,29 +287,7 @@ export default function ChatBotHome({ onNext, onPrevious }) {
         </section>
 
         {/* Bottom navigation */}
-        <div className="w-full max-w-[1030px] mt-auto mb-3 flex justify-between">
-          <Button
-            onClick={onPrevious}
-            variant="outline"
-            size="default"
-            radius="md"
-            width="112px"
-            leftIcon={<ArrowLeft size={16} className="text-[#374151]" />}
-            className="text-[13px] font-medium text-[#374151] hover:bg-[#F3F4F6]"
-          >
-            Previous
-          </Button>
-          <Button
-            onClick={onNext}
-            variant="default"
-            size="default"
-            radius="md"
-            width="87px"
-            rightIcon={<ArrowRight size={16} className="text-white" />}
-          >
-            Next
-          </Button>
-        </div>
+        <NavigationButtons onPrevious={onPrevious} onNext={onNext} />
       </main>
     </div>
   );

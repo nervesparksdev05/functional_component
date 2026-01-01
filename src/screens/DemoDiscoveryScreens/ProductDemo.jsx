@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BulbIcon from "../../assets/bulb.svg";
 import { Button } from "../../components/ui/button.jsx";
-import { ChatInput } from "../../components/ui";
+import { ChatInput, Modal } from "../../components/ui";
 import UploadKnowledgeBaseContainer from "../../components/UploadKnowledgeBase.jsx";
 import SparklesIconImg from "../../assets/sparkles-1.svg";
 import Avatar from "../../assets/ai-avatar.svg";
@@ -319,23 +319,12 @@ export default function ProductDemo() {
       )}
 
       {/* ✅ Upload modal overlay (centered + instant) */}
-      {showUploadPanel && !showWelcome && (
-        <div className="fixed inset-0 z-50">
-          {/* overlay */}
-          <div
-            className="absolute inset-0 bg-black/20 backdrop-blur-[2px]"
-            onClick={() => setShowUploadPanel(false)} // click outside closes
-          />
-
-          {/* modal mount (center) */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            {/* small scale/fade animation (requires keyframes in CSS) */}
-            <div className="animate-[modalIn_160ms_ease-out]">
-              <UploadKnowledgeBaseContainer onClose={() => setShowUploadPanel(false)} />
-            </div>
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={showUploadPanel && !showWelcome}
+        onClose={() => setShowUploadPanel(false)}
+      >
+        <UploadKnowledgeBaseContainer onClose={() => setShowUploadPanel(false)} />
+      </Modal>
     </div>
   );
 }
